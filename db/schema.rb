@@ -36,13 +36,13 @@ ActiveRecord::Schema.define(version: 2019_03_11_145801) do
   end
 
   create_table "location_types", force: :cascade do |t|
-    t.string "type"
+    t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "music_types", force: :cascade do |t|
-    t.string "type"
+    t.string "style"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

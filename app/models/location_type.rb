@@ -1,5 +1,5 @@
 class LocationType < ApplicationRecord
   has_many :fest_locations
   has_many :fests, through: :fest_locations
-  validates :type, presence: true
+  validates :location, presence: true
 end

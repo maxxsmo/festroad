@@ -136,7 +136,7 @@
  }
 
    /*line under footer header*/
-.block-title::after, .animated-digits::after,.widget-title::after{
+.block-title::after, .animated-digits::after,.widget-title::after,h3.step-title::after{
  background: linear-gradient(to right, #FFCF0F 0%, #E54F26 20%, #4A1836 100%) !important;
  }
 
@@ -193,6 +193,7 @@
   padding: .10em 5em;
 }
 
+/*CSS FOR TEAM SECTION*/
 .row-team{
   display: flex;
   flex-wrap: nowrap;
@@ -201,3 +202,20 @@
   margin-left: -10px;
 }
 
+/*CSS FOR HOW SECTION*/
+.icons-step{
+  color:#FFCF0F !important;
+}
+
+.step.step-with-icon .step-icon::after {
+  border: 1px dashed #E54F26 !important;
+}
+
+.step .step-link {
+    color: #E54F26 !important;
+}
+
+.bg-gradient, .block-title::after, .animated-digits::after, .step .step-title::after, .btn-gradient, .btn-style-2.btn-gradient::after, .btn-style-2.btn-gradient:hover::before, .btn-style-6.btn-gradient::before, .accordion-style-3 .card-body::after, .accordion-style-3 [data-toggle='collapse'], .widget-title::after, .tag-link::before, .noUi-connect, .mobile-menu .dropdown-header::after, .blog-card .post-title::after {
+  background:#FFCF0F !important;
+  background: linear-gradient(to right, #FFCF0F 0%, #E54F26 100%) !important;
+}

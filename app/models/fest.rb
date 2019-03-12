@@ -1,4 +1,5 @@
 class Fest < ApplicationRecord
+  scope :title, -> (title) { where(title: title )}
   has_many :wish_lists
   has_many :users, through: :wish_lists
   has_many :tags

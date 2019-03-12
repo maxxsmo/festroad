@@ -190,7 +190,7 @@
 }
 
 .icon-table th {
-  padding: .10em 5em;
+  padding: .5em 3em;
 }
 
 /*CSS FOR TEAM SECTION*/
@@ -223,4 +223,9 @@
 /*CSS FOR CONTACT FORM*/
 .contact-form{
   padding-top: 80px;
+}
+
+/*CSS FOR CONTACT FORM*/
+.kit-container{
+  padding: 120px 20px 10px 20px;
 }

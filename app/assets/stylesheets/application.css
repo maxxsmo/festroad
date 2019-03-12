@@ -10,13 +10,81 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
- *= require theme
  *= require css/feather.min
  *= require css/iziToast.min
  *= require css/jquery.fancybox.min
  *= require css/nouislider.min
  *= require css/owl.carousel.min
  *= require css/socicon.min
+ *= require theme
+ *= require_tree .
+ *= require_self
  */
+
+
+ /*CSS COLORS CHOSEN*/
+
+ .color-table{
+  margin: 2%;
+  padding: 2%;
+ }
+ .hex-color{
+  margin: 10px;
+ }
+  .hex-color-one{
+  margin: 10px;
+  color: #FFCF0F;
+ }
+
+ .hex-color-two{
+  margin: 10px;
+  color: #E54F26;
+ }
+
+ .hex-color-three{
+  margin: 10px;
+  color: #4A1836;
+ }
+
+ .hex-color-four{
+  margin: 10px;
+  color: #404040;
+ }
+
+
+
+ /*CSS OF THE FOOTER*/
+
+ footer{
+  background-color: #343b43;
+ }
+
+  /*footer logo*/
+ .footer-icon{
+  color:#FFFF !important;
+  background-color:#E54F26 !important;
+ }
+
+ .btn-primary{
+  background-color:#E54F26 !important;
+ }
+
+   /*line under footer header*/
+.block-title::after, .animated-digits::after,.widget-title::after{
+ background: linear-gradient(to right, #FFCF0F 0%, #E54F26 20%, #4A1836 100%) !important;
+ }
+
+
+ /*CSS FOR FORMS*/
+ .container-form{
+  width: 60%;
+  length: auto;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+ }
+
+ .custom-control-label::after {
+  background-color:#E54F26 !important;
+}

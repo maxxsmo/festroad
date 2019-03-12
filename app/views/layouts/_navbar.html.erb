@@ -3,14 +3,21 @@
     <ul class="navbar-nav d-none d-lg-block">
     <div class="d-table-cell align-center pr-md-3">
       <div class="navbar-nav d-none d-lg-block">
-        <a class="navbar-brand mr-1" href="#"><img src="#" alt="FestRoad"></a>
-        <a class="nav-link" href="#">Accueil</a>
-        <a class="nav-link" href="#">Carte</a>
+        <a class="navbar-brand mr-1" href="<%= root_path%> "><img src="#" alt="FestRoad"></a>
+        <a class="nav-link" href="<%= root_path%>">Accueil</a>
+        <a class="nav-link" href="#">Les festivals</a>
         <a class="nav-link" href="#">Contact</a>
       </div>
     </div>
     <div>
       <ul class="dropdown-menu">
+          <% if current_user%>
+          <!-- Components-->
+            <%= link_to "Se déconnecter",  destroy_user_session_path, method: :delete, class:"btn btn-gradient ml-3 d-none d-xl-inline-block" %></li>
+          <%else%>
+            <a class="btn btn-gradient ml-3 d-none d-xl-inline-block" href="<%= new_user_session_path %>" >Me connecter</a>
+          <%end%>
+          </div>
       <a class="btn dropdown-toggle ml-3 d-none d-xl-inline-block" href="#">Mon compte </a>
         <li class="dropdown-item"><a href="#">Se connecter / S'enregistrer</a></li>
         <li class="dropdown-item"><a href="#">Mon compte</a></li>

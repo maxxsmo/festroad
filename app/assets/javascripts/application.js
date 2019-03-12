@@ -12,9 +12,6 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
-
-
 //= require js/bootstrap.min
 //= require js/card.min
 //= require js/gmap3.min
@@ -33,5 +30,4 @@
 //= require js/owl.carousel.min
 //= require js/parallax-scroll.min
 //= require js/popper.min
-
 //= require_tree .

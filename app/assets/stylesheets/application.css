@@ -191,3 +191,12 @@
 .icon-table th {
   padding: .10em 5em;
 }
+
+.row-team{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin-right: -10px;
+  margin-left: -10px;
+}
+

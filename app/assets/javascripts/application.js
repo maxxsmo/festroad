@@ -12,6 +12,9 @@
 //
 //= require rails-ujs
 //= require activestorage
+//= require turbolinks
+
+
 //= require js/bootstrap.min
 //= require js/card.min
 //= require js/gmap3.min

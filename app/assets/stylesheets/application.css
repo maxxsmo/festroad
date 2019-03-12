@@ -27,6 +27,7 @@
  .color-table{
   margin: 2%;
   padding: 2%;
+  text-align: center;
  }
  .hex-color{
   margin: 10px;
@@ -145,4 +146,21 @@
 
  .custom-control-label::after {
   background-color:#E54F26 !important;
+}
+
+
+.centered-form-btn{
+  display: block;
+  margin : auto;
+}
+
+/*CSS FOR BUTTONS*/
+.btn-success{
+  color:#FFFF !important;
+  background-color:#4A1836 !important;
+}
+
+.btn-danger{
+  color:#FFFF !important;
+  background-color:#FFCF0F !important;
 }

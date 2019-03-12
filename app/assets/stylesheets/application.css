@@ -164,3 +164,8 @@
   color:#FFFF !important;
   background-color:#FFCF0F !important;
 }
+
+/*CSS FOR PROFILE CARD*/
+.bg-gradient-vertical, .gallery-item::before, .team-card-style-1::before, .team-card-style-2::after, .author-card .author-card-cover::after {
+  background:#FFCF0F !important;
+  background: linear-gradient(to bottom, #FFCF0F 0%, #E54F26 20%, #4A1836 100%) !important;

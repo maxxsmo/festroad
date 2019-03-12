@@ -219,3 +219,8 @@
   background:#FFCF0F !important;
   background: linear-gradient(to right, #FFCF0F 0%, #E54F26 100%) !important;
 }
+
+/*CSS FOR CONTACT FORM*/
+.contact-form{
+  padding-top: 80px;
+}

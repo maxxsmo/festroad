@@ -172,11 +172,9 @@
   background-color:#FFCF0F !important;
 }
 
-<<<<<<< HEAD
 /*CSS FOR BANNER*/
 
 
-=======
 /*CSS FOR PROFILE CARD*/
 .bg-gradient-vertical, .gallery-item::before, .team-card-style-1::before, .team-card-style-2::after, .author-card .author-card-cover::after {
   background:#FFCF0F !important;
@@ -193,4 +191,3 @@
 .icon-table th {
   padding: .10em 5em;
 }
->>>>>>> development

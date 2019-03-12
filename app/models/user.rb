@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :description, length: { in: 4..1000 }
-  validates :is_admin, presence: true
-
+  validates :description, allow_nil: true,  length: { in: 4..1000 }
+  validates :is_admin, default: false
+  
 end

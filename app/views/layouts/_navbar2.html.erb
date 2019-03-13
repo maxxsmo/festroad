@@ -1,5 +1,5 @@
 
-<div class="navbar-wrapper navbar-boxed navbar-sticky">
+<div class="navbar-wrapper navbar-boxed navbar-floating navbar-sticky">
       <div class="container-fluid">
         <div class="d-table-cell align-middle pr-md-3">
           <a class="navbar-brand mr-1" href="#"><img src="<%= root_path%>" alt="FestRoad"></a>
@@ -12,6 +12,8 @@
               <li class="nav-item"><a class="nav-link" href="#">Les festivals</a>
               </li>
               <li class="nav-item"><a class="nav-link" href="#">Contact</a>
+              </li>
+              <li class="nav-item"><%= link_to 'Mes favoris',wish_lists_path, class: 'nav-link' %>
               </li>
             </ul>
 

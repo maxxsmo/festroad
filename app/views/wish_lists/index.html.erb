@@ -1,3 +1,4 @@
+<div class= "page-container">
 <% if @wishlist.count == 0 %>
   <h1>Pour l'instant, vous n'avez ajouté aucun festival à vos favoris </h1>
 <% else %>
@@ -7,3 +8,4 @@
     <%= render 'layouts/fest_cart', fest: fest %>
   <% end %>
 <% end %>
+</div>

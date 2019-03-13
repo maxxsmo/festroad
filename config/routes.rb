@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'festivals/index'
+  get 'festivals/show'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :wish_lists, only: [:index]
   resources :home, only: [:index]
@@ -6,5 +8,6 @@ Rails.application.routes.draw do
   resources :contact, only: [:index]
   root 'home#index'
   devise_for :users, :controllers => { registrations: 'registrations' }
+  resources :profiles
 
 end

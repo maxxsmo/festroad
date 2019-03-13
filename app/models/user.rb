@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+
+  after_create :welcome_send
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -10,5 +13,10 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :description, allow_nil: true,  length: { in: 4..1000 }
   validates :is_admin, default: false
+
+  def welcome_send
+    UserMailer.welcome_email(self).deliver_now
+
+  end
   
 end

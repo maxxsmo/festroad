@@ -1,128 +1,23 @@
 <section class="bg-center bg-no-repeat py-5" style="background-image: url(assets/img_test.JPG);">
-  <div class="row no-gutters pt-lg-5 mt-lg-5">
-    <div class="col-xl-7 col-lg-8"><img class="d-block" src="" alt="Hero Image"></div>
-    <div class="col-lg-4 pt-xl-5">
-      <div class="px-3 px-lg-0 text-center text-lg-left">
+  <div class="row no-gutters pt-lg-5 mt-lg-5 justify-content-center ">
+    <div class=" pt-xl-5">
+      <div class=" px-lg-0 text-center">
         <h1 class="pt-md-5 pb-md-4 pt-3 pb-3 pt-md-0 pb-md-5">We do all the hard work for you</h1>
-        <a class="scroll-to btn btn-style-4 btn-gradient btn-icon-right btn-lg" href="#services">En savoir plus<i class="fe-icon-arrow-down"></i></a>
-        <a class="scroll-to btn btn-style-4 btn-gradient btn-icon-right btn-lg" href="#services">Trouve ton festival<i class="fe-icon-arrow-down"></i></a>
+        <div class="input-group">
+          <input class="form-control" type="email" name="EMAIL" placeholder="Nom d'un festival">
+            <div class="input-group-append">
+            <button class="btn btn-primary" type="submit"><i class="footer-icon fas fa-search"></i> Rechercher</button>
+            </div>
+
+        </div>
+        <a class="scroll-to btn btn-style-4 btn-gradient btn-icon-right btn-lg mt-5" href="#services">En savoir plus<i class="fe-icon-arrow-down"></i></a>
+        <a class="scroll-to btn btn-style-4 btn-gradient btn-icon-right btn-lg mt-5" href="#services">Trouve ton festival<i class="fe-icon-arrow-down"></i></a>
       </div>
     </div>
     
   </div>
 </section>
 
+<%= render'layouts/how' %>
 
-<section class="container py-5 mt-3">
-      <h2 class="h3 block-title text-center mb-4">Meet our team<small>People behind your great experience</small></h2>
-      <div class="row">
-        <!-- Team member-->
-        <div class="col-lg-3 col-sm-6">
-          <div class="team-card-style-1 mx-auto">
-            <div class="team-card-inner">
-              <div class="team-thumb"><img src="img/team/style-1/05.jpg" alt="Team Member Picture">
-              </div>
-              <div class="team-social-bar text-center"><a class="social-btn sb-style-4 sb-facebook" href="#"><i class="socicon-facebook"></i></a><a class="social-btn sb-style-4 sb-twitter" href="#"><i class="socicon-twitter"></i></a><a class="social-btn sb-style-4 sb-skype" href="#"><i class="socicon-skype"></i></a><a class="social-btn sb-style-4 sb-linkedin" href="#"><i class="socicon-linkedin"></i></a></div><a class="team-contact-link" href="tel:+72056557984"><i class="fe-icon-phone"></i>&nbsp;+7 (205) 655 79 84</a><a class="team-contact-link" href="mailto:info@example.com"><i class="fe-icon-mail"></i>&nbsp;info@example.com</a>
-            </div><span class="team-position">CEO, Co-Founder</span>
-            <h4 class="team-name">James McCorvinus</h4>
-          </div>
-        </div>
-        <!-- Team member-->
-        <div class="col-lg-3 col-sm-6">
-          <div class="team-card-style-1 mx-auto">
-            <div class="team-card-inner">
-              <div class="team-thumb"><img src="img/team/style-1/06.jpg" alt="Team Member Picture">
-              </div>
-              <div class="team-social-bar text-center"><a class="social-btn sb-style-4 sb-facebook" href="#"><i class="socicon-facebook"></i></a><a class="social-btn sb-style-4 sb-twitter" href="#"><i class="socicon-twitter"></i></a><a class="social-btn sb-style-4 sb-google-plus" href="#"><i class="socicon-googleplus"></i></a><a class="social-btn sb-style-4 sb-linkedin" href="#"><i class="socicon-linkedin"></i></a></div><a class="team-contact-link" href="tel:+57872336590"><i class="fe-icon-phone"></i>&nbsp;+5 (787) 233 65 90</a><a class="team-contact-link" href="mailto:info@example.com"><i class="fe-icon-mail"></i>&nbsp;info@example.com</a>
-            </div><span class="team-position">Marketing Manager</span>
-            <h4 class="team-name">Sara Palson</h4>
-          </div>
-        </div>
-        <!-- Team member-->
-        <div class="col-lg-3 col-sm-6">
-          <div class="team-card-style-1 mx-auto">
-            <div class="team-card-inner">
-              <div class="team-thumb"><img src="img/team/style-1/07.jpg" alt="Team Member Picture">
-              </div>
-              <div class="team-social-bar text-center"><a class="social-btn sb-style-4 sb-twitter" href="#"><i class="socicon-twitter"></i></a><a class="social-btn sb-style-4 sb-github" href="#"><i class="socicon-github"></i></a><a class="social-btn sb-style-4 sb-stackoverflow" href="#"><i class="socicon-stackoverflow"></i></a><a class="social-btn sb-style-4 sb-skype" href="#"><i class="socicon-skype"></i></a></div><a class="team-contact-link" href="tel:+19871625346"><i class="fe-icon-phone"></i>&nbsp;+1 (987) 162 53 46</a><a class="team-contact-link" href="mailto:info@example.com"><i class="fe-icon-mail"></i>&nbsp;info@example.com</a>
-            </div><span class="team-position">Lead Programmer</span>
-            <h4 class="team-name">Brandon Nash</h4>
-          </div>
-        </div>
-        <!-- Team member-->
-        <div class="col-lg-3 col-sm-6">
-          <div class="team-card-style-1 mx-auto">
-            <div class="team-card-inner">
-              <div class="team-thumb"><img src="img/team/style-1/03.jpg" alt="Team Member Picture">
-              </div>
-              <div class="team-social-bar text-center"><a class="social-btn sb-style-4 sb-twitter" href="#"><i class="socicon-twitter"></i></a><a class="social-btn sb-style-4 sb-pinterest" href="#"><i class="socicon-pinterest"></i></a><a class="social-btn sb-style-4 sb-behance" href="#"><i class="socicon-behance"></i></a><a class="social-btn sb-style-4 sb-dribbble" href="#"><i class="socicon-dribbble"></i></a></div><a class="team-contact-link" href="tel:+13907765843"><i class="fe-icon-phone"></i>&nbsp;+1 (390) 776 58 43</a><a class="team-contact-link" href="mailto:info@example.com"><i class="fe-icon-mail"></i>&nbsp;info@example.com</a>
-            </div><span class="team-position">Graphic Designer</span>
-            <h4 class="team-name">Emma Johnson</h4>
-          </div>
-        </div>
-      </div>
-    </section>
-<section class="bg-secondary bg-cover bg-no-repeat pt-5 pb-4" style="background-image: url(assets/img_test.JPG);" data-offset-top="-10" id="contacts">
-      <div class="container py-2">
-        <h2 class="h3 block-title text-center">Contact me<small>I'll be glad to answer all your questions. I normally respond within 2 - 3 business days.</small></h2>
-        <form class="needs-validation pt-4 pb-5" novalidate="">
-          <div class="row">
-            <div class="col-md-4 col-sm-6 form-group">
-              <label for="cont-name">Your Name <span class="text-danger font-weight-medium">*</span></label>
-              <input class="form-control" type="text" id="cont-name" placeholder="John Doe" required="">
-              <div class="invalid-feedback">Please fill in your name!</div>
-            </div>
-            <div class="col-md-4 col-sm-6 form-group">
-              <label for="cont-email">Email Address <span class="text-danger font-weight-medium">*</span></label>
-              <input class="form-control" type="email" id="cont-email" placeholder="johndoe@example.com" required="">
-              <div class="invalid-feedback">Please provide valid email address!</div>
-            </div>
-            <div class="col-md-4 form-group">
-              <label for="cont-subject">Subject</label>
-              <input class="form-control" type="email" id="cont-subject" placeholder="Title of your message">
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="cont-message">Message <span class="text-danger font-weight-medium">*</span></label>
-            <textarea class="form-control" id="cont-message" rows="8" placeholder="Type your message..." required=""></textarea>
-            <div class="invalid-feedback">Please type your message!</div>
-          </div>
-          <div class="text-center">
-            <button class="btn btn-style-4 btn-icon-left btn-gradient" type="submit"><i class="fe-icon-mail text-md"></i>Send Message</button>
-          </div>
-        </form>
-        <hr>
-        <div class="d-md-flex justify-content-between align-items-center pt-4 text-center text-md-left">
-          <div class="order-2"><a class="social-btn sb-style-6 sb-facebook" href="#"><i class="socicon-facebook"></i></a><a class="social-btn sb-style-6 sb-dribbble" href="#"><i class="socicon-dribbble"></i></a><a class="social-btn sb-style-6 sb-twitter" href="#"><i class="socicon-twitter"></i></a><a class="social-btn sb-style-6 sb-instagram" href="#"><i class="socicon-instagram"></i></a><a class="social-btn sb-style-6 sb-behance" href="#"><i class="socicon-behance"></i></a></div>
-          <p class="m-0 text-sm order-1"><span class="opacity-80">© All rights reserved. Made with</span> <i class="d-inline-block align-middle fe-icon-heart text-danger"></i> <a href="http://createx.studio/" class="d-inline-block navi-link opacity-80 p-0" target="_blank">by Createx Studio</a></p>
-        </div>
-      </div>
-    </section>
-
-<div class="container">
-        <h6 class="text-center">Subscribe to Newsletter</h6>
-        <div class="row justify-content-center pb-4 mb-3">
-          <div class="col-xl-6 col-lg-7 col-md-9">
-            <form action="https://studio.us12.list-manage.com/subscribe/post?u=c7103e2c981361a6639545bd5&amp;amp;id=29ca296126" method="post" target="_blank" novalidate="">
-              <div class="input-group">
-                <input class="form-control" type="email" name="EMAIL" placeholder="Email address">
-                <div class="input-group-append">
-                  <button class="btn btn-primary" type="submit">Sign Up</button>
-                </div>
-              </div><small class="form-text text-muted pt-1 text-center">Enter email to receive a newsletter about new templates and updates.</small>
-              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-              <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                <input type="text" name="b_c7103e2c981361a6639545bd5_1194bb7544" tabindex="-1">
-              </div>
-            </form>
-          </div>
-        </div>
-        <!-- Follow Me-->
-        <h6 class="text-center">Follow Us</h6>
-        <div class="text-center pt-2 pb-4 mb-2"><a class="social-btn sb-style-6 sb-facebook" href="#"><i class="socicon-facebook"></i></a><a class="social-btn sb-style-6 sb-twitter" href="#"><i class="socicon-twitter"></i></a><a class="social-btn sb-style-6 sb-dribbble" href="#"><i class="socicon-dribbble"></i></a><a class="social-btn sb-style-6 sb-instagram" href="#"><i class="socicon-instagram"></i></a><a class="social-btn sb-style-6 sb-youtube" href="#"><i class="socicon-youtube"></i></a></div>
-        <hr>
-        <div class="d-md-flex justify-content-between align-items-center py-4 text-center text-md-left">
-          <div class="order-2"><a class="footer-link" href="#">About</a><a class="footer-link ml-3" href="#">Help &amp; Info</a><a class="footer-link ml-3" href="#">Privacy Policy</a></div>
-          <p class="m-0 text-sm order-1"><span class="opacity-60">© All rights reserved. Made with</span> <i class="d-inline-block align-middle fe-icon-heart text-danger"></i> <a href="http://createx.studio/" class="d-inline-block navi-link p-0" target="_blank">by Createx Studio</a></p>
-        </div>
-      </div>
+<%= render'layouts/partners' %>

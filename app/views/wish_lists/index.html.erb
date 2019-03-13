@@ -5,7 +5,7 @@
   <h1 class="text-center">Mes favoris</h1>
   <% @wishlist.each do |wishlist| %>
     <% fest = wishlist.fest %>
-    <%= render 'layouts/fest_cart', fest: fest %>
+    <%= render 'fest_cart', fest: fest %>
   <% end %>
 <% end %>
 </div>

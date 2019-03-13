@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'admin/index'
   get 'avatars/create'
   get 'festivals/index'
   get 'festivals/show'
@@ -13,5 +14,8 @@ Rails.application.routes.draw do
     resources :avatars, only: [:create]
   end
 
+  namespace :admin do
+    resources :fests
+  end
 
 end

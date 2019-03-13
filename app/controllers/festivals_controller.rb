@@ -3,5 +3,6 @@ class FestivalsController < ApplicationController
   end
 
   def show
+    
   end
 end

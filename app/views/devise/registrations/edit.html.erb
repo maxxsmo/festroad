@@ -9,10 +9,16 @@
         <div class="col-lg-4 pb-5">
           <div class="author-card pb-3">
             <div class="author-card-cover"><%= image_tag "bracelet_festivals.jpg"%></div>
+            <!-- Profile picture-->
               <div class="author-card-profile">
-                <i class="fas fa-user-circle fa-7x"></i>
+                <%if @user.avatar.attached?%>
+                  <img class="d-block w-100 rounded-circle"><%= image_tag @user.avatar, alt: 'avatar' %>
+                <%else%>
+                  <i class="fas fa-user-circle fa-7x"></i>
+                <%end%>
+            <!-- end-->
                   <div class="author-card-details">
-                    <h5 class="author-card-name text-lg">Prénom Nom</h5><span class="author-card-position">Depuis le "Date d'inscription"</span>
+                    <h5 class="author-card-name text-lg"><%= @user.first_name%> <%= @user.last_name%></h5><span class="author-card-position">Depuis le <%= @user.created_at%></span>
                   </div>
               </div>
           </div>
@@ -62,9 +68,12 @@
                     <% end %>
 
               <div class="col-md-6">
+              </div>
+
+              <div class="col-md-6">
                 <div class="form-group">
                   <div class="field">
-                    <%= f.label :Mot_de_passe %> <i>(laissez vide si aucun changement)</i><br />
+                    <%= f.label :Nouveau_Mot_de_passe %>
                     <%= f.password_field :password, autocomplete: "new-password", class: "form-control"  %>
                     <% if @minimum_password_length %>
                       <em><%= @minimum_password_length %> caractères minimum</em>
@@ -81,7 +90,23 @@
                   </div>
                 </div>
               </div>
+        <!-- end-->
 
+        <!-- avatar change upload-->
+            <div class="col-md-6">
+              <div class="form-group">  
+                <div class="field">
+                    <%= f.label :Changement_avatar %><br />
+                    <%= form_tag profile_avatars_path(@user), multipart: true do %>
+                    <%= file_field_tag :avatar, class: "form-control" %>
+                    <%= submit_tag "mettre à jour l'avatar",class:"btn btn-warning btn-sm" %>
+                    <% end %>
+                </div>
+              </div>
+            </div>
+        <!-- end-->
+
+        <!-- mandatory password for modifications-->
               <div class="col-md-6">
                 <div class="form-group">  
                   <div class="field">
@@ -90,19 +115,21 @@
                   </div>
                 </div>
               </div>
+        <!-- end-->
 
+        <!-- confirmation button-->
             <div class="col-12 text-center">
-                <div class="d-flex flex-wrap justify-content-end align-items-center">
+                <div class="d-flex flex-wrap justify-content-end align-items-center ">
                   <%= f.submit "Mettre à jour mon profil", class:"btn btn-primary" %>
                 </div>
               </div>
               <% end %>
-
         </div>
     </div>
   </div>
 </div>
         <!-- end-->
+
         <!-- Delete account-->
 
 
@@ -118,7 +145,7 @@
       <em> Déçu ? Vous pouvez supprimer votre compte ici : </em>
     </div>
     <div class="col-6 text-left d-flex flex-wrap justify-content-between align-items-center">
-      <%= button_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Vous êtes sûr de vous?" }, method: :delete,  class:"btn btn-primary btn-sm" %></p>
+      <%= button_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Vous êtes sûr de vous?" }, method: :delete,  class:"btn btn-dark btn-sm" %></p>
     </div>  
   </div>
 </div>

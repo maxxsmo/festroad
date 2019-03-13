@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :wish_lists
   has_many :fests, through: :wish_lists
+  has_one_attached :avatar
 
   validates :first_name, presence: true
   validates :last_name, presence: true

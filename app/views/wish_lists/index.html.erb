@@ -1,8 +1,9 @@
 <% if @wishlist.count == 0 %>
-
   <h1>Pour l'instant, vous n'avez ajouté aucun festival à vos favoris </h1>
 <% else %>
+  <h1 class="text-center">Mes favoris</h1>
   <% @wishlist.each do |wishlist| %>
-  <% nomdetavariable = wishlist.fest %>
-
+    <% fest = wishlist.fest %>
+    <%= render 'layouts/fest_cart', fest: fest %>
   <% end %>
+<% end %>

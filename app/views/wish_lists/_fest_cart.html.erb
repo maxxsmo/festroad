@@ -1,0 +1,14 @@
+<div class= "col">
+  <div class= "row justify-content-between  mr-5 ml-5">
+    <h5><%= fest.title %><h5>
+    <p>Du <%= fest.start_date.strftime("%d/%m/%Y") %> au <%= fest.end_date.strftime("%d/%m/%Y") %><p>
+  </div>
+  <div class= "mr-5 ml-5">
+    <% if fest.description != nil %>
+    <p>Description: <%= fest.description %> </p>
+    <% end %>
+    <% if fest.website != nil %>
+    <p>Site web: <%= link_to fest.website, fest.website %></p>
+    <% end %>
+  </div>
+</div>

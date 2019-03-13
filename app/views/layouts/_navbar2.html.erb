@@ -9,17 +9,19 @@
             <ul class="navbar-nav d-none d-lg-block">
               <li class="nav-item mega-dropdown-toggle"><a class="nav-link" href="<%= root_path%>">Accueil</a>
               </li>
-              <li class="nav-item"><a class="nav-link" href="#">Les festivals</a>
+              <li class="nav-item"><a class="nav-link" href="<%=festivals_index_path %>">Les festivals</a>
               </li>
-              <li class="nav-item"><a class="nav-link" href="#">Contact</a>
+              <li class="nav-item"><%= link_to 'Mes favoris',wish_lists_path, class: 'nav-link' %>
+              </li>
+               <li class="nav-item">
+                <a class="nav-link" href="<%= contact_index_path %>">Contact</a>
               </li>
             </ul>
-
            <% if current_user%>
           <!-- Components-->
-            <%= link_to "Se déconnecter",  destroy_user_session_path, method: :delete, class:"btn btn-gradient ml-3 d-none d-xl-inline-block" %></li>
+            <%= link_to "Se déconnecter",  destroy_user_session_path, method: :delete, class:"btn ml-3 d-none d-xl-inline-block" %></li>
           <%else%>
-            <a class="btn ml-3 d-none d-xl-inline-block" href="<%= new_user_session_path %>">Me connecter</a>
+          <%= link_to "Me connecter",  new_user_session_path, method: :new, class:"btn ml-3 d-none d-xl-inline-block" %></li>
           <%end%>
           </div>
             </div>

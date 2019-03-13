@@ -11,6 +11,7 @@
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fe-icon-mail"></i></span>
             </div>
+             <%= f.label :email, class:"d-none"%>
               <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", id:"inputEmail", placeholder:"email" %>
             </div>
           </div>
@@ -19,6 +20,7 @@
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fe-icon-lock"></i></span>
             </div>
+            <%= f.label :password, class:"d-none"%>
             <%= f.password_field :password, autocomplete: "current-password", class:"form-control", placeholder:"password" %>
           </div>
 

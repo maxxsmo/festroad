@@ -16,7 +16,7 @@ class User < ApplicationRecord
 
   def welcome_send
     UserMailer.welcome_email(self).deliver_now
-    redirect_to root_path, alert:'Bienvenue à Festroad'
+
   end
   
 end

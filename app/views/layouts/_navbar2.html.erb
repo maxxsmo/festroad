@@ -21,7 +21,7 @@
           <!-- Components-->
             <%= link_to "Se déconnecter",  destroy_user_session_path, method: :delete, class:"btn ml-3 d-none d-xl-inline-block" %></li>
           <%else%>
-            <a class="btn ml-3 d-none d-xl-inline-block" href="<%= new_user_session_path %>">Me connecter</a>
+          <%= link_to "Me connecter",  new_user_session_path, method: :new, class:"btn ml-3 d-none d-xl-inline-block" %></li>
           <%end%>
           </div>
             </div>

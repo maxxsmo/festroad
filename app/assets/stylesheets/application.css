@@ -377,6 +377,32 @@ color:#E54F26;
   padding: 120px 20px 10px 20px;
 }
 
+
+/* CSS for index fest */
+.cont_map{
+background-color: grey;
+height: 800px;
+}
+
+.cont_fest {
+background-color: white;
+height: 800px;
+overflow-y: scroll;
+padding-top: 10%;
+}
+
+
+.col-centered{
+  float: none;
+  margin: 0 auto;
+}
+
+.card_index {
+  width: auto;
+}
+
+.btn {
+  box-shadow: none !important;
 .page-container{
   padding-top: 150px;
 }

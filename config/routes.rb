@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'avatars/create'
   get 'festivals/index'
   get 'festivals/show'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -8,6 +9,9 @@ Rails.application.routes.draw do
   resources :contact, only: [:index]
   root 'home#index'
   devise_for :users, :controllers => { registrations: 'registrations' }
-  resources :profiles
+  resources :profiles do
+    resources :avatars, only: [:create]
+  end
+
 
 end

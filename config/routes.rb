@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :contact, only: [:index]
   root 'home#index'
   devise_for :users, :controllers => { registrations: 'registrations' }
+  resources :profiles
 
 end

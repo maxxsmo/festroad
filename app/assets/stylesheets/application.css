@@ -398,4 +398,6 @@ padding-top: 10%;
 
 .btn {
   box-shadow: none !important;
+.page-container{
+  padding-top: 150px;
 }

@@ -396,4 +396,6 @@ padding-top: 10%;
   width: auto;
 }
 
-
+.btn {
+  box-shadow: none !important;
+}

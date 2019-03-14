@@ -1,5 +1,5 @@
 <div class="page-container">
-    <!-- Backoffice Items-->
+    <!-- Backoffice Fests-->
     
     <div class="container">
       <h1 class= "h4 block-title text-center pt-3">Modifier le festival</h1>
@@ -9,6 +9,9 @@
               <div class="col-md-4"></div>
                 <div class="col-md-2">
                   <label> Titre </label>
+                  </div>
+                    <div class= "col-md-6">
+                  <p><%= text_field_tag 'title', @fest.title %></p>
                 </div>
               </div>
             <div class="row"> 

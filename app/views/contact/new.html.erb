@@ -1,8 +1,9 @@
 <section class="bg-secondary bg-cover bg-no-repeat pt-5 pb-4"  data-offset-top="-10" id="contacts">
       <div class="container py-2">
         <h2 class="h3 contact-form block-title text-center">Contactez-nous<small>Nous ferons de notre mieux pour vous répondre dans les 48h.</small></h2>
+         <%= form_for @contact, url: contact_index_path  do |f| %>
         <form class="needs-validation pt-4 pb-5">
-         <%= form_for contact_index_path do |f| %>
+        
           <% if flash[:error].present? %>
               <p> flash[:error]</p>
           <% end %>
@@ -21,7 +22,7 @@
             </div>
             <div class="col-md-4 form-group">
                 <%= f.label :object %> <span class="text-danger font-weight-medium">*</span><br>
-                <%= f.text_field :subject, class:"form-control",id:"cont-subject",placeholder:"Objet de votre message"%>
+                <%= f.text_field :subject,required: true,  class:"form-control",id:"cont-subject",placeholder:"Objet de votre message"%>
             </div>
           </div>
           <div class="form-group">
@@ -30,10 +31,11 @@
             <div class="invalid-feedback">Merci d'écrire votre message ici!</div>
           </div>
           <div class="text-center">
-            <%= f.submit 'Envoyer mon message', class: "button btn btn-style-4 btn-primary" %>
+            <%= f.submit 'Envoyer mon message', class: "button btn btn-style-4 btn-primary" %>      
           </div>
+         
         </form>
-        <% end %>
+    <% end %>
       </div>
     </section>
 

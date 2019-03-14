@@ -1,6 +1,6 @@
 <div class="page-container">
   <!-- Backoffice Fests-->
-  <section class="container py-5 mb-4">
+  <section class="py-5 mb-4">
     <h1 class="h4 block-title text-center pt-3">Les festivals de mon site FestRoad</h1>
 
             <div class="table-responsive">
@@ -14,6 +14,8 @@
                 <th>Date de fin</th>
                 <th>Adresse</th>
                 <th>Website</th>
+                <th>Type de musique</th>
+                <th>Intérieur/Extérieur</th>
                 <th>Éditer</th>
                 <th>Supprimer</th>
               </tr>
@@ -28,6 +30,8 @@
                 <td><%=fest.end_date%></td>
                 <td><%=fest.address%></td>
                 <td><%=fest.website%></td>
+                <td><% fest.tags.each do |tag|%><%=tag.music_type.style%><% end %></td> 
+                <td><% fest.fest_locations.each do |fest_location|%><%=fest_location.location_type.location%><% end %></td>
                 <td><%=link_to 'Éditer', edit_admin_fest_path(fest.id) %></td>
                 <td><%=link_to 'Supprimer', admin_fest_path(fest.id), method: :delete %></td>
               </tr>

@@ -1,5 +1,5 @@
 class Fest < ApplicationRecord
-  scope :title, -> (title) { where(title: title )}
+  
   has_many :wish_lists
   has_many :users, through: :wish_lists
   has_many :tags
@@ -30,4 +30,20 @@ class Fest < ApplicationRecord
     end
   end
 
+  def self.title(title)
+    festival = Fest.all
+    result = []
+    festival.each do  |fest|
+      result_of_matching = 0
+      fest.title.split.each do |letter|
+        if title =~ /#{letter}/i
+          result_of_matching += 1
+        end
+      end
+      if fest.title.split.length * 75/100 <= result_of_matching
+        result << fest
+      end
+    end
+    result
+  end
 end

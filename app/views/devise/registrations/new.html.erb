@@ -1,0 +1,81 @@
+<section class="signup-page">
+<div class="page-header section-image">
+<div class="page-header-image" style="background-image:url(assets/img/forms/signup_peepoodur.jpg)"></div>
+<div class="content">
+<div class="container">
+  <div class="row">
+  <div class="col-md-4 ml-auto mr-auto d-flex flex-column">
+    <div class="info info-horizontal">
+      <div class="icon icon-primary">
+        <i class="far fa-user"></i>
+        </div>
+        <div class="description">
+          <h5 class="info-title">Un autre univers</h5>
+          <p class="description">
+           En vous inscrivant à Festroad, découvrez de nombreuses fonctionnalités inédites !
+          </p>
+        </div>
+    </div>
+      <div class="info info-horizontal">
+        <div class="icon icon-primary">
+          <i class="far fa-heart"></i>
+        </div>
+        <div class="description">
+          <h5 class="info-title">Des avantages exclusifs</h5>
+          <p class="description">
+          Un espace personnel où vous pouvez ajouter vos festivals favoris.
+          </p>
+        </div>
+      </div>
+      <div class="info info-horizontal">
+          <div class="icon icon-primary">
+          <i class="fas fa-map-signs"></i>
+          </div>
+          <div class="description">
+            <h5 class="info-title">Un carnet de bord</h5>
+            <p class="description">
+              Selectionne tes festivals favoris et crée toi ton propre itinéraire.
+            </p>
+          </div>
+      </div>
+  </div>
+      <div class="col-md-4 mr-auto mt-3">
+              <div class="card card-signup">
+                <div class="card-body">
+   
+      <%= form_for resource, as: resource_name, url: registration_path(resource_name), html: { class: "form-signin mt-3" } do |f| %>
+        <h1 class="h3 mb-3 font-weight-normal text-center">S'inscrire</h1>
+        <%= devise_error_messages! %>
+        <div class="form-group">
+          <%= f.label :nom, "Nom" %><br />
+          <%= f.text_field :last_name, autofocus: true, autocomplete: "Nom", class: "form-control" %>
+        </div>
+         <div class="form-group">
+          <%= f.label :prenom, "Prénom" %><br />
+          <%= f.text_field :first_name, autofocus: true, autocomplete: "Prénom", class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :email, "Email" %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :mot_de_passe %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> caractères minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :confirmation_du_mot_de_passe %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+        </div>
+        <div class="actions mt-5">
+          <%= f.submit "S'inscrire", class: "btn btn-lg btn-primary btn-block" %>
+        </div>
+      <% end %>
+      <%= render "devise/shared/links" %>
+    </div>
+    </div>
+  </div>
+  </section>
+

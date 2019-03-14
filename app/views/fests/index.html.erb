@@ -1,3 +1,4 @@
+<div class="page-container">
 <% @products.each do |fest| %>
   <h1><%= fest.title %></h1>
 <% end %>
@@ -5,3 +6,4 @@
 <% if @products.count == 0 %>
   <h1>Ca sert à rien</h1>
   <%end %>
+</div>

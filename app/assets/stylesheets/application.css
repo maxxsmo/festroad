@@ -10,6 +10,435 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require css/feather.min
+ *= require css/iziToast.min
+ *= require css/jquery.fancybox.min
+ *= require css/nouislider.min
+ *= require css/owl.carousel.min
+ *= require css/socicon.min
+ *= require theme
  *= require_tree .
  *= require_self
+
  */
+
+
+ /*CSS COLORS CHOSEN*/
+
+ .color-table{
+  margin: 2%;
+  padding: 2%;
+  text-align: center;
+ }
+ .hex-color{
+  margin: 10px;
+ }
+  .hex-color-one{
+  margin: 10px;
+  color: #FFCF0F;
+ }
+
+ .hex-color-two{
+  margin: 10px;
+  color: #E54F26;
+ }
+
+ .hex-color-three{
+  margin: 10px;
+  color: #4A1836;
+ }
+
+ .hex-color-four{
+  margin: 10px;
+  color: #404040;
+ }
+
+ .hex-color-five{
+  margin: 10px;
+  color: #fff;
+ }
+
+ .hex-color-six{
+  margin: 10px;
+  color: #f8f9fa;
+ }
+
+ .hex-color-seven{
+  margin: 10px;
+  color: #e9ecef;
+ }
+
+ .hex-color-eight{
+  margin: 10px;
+  color: #dee2e6;
+ }
+
+ .hex-color-nine{
+  margin: 10px;
+  color: #ced4da;
+ }
+
+ 
+ .hex-color-ten{
+  margin: 10px;
+  color: #adb5bd;
+ }
+
+ 
+ .hex-color-eleven{
+  margin: 10px;
+  color: #6c757d;
+ }
+
+ .hex-color-twelve{
+  margin: 10px;
+  color: #495057;
+ }
+
+ .hex-color-thirtee{
+  margin: 10px;
+  color: #343a40;
+ }
+
+ .hex-color-fourteen{
+  margin: 10px;
+  color: #212529;
+ }
+
+ .hex-color-fifteen{
+  margin: 10px;
+  color: #000;
+ }
+
+
+
+
+ /*CSS OF THE FOOTER*/
+
+ footer{
+  background-color: #343b43;
+ }
+
+  /*footer logo*/
+ .footer-icon{
+  color:#FFFF !important;
+  background-color:#E54F26 !important;
+ }
+
+ .btn-primary{
+  background-color:#E54F26 !important;
+ }
+
+   /*line under footer header*/
+.block-title::after, .animated-digits::after,.widget-title::after,h3.step-title::after{
+ background: linear-gradient(to right, #FFCF0F 0%, #E54F26 20%, #4A1836 100%) !important;
+ }
+
+
+ /*CSS FOR FORMS*/
+ .container-form{
+  width: 60%;
+  length: auto;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+ }
+
+ .custom-control-label::after {
+  background-color:#E54F26 !important;
+}
+
+
+.centered-form-btn{
+  display: block;
+  margin : auto;
+}
+
+/*CSS FOR BUTTONS*/
+.btn-success{
+  color:#FFFF !important;
+  background-color:#4A1836 !important;
+}
+
+.btn-danger{
+  color:#FFFF !important;
+  background-color:#FFCF0F !important;
+}
+
+/*CSS FOR BANNER*/
+
+
+/*CSS FOR PROFILE CARD*/
+.bg-gradient-vertical, .gallery-item::before, .team-card-style-1::before, .team-card-style-2::after, .author-card .author-card-cover::after {
+  background:#FFCF0F !important;
+  background: linear-gradient(to bottom, #FFCF0F 0%, #E54F26 20%, #4A1836 100%) !important;
+}
+
+/*CSS FOR ICON TABLE*/
+.icon-table td {
+  text-align: center;
+  padding-top: .5em;
+  padding-bottom: .5em;
+}
+
+.icon-table th {
+  padding: .5em 3em;
+}
+
+/*CSS FOR TEAM SECTION*/
+.row-team{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin-right: -10px;
+  margin-left: -10px;
+}
+
+/*CSS FOR HOW SECTION*/
+.icons-step{
+  color:#f73f00;
+}
+
+.step.step-with-icon .step-icon::after {
+  border: 1px dashed #e54f2699 ;
+}
+
+.step.step-with-icon .step-icon::before {
+  transform: scale(0);
+  background-color:#e54f2647;
+  opacity: 0;
+}
+/***** CSS FOR DEVISE *******/
+
+/* Form LOG IN */
+
+#login {
+  margin: 15% 10% 15% 25%;
+}
+#login a {
+color:#E54F26;
+}
+
+.form-heading{
+  padding-bottom: 5%;
+}
+
+/* Form SIGN IN */
+
+.signup-page{
+  margin-top:15%;
+  margin-bottom:10%;
+}
+
+.signup-page a {
+  color:#E54F26;
+}
+.signup-page .section {
+  padding-top: 180px;
+  padding-bottom: 0; 
+
+}
+
+.signup-page .input-group, .signup-page .form-group {
+  margin-bottom: 20px; }
+
+.signup-page .card-signup {
+  max-width: 100%;
+  margin-bottom: 130px;
+  padding: 15px 0px; }
+  .signup-page .card-signup:not([data-background-color]) .card-title {
+    color: initial; }
+  .signup-page .card-signup .checkbox label {
+    margin-left: 14px;
+    padding-left: 39px;
+    color: initial; }
+
+.info-horizontal {
+  padding-top: 10%;
+  padding-bottom: 10%; }
+
+.signup-page .social .btn {
+  margin: 5px; }
+
+.signup-page .social h4 {
+  margin-top: 20px; }
+
+
+.info {
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 70px 0 30px;
+    text-align: center; }
+.info.info-hover .info-title {
+      -webkit-transition: color .4s;
+      transition: color .4s; }
+.info.info-hover:hover .icon {
+      -webkit-transform: translate3d(0, -0.5rem, 0);
+      transform: translate3d(0, -0.5rem, 0); }
+.info.info-hover:hover .icon.icon-primary.icon-circle {
+        -webkit-box-shadow: 0px 15px 30px 0px rgba(249, 99, 50, 0.35);
+                box-shadow: 0px 15px 30px 0px rgba(249, 99, 50, 0.35); }
+.info.info-hover:hover .icon.icon-info.icon-circle {
+        -webkit-box-shadow: 0px 15px 35px 0px rgba(44, 168, 255, 0.35);
+                box-shadow: 0px 15px 35px 0px rgba(44, 168, 255, 0.35); }
+      .info.info-hover:hover .icon.icon-success.icon-circle {
+        -webkit-box-shadow: 0px 15px 35px 0px rgba(24, 206, 15, 0.35);
+                box-shadow: 0px 15px 35px 0px rgba(24, 206, 15, 0.35); }
+      .info.info-hover:hover .icon.icon-warning.icon-circle {
+        -webkit-box-shadow: 0px 15px 35px 0px rgba(255, 178, 54, 0.35);
+                box-shadow: 0px 15px 35px 0px rgba(255, 178, 54, 0.35); }
+      .info.info-hover:hover .icon.icon-danger.icon-circle {
+        -webkit-box-shadow: 0px 15px 35px 0px rgba(255, 54, 54, 0.35);
+                box-shadow: 0px 15px 35px 0px rgba(255, 54, 54, 0.35); }
+      .info.info-hover:hover .icon.icon-info + .info-title {
+        color: #2CA8FF; }
+      .info.info-hover:hover .icon.icon-warning + .info-title {
+        color: #FFB236; }
+      .info.info-hover:hover .icon.icon-danger + .info-title {
+        color: #FF3636; }
+      .info.info-hover:hover .icon.icon-primary + .info-title {
+        color: #f96332; }
+      .info.info-hover:hover .icon.icon-success + .info-title {
+        color: #18ce0f; }
+.info .icon {
+      color: #888888;
+      -webkit-transition: -webkit-transform .4s, -webkit-box-shadow .4s;
+      transition: -webkit-transform .4s, -webkit-box-shadow .4s;
+      transition: transform .4s, box-shadow .4s;
+      transition: transform .4s, box-shadow .4s, -webkit-transform .4s, -webkit-box-shadow .4s; }
+      .info .icon > i {
+        font-size: 3em; }
+      .info .icon.icon-circle {
+        max-width: 80px;
+        width: 80px;
+        height: 80px;
+        margin: 0 auto;
+        border-radius: 50%;
+        -webkit-box-shadow: 0px 9px 35px -6px rgba(0, 0, 0, 0.3);
+                box-shadow: 0px 9px 35px -6px rgba(0, 0, 0, 0.3);
+        font-size: 0.7142em;
+        background-color: #FFFFFF;
+        position: relative; }
+        .info .icon.icon-circle i {
+          line-height: 2.7; }
+    .info .info-title {
+      margin: 25px 0 15px;
+      padding: 0 15px;
+      color: #2c2c2c; }
+    .info p {
+      color: #888888;
+      padding: 0 15px;
+      font-size: 1.1em; }
+  
+  .info-horizontal {
+    text-align: left !important; }
+    .info-horizontal .icon {
+      float: left;
+      margin-top: 23px;
+      margin-right: 10px; }
+      .info-horizontal .icon > i {
+        font-size: 2em; }
+      .info-horizontal .icon.icon-circle {
+        width: 65px;
+        height: 65px;
+        max-width: 65px;
+        margin-top: 8px; }
+        .info-horizontal .icon.icon-circle i {
+          display: table;
+          margin: 0 auto;
+          line-height: 3.5;
+          font-size: 1.9em; }
+    .info-horizontal .description {
+      overflow: hidden; }
+  
+  .icon.icon-primary {
+    color: #f96332; }
+    .icon.icon-primary.icon-circle {
+      -webkit-box-shadow: 0px 9px 30px -6px rgba(249, 99, 50, 0.3);
+              box-shadow: 0px 9px 30px -6px rgba(249, 99, 50, 0.3); }
+  
+.step .step-link {
+    color: #E54F26 !important;
+}
+
+.bg-gradient, .block-title::after, .animated-digits::after, .step .step-title::after, .btn-gradient, .btn-style-2.btn-gradient::after, .btn-style-2.btn-gradient:hover::before, .btn-style-6.btn-gradient::before, .accordion-style-3 .card-body::after, .accordion-style-3 [data-toggle='collapse'], .widget-title::after, .tag-link::before, .noUi-connect, .mobile-menu .dropdown-header::after, .blog-card .post-title::after {
+  background:#FFCF0F !important;
+  background: linear-gradient(to right, #FFCF0F 0%, #E54F26 100%) !important;
+}
+
+/*CSS FOR CONTACT FORM*/
+.contact-form{
+  padding-top: 80px;
+}
+
+/*CSS FOR CONTACT FORM*/
+.kit-container{
+  padding: 120px 20px 10px 20px;
+}
+
+
+/* CSS for index fest */
+.cont_map{
+background-color: grey;
+height: 800px;
+}
+
+.cont_fest {
+background-color: white;
+height: 800px;
+overflow-y: scroll;
+padding-top: 10%;
+}
+
+
+.col-centered{
+  float: none;
+  margin: 0 auto;
+}
+
+.card_index {
+  width: auto;
+}
+
+.btn {
+  box-shadow: none !important;
+}
+.page-container{
+  padding-top: 150px;
+}
+
+
+/* CSS FOR BANNER */
+.banner-overlay {
+  background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(cover_concerts.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  color: #fff;
+  padding-top: 200px;
+  padding-bottom:200px;
+}
+.banner-heading h2 {
+  color:#fff;
+  font-size: 42px;
+  font-weight: 600;
+  
+
+  }
+.banner-heading P {
+  color:#fff;
+  padding-bottom:20px;
+  font-size: 19px;
+  font-weight: 400;
+  }
+ 
+  #banner{
+    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(cover_concerts.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
+    padding-top: 200px;
+    padding-bottom:200px;
+  }

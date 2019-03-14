@@ -1,0 +1,27 @@
+<form class="row">
+  <div class="col-md-6">
+    <div class="form-group">
+      <label for="account-fn">Prénom</label>
+      <input class="form-control" type="text" id="account-fn" disabled="" value="Votre Prénom" >
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="form-group">
+      <label for="account-ln">Nom</label>
+      <input class="form-control" type="text" id="account-ln" disabled="" value="Votre Nom">
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="form-group">
+      <label for="account-email">Adresse E-mail </label>
+      <input class="form-control" type="Votre adresse email" id="account-email" value="Email" disabled="">
+    </div>
+  </div>
+ 
+  <div class="col-12">
+    <hr class="mt-2 mb-3">
+    <div class="d-flex flex-wrap justify-content-left align-items-center">
+      <%= link_to "Mettre à jour mes infos profil" ,edit_user_registration_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+</form>

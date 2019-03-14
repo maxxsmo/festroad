@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(version: 2019_03_13_182141) do
     t.string "last_name"
     t.string "first_name"
     t.text "description"
-    t.boolean "is_admin"
+    t.boolean "is_admin", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false

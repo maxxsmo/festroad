@@ -11,16 +11,29 @@
             <div class="author-card-cover"><%= image_tag "bracelet_festivals.jpg"%></div>
             <!-- Profile picture-->
               <div class="author-card-profile">
-                <%if @user.avatar.attached?%>
-                  <img class="d-block w-100 rounded-circle"><%= image_tag @user.avatar, alt: 'avatar' %>
-                <%else%>
-                  <i class="fas fa-user-circle fa-7x"></i>
-                <%end%>
+                <div class="author-card-avatar">
+                  <%if @user.avatar.attached?%>
+                    <%= image_tag @user.avatar.variant(resize: "100x100"), alt: 'avatar' %>
+                  <%else%>
+                    <i class="fas fa-user-circle fa-7x"></i>
+                  <%end%>
+                </div>
             <!-- end-->
                   <div class="author-card-details">
                     <h5 class="author-card-name text-lg"><%= @user.first_name%> <%= @user.last_name%></h5><span class="author-card-position">Depuis le <%= @user.created_at%></span>
                   </div>
+               </div>
+            
+          <!-- avatar change upload-->
+            <div class="col-md-12">
+              <div class="form-group d-flex">  
+                    <%= form_tag profile_avatars_path(@user), multipart: true do %>
+                    <%= file_field_tag :avatar %><%= submit_tag "changer avatar",class:"btn btn-warning btn-sm justify-content" %>
+                    <% end %>
               </div>
+            </div>
+          <!-- end-->
+
           </div>
             <div class="wizard">
               <nav class="list-group list-group-flush"><a class="list-group-item" data-remote="true" href="/mon_profil">
@@ -90,20 +103,6 @@
                   </div>
                 </div>
               </div>
-        <!-- end-->
-
-        <!-- avatar change upload-->
-            <div class="col-md-6">
-              <div class="form-group">  
-                <div class="field">
-                    <%= f.label :Changement_avatar %><br />
-                    <%= form_tag profile_avatars_path(@user), multipart: true do %>
-                    <%= file_field_tag :avatar, class: "form-control" %>
-                    <%= submit_tag "mettre à jour l'avatar",class:"btn btn-warning btn-sm" %>
-                    <% end %>
-                </div>
-              </div>
-            </div>
         <!-- end-->
 
         <!-- mandatory password for modifications-->

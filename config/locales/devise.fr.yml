@@ -63,6 +63,8 @@ fr:
       models:
         user:
           attributes:
+            current_password:
+              blank: "Veuillez saisir votre mot de passe actuel pour poursuivre."
             password:
               too_short: "Votre mot de passe doit comporter 6 caractères au minimum."
             password_confirmation:

@@ -5,6 +5,11 @@ class WishListsController < ApplicationController
   end
 
   def destroy
-    
+    @destroy = WishList.find(params[:id])
+    @destroy.destroy
+    respond_to do |format|
+      format.html {redirect_to wish_lists_path}
+      format.js
+    end
   end
 end

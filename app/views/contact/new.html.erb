@@ -2,7 +2,7 @@
       <div class="container py-2">
         <h2 class="h3 contact-form block-title text-center">Contactez-nous<small>Nous ferons de notre mieux pour vous répondre dans les 48h.</small></h2>
         <form class="needs-validation pt-4 pb-5">
-         <%= form_for contact_index_path do |f| %>
+         <%= form_for @contact contact_index_path do |f| %>
           <% if flash[:error].present? %>
               <p> flash[:error]</p>
           <% end %>

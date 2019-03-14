@@ -9,10 +9,9 @@
                 <h4 class="card-title"><%= fest.title %></h4><br>
                 <p><strong><%= fest.start_date.strftime("%d/%m/%Y") %> - <%= fest.end_date.strftime("%d/%m/%Y") %></strong></p>
                 <p> Du côté de <%=fest.address%> </p>
-                <%= link_to 'Détails', festivals_path, class:"btn btn-style-4 btn-primary" %>
               </div>
               <div class="card-footer text-muted text-sm">
-                <span class="opacity-75"></span></div>
+                <span class="opacity-75"></span>       <%= link_to 'Détails', festivals_path, class:"btn btn-style-4 btn-primary" %></div>
               </div>
         <% end %>
     </div>

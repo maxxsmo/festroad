@@ -13,14 +13,17 @@
                     <div class= "col-md-6">
                   <p><%= text_field_tag 'title', @fest.title %></p>
                 </div>
-              </div>
+                <div class= "col-md-6">
+                  <p><%= text_field_tag 'title', @fest.title%></p>
+                </div>
+            </div>
             <div class="row"> 
               <div class="col-md-4"></div>
                 <div class="col-md-2">
                   <label> Date de début </label>
                 </div>
                 <div class= "col-md-6">
-                  <p><%= datetime_field_tag 'start_date', @fest.start_date%></p>
+                  <p><%= text_field_tag 'start_date', @fest.start_date%></p>
                 </div>
             </div>
             <div class="row"> 
@@ -29,7 +32,7 @@
                   <label> Date de fin </label>
                 </div>
                 <div class= "col-md-6">
-                  <p><%= datetime_field_tag 'end_date', @fest.end_date%></p>
+                  <p><%= text_field_tag 'end_date', @fest.end_date%></p>
                 </div>
             </div>
             <div class="row">

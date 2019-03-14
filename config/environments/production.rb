@@ -95,15 +95,4 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'https://festroad-dev.herokuapp.com/' }
   config.action_mailer.delivery_method = :smtp
 
-  ActionMailer::Base.smtp_settings = {
-  :user_name => ENV['SENDGRID_LOGIN'],
-  :password => ENV['SENDGRID_PWD'],
-  :domain => 'heroku.com',
-  :address => 'smtp.sendgrid.net',
-  :port => 587,
-  :authentication => :plain,
-  :enable_starttls_auto => true
-  }
-
-
 end

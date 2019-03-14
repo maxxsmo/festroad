@@ -1,28 +1,44 @@
 <div class="page-container">
-<!-- Account Sidebar-->
-  <div class="col-lg-4 pb-5">
-    <div class="author-card pb-3">
-      <div class="author-card-cover"><%= image_tag "bracelet_festivals.jpg"%></div>
-        <div class="author-card-profile">
-          <i class="fas fa-user-circle fa-7x"></i>
-            <div class="author-card-details">
-              <h5 class="author-card-name text-lg">Prénom Nom</h5><span class="author-card-position">Depuis le "Date d'inscription"</span>
-            </div>
-        </div>
-      </div>
-      <div class="wizard">
-        <nav class="list-group list-group-flush"><a class="list-group-item" data-remote="true" href="/mon_profil">
-          <i class="fas fa-user text-muted"></i>Informations Profil</a>
-          <div class="d-flex justify-content-between align-items-center">
-          </div><a class="list-group-item" data-remote="true" rel="nofollow" data-method="post" href="/mon_profil">
-          <i class="fas fa-shopping-bag text-muted"></i>Ma Wishlist</a>                
-        </nav>
-      </div>
-    </div>
-  </div>
+  <div class="container mb-4">
+    <h4 class="text-center">Éditer mon compte</h4>
+      <div class="row">
 
-<!-- Profile Settings-->
-  <div class="col-lg-8 pb-5" id="tab">
-    <%= render 'users_info', user: @user %>
+      <!-- Account Sidebar-->
+        <div class="col-lg-4 pb-5">
+          <div class="author-card pb-3">
+            <div class="author-card-cover"><%= image_tag "bracelet_festivals.jpg"%></div>
+            <!-- Profile picture-->
+              <div class="author-card-profile">
+                <%if @user.avatar.attached?%>
+                  <img class="d-block w-100 rounded-circle"><%= image_tag @user.avatar, alt: 'avatar' %>
+                <%else%>
+                  <i class="fas fa-user-circle fa-7x"></i>
+                <%end%>
+            <!-- end-->
+                  <!-- end-->
+                    <div class="author-card-details">
+                      <h5 class="author-card-name text-lg"><%= @user.first_name%> <%= @user.last_name%></h5><span class="author-card-position">Depuis le <%= @user.created_at%></span>
+                    </div>
+                </div>
+              </div>
+              <div class="wizard">
+                <nav class="list-group list-group-flush"><a class="list-group-item" data-remote="true" href="/mon_profil">
+                  <i class="fas fa-user text-muted"></i>Informations Profil</a>
+                  <div class="d-flex justify-content-between align-items-center">
+                  </div><a class="list-group-item" data-remote="true" rel="nofollow" data-method="post" href="/mon_profil">
+                  <i class="fas fa-shopping-bag text-muted"></i>Ma Wishlist</a>                
+                </nav>
+              </div>
+            </div>
+    
+
+        <!-- Profile Settings-->
+          <div class="col-lg-8 pb-5" id="tab">
+            <%= render 'users_info', user: @user %>
+          </div>
+
+
+    </div>
+    </div>
   </div>
 </div>

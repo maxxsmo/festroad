@@ -8,9 +8,9 @@
               <div class="widget widget-contacts widget-light-skin mb-4">
                 <h4 class="widget-title">FestRoad</h4>
                 <ul>
-                  <li><i class="footer-icon fas fa-search"></i><span>Trouver mon fest</span><a href="#"></a></li>
-                  <li><i class="footer-icon fas fa-envelope"></i><span>Nous contacter</span><a href="mailto:info@example.com">info@festroad.com</a></li>
-                  <li><i class="footer-icon fas fa-balance-scale"></i><span>Mentions légales</span></li>
+                  <li class="align-items-center"><i class="footer-icon fas fa-search"></i><a href="<%=festivals_index_path %>"><span>Trouver mon fest</span></a></li>
+                  <li class="align-items-center"><i class="footer-icon fas fa-envelope"></i><span>Nous contacter</span><a href="mailto:info@example.com">info@festroad.com</a></li>
+                  <li class="align-items-center"><i class="footer-icon fas fa-balance-scale"></i><span>Mentions légales</span></li>
                 </ul>
               </div>
             </div>
@@ -18,10 +18,17 @@
             <div class="col-lg-3 col-sm-6">
               <div class="widget widget-contacts widget-light-skin mb-4">
                 <h4 class="widget-title">Espace Perso</h4>
-                <ul>
-                  <li><i class="footer-icon fas fa-user-plus"></i><span>M'inscrire</span><a href="#"></a></li>
-                  <li><i class="footer-icon fas fa-sign-in-alt"></i><span>Me connecter</span></li>
-                </ul>
+                 <% if current_user %>
+                  <ul>
+                    <li class="align-items-center"><%= link_to "Mon espace", profile_path(current_user)%></li>
+                    <li class="align-items-center"><a href="<%= destroy_user_session_path%>">Déconnexion</a></li>
+                  </ul>
+                  <% else %>
+                  <ul>
+                    <li class="align-items-center"><i class="footer-icon fas fa-sign-in-alt"></i><a href="<%= new_user_session_path %>">Connexion</a></li>
+                    <li class="align-items-center"><i class="footer-icon fas fa-user-plus"></i><a href="<%= new_user_registration_path %>">Inscription</a></li>
+                  </ul>
+                   <% end %>
               </div>
               <div class="widget pt-2"><a class="#" href="#"></a></div>
             </div>
@@ -40,13 +47,12 @@
                   <div style="position: absolute; left: -5000px;" aria-hidden="true">
                     <input type="text" name="b_c7103e2c981361a6639545bd5_1194bb7544" tabindex="-1">
                   </div>
-                  <div class="widget pt-2"><a class="social-btn sb-style-6 sb-facebook sb-light-skin" href="#"><i class="socicon-facebook"></i></a><a class="social-btn sb-style-6 sb-twitter sb-light-skin" href="#"><i class="socicon-twitter"></i></a><a class="social-btn sb-style-6 sb-youtube sb-light-skin" href="#"><i class="socicon-youtube"></i></a><a class="social-btn sb-style-6 sb-instagram sb-light-skin" href="#"><i class="socicon-instagram"></i></a><a class="social-btn sb-style-6 sb-pinterest sb-light-skin" href="#"><i class="socicon-pinterest"></i></a></div>
                 </form>
               </div>
             </div>
           </div>
-          <div class="d-md-flex justify-content-between align-items-center py-4 text-center text-md-left">
-            <p class="m-0 text-sm text-white order-1"><span class="opacity-60">© Fait avec amour par</span> <i class="d-inline-block align-middle fe-icon-heart text-danger"></i> <a href="http://createx.studio/" class="d-inline-block nav-link text-white opacity-60 p-0" target="_blank">2019 THP #TeamStrasbourg</a></p>
+          <div class="d-md-flex justify-content-center py-4">
+            <p class="text-sm text-white "><span class="opacity-60">© Fait avec <i class="far fa-heart"></i> par</span> THP2019 #TeamStrasbourg</p>
           </div>
         </div>
       </div>

@@ -1,0 +1,42 @@
+<section class="bg-secondary bg-cover bg-no-repeat pt-5 pb-4"  data-offset-top="-10" id="contacts">
+      <div class="container py-2">
+        <h2 class="h3 contact-form block-title text-center">Contactez-nous<small>Nous ferons de notre mieux pour vous répondre dans les 48h.</small></h2>
+        <form class="needs-validation pt-4 pb-5">
+         <%= form_for contact_index_path do |f| %>
+          <% if flash[:error].present? %>
+              <p> flash[:error]</p>
+          <% end %>
+          <div class="row">
+            <div class="col-md-4 col-sm-6 form-group">
+                <%= f.label :votre_nom_et_prénom %> <span class="text-danger font-weight-medium">*</span><br/>
+                <%= f.text_field :name, required: true, class: 'form-control',placeholder:"John Doe",id:'cont-name'  %>
+                <div class="invalid-feedback">Merci de renseigner votre nom et prénom!</div>
+            </div>
+                 <%= f.label :nickname, class:"d-none" %> <br/>
+                <%= f.text_field :nickname, hint: 'leave this field blank', class:"d-none" %> 
+            <div class="col-md-4 col-sm-6 form-group">
+                <%= f.label :votre_adresse_email %>  <span class="text-danger font-weight-medium">*<br>
+                <%= f.text_field :email, required: true, placeholder:"johndoe@example.com", id:"cont-email", class:"form-control"  %>
+                <div class="invalid-feedback">Merci de renseigner votre adresse mail!</div>
+            </div>
+            <div class="col-md-4 form-group">
+                <%= f.label :object %> <span class="text-danger font-weight-medium">*</span><br>
+                <%= f.text_field :subject, class:"form-control",id:"cont-subject",placeholder:"Objet de votre message"%>
+            </div>
+          </div>
+          <div class="form-group">
+              <%= f.label :message %><span class="text-danger font-weight-medium">*</span> <br>
+              <%= f.text_area :message, as: :text, class:"form-control", id:"cont-message", rows:"8", placeholder:"Écrivez votre message..." %>
+            <div class="invalid-feedback">Merci d'écrire votre message ici!</div>
+          </div>
+          <div class="text-center">
+            <%= f.submit 'Envoyer mon message', class: "button btn btn-style-4 btn-primary" %>
+          </div>
+        </form>
+        <% end %>
+      </div>
+    </section>
+
+
+
+<%= render'team' %>

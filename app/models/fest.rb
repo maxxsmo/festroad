@@ -39,6 +39,12 @@ class Fest < ApplicationRecord
       if fest.address =~ /#{title}/i
         result << fest
       end
+      fest.fest_locations.each do |location|
+        if location.location_type.location =~ /#{title}/i
+          result << fest
+        end
+      end
+        
     end
     result.uniq
   end

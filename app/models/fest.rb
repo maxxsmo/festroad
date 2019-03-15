@@ -44,6 +44,11 @@ class Fest < ApplicationRecord
           result << fest
         end
       end
+      fest.tags.each do |tag|
+        if tag.music_type.style =~ /#{title}/i
+          result << fest
+        end
+      end
         
     end
     result.uniq

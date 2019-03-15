@@ -17,16 +17,16 @@ class Fest < ApplicationRecord
 
   def date_not_in_past
     if start_date < DateTime.now
-      errors.add(:start_date, "can't be in past")
+      errors.add(:start_date, "la date ne peut pas être dans le passé")
     elsif end_date < DateTime.now
-      errors.add(:end_date, "can't be in past")
+      errors.add(:end_date, "la date ne peut pas être dans le passé")
     end
   end
  
 
   def incorrect_dates
     if start_date > end_date
-      errors.add(:end_date, "Festival end date can't be earlier than its start date")
+      errors.add(:end_date, "La date de fin ne peut pas être antérieure à la date de début")
     end
   end
 
@@ -35,12 +35,13 @@ class Fest < ApplicationRecord
     result = []
     festival.each do  |fest|
       result_of_matching = 0
-      fest.title.split.each do |letter|
-        if title =~ /#{letter}/i
+      title.split.each do |letter|
+        if fest.title =~ /#{letter}/i
           result_of_matching += 1
+          fest.title.delete(letter)
         end
       end
-      if fest.title.split.length * 75/100 <= result_of_matching
+      if title.split.length <= result_of_matching
         result << fest
       end
     end

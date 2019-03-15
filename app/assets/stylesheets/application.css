@@ -116,7 +116,7 @@
  /*CSS OF THE FOOTER*/
 
  footer{
-  background-color: #343b43;
+  background-color: #000000e0;
  }
 
   /*footer logo*/
@@ -155,18 +155,7 @@
   margin : auto;
 }
 
-/*CSS FOR BUTTONS*/
-.btn-success{
-  color:#FFFF !important;
-  background-color:#4A1836 !important;
-}
 
-.btn-danger{
-  color:#FFFF !important;
-  background-color:#FFCF0F !important;
-}
-
-/*CSS FOR BANNER*/
 
 
 /*CSS FOR PROFILE CARD*/
@@ -208,6 +197,10 @@
   transform: scale(0);
   background-color:#e54f2647;
   opacity: 0;
+}
+
+#sectionhow{
+  margin-top:5%;
 }
 /***** CSS FOR DEVISE *******/
 
@@ -401,9 +394,7 @@ padding-top: 10%;
   width: auto;
 }
 
-.btn {
-  box-shadow: none !important;
-}
+
 .page-container{
   padding-top: 150px;
 }
@@ -442,3 +433,26 @@ padding-top: 10%;
     padding-top: 200px;
     padding-bottom:200px;
   }
+
+/*** BUTTONS ***/
+
+.btn-primary{
+  border-radius: var(--border-button-border-radius, 4px);
+}
+
+
+.btn-success{
+  color:#FFFF !important;
+  background-color:#4A1836 !important;
+}
+
+.btn-danger{
+  color:#FFFF !important;
+  background-color:#FFCF0F !important;
+}
+
+/*** INPUT ***/
+
+.form-control{
+  border-radius: var(--border-button-border-radius, 4px) !important;
+}

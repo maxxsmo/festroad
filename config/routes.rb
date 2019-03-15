@@ -1,22 +1,22 @@
 Rails.application.routes.draw do
-  resources :fests, only: [:index]
-  get 'admin/index'
-  get 'avatars/create'
-  get 'festivals/index'
-  get 'festivals/show'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :wish_lists, only: [:index]
+  resources :wish_lists, only: [:index, :destroy]
   resources :home, only: [:index]
   resources :kitui, only: [:index]
-  resources :contact, only: [:index]
+  resources :contact, only: [:new, :create]
+  resources :festivals, only: [:index, :show]
   root 'home#index'
+  resources :fests, only: [:index]
+
   devise_for :users, :controllers => { registrations: 'registrations' }
+  
   resources :profiles do
     resources :avatars, only: [:create]
   end
 
   namespace :admin do
     resources :fests
+    resources :users, only: [:index, :edit, :update, :destroy]
   end
 
 end

@@ -1,5 +1,4 @@
 class Fest < ApplicationRecord
-  
   has_many :wish_lists
   has_many :users, through: :wish_lists
   has_many :tags
@@ -33,18 +32,17 @@ class Fest < ApplicationRecord
   def self.title(title)
     festival = Fest.all
     result = []
-    festival.each do  |fest|
-      result_of_matching = 0
-      title.split.each do |letter|
-        if fest.title =~ /#{letter}/i
-          result_of_matching += 1
-          fest.title.delete(letter)
-        end
+    festival.each do |fest|
+      if fest.title =~ /#{title}/i
+        result << fest
       end
-      if title.split.length <= result_of_matching
+      if fest.address =~ /#{title}/i
         result << fest
       end
     end
+    result.uniq
+  end
+
   def self.carousel
     result = []
     Fest.all.each do |fest|

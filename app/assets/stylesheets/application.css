@@ -116,7 +116,7 @@
  /*CSS OF THE FOOTER*/
 
  footer{
-  background-color: #343b43;
+  background-color: #000000e0;
  }
 
   /*footer logo*/
@@ -155,18 +155,7 @@
   margin : auto;
 }
 
-/*CSS FOR BUTTONS*/
-.btn-success{
-  color:#FFFF !important;
-  background-color:#4A1836 !important;
-}
 
-.btn-danger{
-  color:#FFFF !important;
-  background-color:#FFCF0F !important;
-}
-
-/*CSS FOR BANNER*/
 
 
 /*CSS FOR PROFILE CARD*/
@@ -197,13 +186,22 @@
 
 /*CSS FOR HOW SECTION*/
 .icons-step{
-  color:#FFCF0F !important;
+  color:#f73f00;
 }
 
 .step.step-with-icon .step-icon::after {
-  border: 1px dashed #E54F26 !important;
+  border: 1px dashed #e54f2699 ;
 }
 
+.step.step-with-icon .step-icon::before {
+  transform: scale(0);
+  background-color:#e54f2647;
+  opacity: 0;
+}
+
+#sectionhow{
+  margin-top:5%;
+}
 /***** CSS FOR DEVISE *******/
 
 /* Form LOG IN */
@@ -370,4 +368,91 @@ color:#E54F26;
 /*CSS FOR CONTACT FORM*/
 .kit-container{
   padding: 120px 20px 10px 20px;
+}
+
+
+/* CSS for index fest */
+.cont_map{
+background-color: grey;
+height: 800px;
+}
+
+.cont_fest {
+background-color: white;
+height: 800px;
+overflow-y: scroll;
+padding-top: 10%;
+}
+
+
+.col-centered{
+  float: none;
+  margin: 0 auto;
+}
+
+.card_index {
+  width: auto;
+}
+
+
+.page-container{
+  padding-top: 150px;
+}
+
+
+/* CSS FOR BANNER */
+.banner-overlay {
+  background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(cover_concerts.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  color: #fff;
+  padding-top: 200px;
+  padding-bottom:200px;
+}
+.banner-heading h2 {
+  color:#fff;
+  font-size: 42px;
+  font-weight: 600;
+  
+
+  }
+.banner-heading P {
+  color:#fff;
+  padding-bottom:20px;
+  font-size: 19px;
+  font-weight: 400;
+  }
+ 
+  #banner{
+    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(cover_concerts.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
+    padding-top: 200px;
+    padding-bottom:200px;
+  }
+
+/*** BUTTONS ***/
+
+.btn-primary{
+  border-radius: var(--border-button-border-radius, 4px);
+}
+
+
+.btn-success{
+  color:#FFFF !important;
+  background-color:#4A1836 !important;
+}
+
+.btn-danger{
+  color:#FFFF !important;
+  background-color:#FFCF0F !important;
+}
+
+/*** INPUT ***/
+
+.form-control{
+  border-radius: var(--border-button-border-radius, 4px) !important;
 }

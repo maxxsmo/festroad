@@ -7,8 +7,11 @@ gem 'faker'
 gem 'dotenv-rails'
 gem 'devise'
 gem 'stripe'
+gem 'mailjet'
+gem 'mail_form'
+gem 'mini_magick'
 
-
+gem 'jquery-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'

@@ -45,6 +45,12 @@ class Fest < ApplicationRecord
         result << fest
       end
     end
+  def self.carousel
+    result = []
+    Fest.all.each do |fest|
+      result << fest
+    end
+    result = result.sort! {|a,b| a.start_date <=> b.start_date}
     result
   end
 end

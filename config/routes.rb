@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { registrations: 'registrations' }
   
-  resources :profiles do
+  resources :profiles, only: [:show] do
     resources :avatars, only: [:create]
   end
 

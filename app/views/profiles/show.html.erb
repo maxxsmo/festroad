@@ -9,11 +9,13 @@
             <div class="author-card-cover"><%= image_tag "bracelet_festivals.jpg"%></div>
             <!-- Profile picture-->
               <div class="author-card-profile">
-                <%if @user.avatar.attached?%>
-                  <img class="d-block w-100 rounded-circle"><%= image_tag @user.avatar, alt: 'avatar' %>
-                <%else%>
-                  <i class="fas fa-user-circle fa-7x"></i>
-                <%end%>
+                <div class="author-card-avatar">
+                  <%if @user.avatar.attached?%>
+                    <%= image_tag @user.avatar.variant(resize: "100x100"), alt: 'avatar' %>
+                  <%else%>
+                    <i class="fas fa-user-circle fa-7x"></i>
+                  <%end%>
+                </div>
             <!-- end-->
                   <!-- end-->
                     <div class="author-card-details">

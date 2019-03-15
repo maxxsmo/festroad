@@ -1,0 +1,9 @@
+
+<% if cookies[:saved_subscriber] %>
+<p> Merci pour votre inscription à la Newsletter de Festroad <p>
+<%else%>
+  <%= form_for @subscriber do |f| %>
+    <%= f.email_field :email, placeholder : "Email" %>
+    <%= f.submit %>
+  <% end %>
+<%end%>

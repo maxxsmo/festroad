@@ -8,7 +8,7 @@ gem 'dotenv-rails'
 gem 'devise'
 gem 'stripe'
 gem 'geocoder'
-
+gem 'gon'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

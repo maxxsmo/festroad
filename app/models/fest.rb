@@ -5,6 +5,8 @@ class Fest < ApplicationRecord
   has_many :music_types, through: :tags
   has_many :fest_locations
   has_many :location_types, through: :fest_locations
+  has_one_attached :festpic
+  
   validates :title, presence: true, length: { in: 4..140 }
   validates :description, length: { in: 4..1000 }
   validates :address, presence: true

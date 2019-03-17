@@ -1,4 +1,15 @@
-<section class="bg-secondary bg-cover bg-no-repeat pt-5 pb-4"  data-offset-top="-10" id="contacts">
+            
+          <!-- avatar change upload-->
+            <div class="col-md-12">
+              <div class="form-group d-flex">  
+                    <%= form_tag profile_avatars_path(@user), multipart: true do %>
+                    <%= file_field_tag :avatar %><%= submit_tag "changer avatar",class:"btn btn-warning btn-sm justify-content" %>
+                    <% end %>
+              </div>
+            </div>
+          <!-- end-->
+          
+          <section class="bg-secondary bg-cover bg-no-repeat pt-5 pb-4"  data-offset-top="-10" id="contacts">
       <div class="container py-2">
         <h2 class="h3 contact-form block-title text-center">Contactez-nous<small>Nous ferons de notre mieux pour vous répondre dans les 48h.</small></h2>
          <%= form_for @contact, url: contact_index_path  do |f| %>

@@ -117,15 +117,12 @@ GEM
     geocoder (1.5.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-<<<<<<< HEAD
     gon (6.2.1)
       actionpack (>= 3.0)
       multi_json
       request_store (>= 1.0)
-=======
     http-cookie (1.0.3)
       domain_name (~> 0.5)
->>>>>>> development
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     io-like (0.3.0)

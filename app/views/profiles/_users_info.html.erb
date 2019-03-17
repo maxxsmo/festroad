@@ -2,52 +2,26 @@
   <div class="col-md-6">
     <div class="form-group">
       <label for="account-fn">Prénom</label>
-      <input class="form-control" type="text" id="account-fn" disabled="" value="Votre Prénom" >
+      <input class="form-control" type="text" id="account-fn" disabled="" value= <%= @user.first_name%> >
     </div>
   </div>
   <div class="col-md-6">
     <div class="form-group">
       <label for="account-ln">Nom</label>
-      <input class="form-control" type="text" id="account-ln" disabled="" value="Votre Nom">
+      <input class="form-control" type="text" id="account-ln" disabled="" value= <%= @user.last_name%>>
     </div>
   </div>
   <div class="col-md-6">
     <div class="form-group">
       <label for="account-email">Adresse E-mail </label>
-      <input class="form-control" type="Votre adresse email" id="account-email" value="Email" disabled="">
+      <input class="form-control" type="Votre adresse email" id="account-email" value= <%= @user.email%> disabled="">
     </div>
   </div>
-  <div class="col-md-6">
-    <div class="form-group">
-      <label for="account-email">Adresse Postale </label>
-      <input class="form-control" type="text" id="account-address" value="Numéro de rue, code postal, ville" disabled="">
-    </div>
-  </div>
-    <div class="col-md-6">
-      <div class="form-group">
-        <label for="account-music-style">Style musicale </label>
-        <div class="col-10">
-          <div class="custom-control custom-checkbox custom-control-inline">
-          <!--Musical choice-->
-            <input class="custom-control-input" type="checkbox" id="check-light" id="account-music-style" value="Style(s) de musique écouté(s)" disabled="">
-            <label class="custom-control-label" for="check-light">Rock</label>
-          </div>
-          <!--Other Musical choice-->
-          <div class="custom-control custom-checkbox custom-control-inline">
-            <input class="custom-control-input" type="checkbox" id="check-light" id="account-music-style" value="Style(s) de musique écouté(s)" disabled="">
-            <label class="custom-control-label" for="check-light">Jazz</label>
-          </div>
-          <!--Other Musical choice-->
-          <div class="custom-control custom-checkbox custom-control-inline">
-            <input class="custom-control-input" type="checkbox" id="check-light" id="account-music-style" value="Style(s) de musique écouté(s)" disabled="">
-            <label class="custom-control-label" for="check-light">Pop</label>
-          </div>
-        </div>
-      </div>
+ 
   <div class="col-12">
     <hr class="mt-2 mb-3">
-    <div class="d-flex flex-wrap justify-content-between align-items-center">
-      <%= link_to "Mettre à jour mon profil" ,edit_user_registration_path, class: "btn btn-primary" %>
+    <div class="d-flex flex-wrap justify-content-left align-items-center">
+      <%= link_to "Mettre à jour mes infos profil" ,edit_user_registration_path, class: "btn btn-primary" %>
     </div>
   </div>
 </form>

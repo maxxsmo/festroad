@@ -1,0 +1,61 @@
+  <!-- Submission Fests Form-->
+  <section class="bg-secondary bg-cover bg-no-repeat pt-5 pb-4"  data-offset-top="-10" id="contacts">
+      <div class="container py-2 page-container">
+        <h2 class="h3 contact-form block-title text-center">Soumettre un nouveau festival</h2>
+
+
+        <%= form_for @fest, url: fest_submissions_path  do |f| %>
+
+        <form class="needs-validation pt-4 pb-5">
+
+          <% if flash[:error].present? %>
+              <p> flash[:error]</p>
+          <% end %>
+
+              <div class="row">
+                  <div class="col-md-4">
+                    <%= f.label :Titre %><span class="text-danger font-weight-medium">*</span>
+                    <%= f.text_field :title, required: true, class: 'form-control'%>
+                    <div class="invalid-feedback">Merci de renseigner le nom du festival!</div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <%= f.label :date_de_début %>  <span class="text-danger font-weight-medium">*</span>
+                    <%= f.datetime_field :start_date,required: true,  class:"form-control"%>
+                  </div>
+
+                  <div class="col-md-4">
+                    <%= f.label :date_de_fin %>  <span class="text-danger font-weight-medium">*</span>
+                    <%= f.datetime_field :end_date,required: true,  class:"form-control"%>
+                  </div>
+              </div>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <%= f.label :description %>  <span class="text-danger font-weight-medium">*</span><br/>
+                    <%= f.text_area :description, required: true,  class:"form-control"%>
+                  </div>
+                </div>
+
+              <div class="row"> 
+                  <div class="col-md-6">
+                    <%= f.label :adresse %> <span class="text-danger font-weight-medium">*</span><br>
+                    <%= f.text_field :address, required: true,  class:"form-control"%>
+                  </div>
+
+                  <div class="col-md-6">
+                    <%= f.label :website %> <span class="text-danger font-weight-medium">*</span><br>
+                    <%= f.text_field :website,required: true,  class:"form-control"%>
+                  </div>
+              </div>
+
+          <!--Validation button-->
+              <div class="row"> 
+                <div class= "py-5 col-sm-12 text-center">
+                  <%= f.submit 'Valider mon nouveau festival', class: "btn btn-primary" %>
+                </div>
+              </div>
+          <!--End Button-->
+    </form>
+          <% end %> 
+  </section>

@@ -1,6 +1,7 @@
 class FestivalsController < ApplicationController
   def index
-    @fests = Fest.all
+    @fest = Fest.all
+    gon.fest = @fest
   end
 
   def show

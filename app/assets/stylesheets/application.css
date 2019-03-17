@@ -370,7 +370,6 @@ color:#E54F26;
   padding: 120px 20px 10px 20px;
 }
 
-<<<<<<< HEAD
 /*CSS FOR MAP*/
 
 #map {
@@ -382,7 +381,6 @@ html, body {
   margin: 0;
   padding: 0;
 }
-=======
 
 /* CSS for index fest */
 .cont_map{
@@ -469,4 +467,3 @@ padding-top: 10%;
 .form-control{
   border-radius: var(--border-button-border-radius, 4px) !important;
 }
->>>>>>> development

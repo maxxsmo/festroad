@@ -4,17 +4,9 @@
 <h1>La carte des festivals : </h1>
 
 
-  <div id="mapid"></div>
+  <div id="map"></div>
 
+<%= javascript_include_tag('map.js') %>
 
-<script type="text/javascript">
-
-var mymap = L.map('mapid').setView([51.505, -0.09], 13);
-
-L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
-    attribution: 'Made with &hearts; THP Strasbourg, <a href="//osm.org/copyright">OpenStreetMap</a>',
-                    minZoom: 1,
-                    maxZoom: 20
-}).addTo(mymap);
-
-</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['API_KEY_GOOGLE_MAPS']%>&callback=initMap"
+    async defer></script>

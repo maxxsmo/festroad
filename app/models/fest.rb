@@ -55,6 +55,18 @@ class Fest < ApplicationRecord
     result.uniq
   end
 
+  def self.music(music, festival)
+    result = []
+    festival.each do |fest|
+      Tag.where(music_type_id: music).each do |tag|
+        if tag.fest == fest
+          result << fest
+        end
+      end
+    end
+    result
+  end
+
   def self.carousel
     result = []
     Fest.all.each do |fest|

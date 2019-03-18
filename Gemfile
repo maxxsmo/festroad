@@ -2,12 +2,13 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
+gem 'geocoder'
 gem 'table_print'
 gem 'faker'
 gem 'dotenv-rails'
 gem 'devise'
 gem 'stripe'
-gem 'geocoder'
+
 gem 'gon'
 
 gem 'mailjet'

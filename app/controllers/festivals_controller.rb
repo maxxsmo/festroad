@@ -13,4 +13,5 @@ class FestivalsController < ApplicationController
       format.js{
       }
     end
+  end
 end

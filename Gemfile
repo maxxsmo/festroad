@@ -12,7 +12,7 @@ gem 'devise'
 gem 'gon'
 gem 'jquery-rails'
 
-
+gem 'mailjet'
 gem 'mail_form'
 gem 'mini_magick'
 

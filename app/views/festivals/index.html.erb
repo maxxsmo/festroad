@@ -23,10 +23,30 @@
                 <button class="btn btn-style-4 btn-primary" type="submit" data-toggle="modal" data-target="#modalLarge">Détails</button>
 
 
+
+
+                <%= link_to "Open modal", festival_path(:fest_id) , :class => "btn", :remote => true, "data-toggle" => "modal", "data-target" => "my-modal" %>
+                <div class="modal hide fade" id="my-modal" title="My modal">
+                  <div class="modal-header">
+                    <button aria-hidden="true" class="close" data-dismiss="modal" type="button">×</button>
+                    <h3 id="myModalLabel">New Post</h3>
+                  </div>
+                  <div class="modal-body a-unique-class">
+                    New Post Body
+                  </div>
+                  <div class="modal-footer">
+                    <button aria-hidden="true" class="btn" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+
+
+
+
+
+
               </div>
               <div class="card-footer text-muted text-sm"><span class="opacity-75">Last updated 3 mins ago</span></div>
             </div>
-          
         <% end %>
       </div>
     </div>
@@ -45,12 +65,31 @@
       </div>
       <div class="modal-body">
 <% #render template: "festivals/show" %> 
-
+  
       </div>
       <div class="modal-footer">
         <button class="btn btn-secondary btn-sm" type="button" data-dismiss="modal">Close</button>
         <button class="btn btn-primary btn-sm" type="button">Save changes</button>
       </div>
     </div>
+  </div>
+</div>
+
+
+
+
+<%# ---- AJAX ---- %>
+
+<%= link_to "Open modal", :class => "btn", :remote => true, "data-toggle" => "modal", "data-target" => "my-modal" %>
+<div class="modal hide fade" id="my-modal" title="My modal">
+  <div class="modal-header">
+    <button aria-hidden="true" class="close" data-dismiss="modal" type="button">×</button>
+    <h3 id="myModalLabel">New Post</h3>
+  </div>
+  <div class="modal-body a-unique-class">
+    New Post Body
+  </div>
+  <div class="modal-footer">
+    <button aria-hidden="true" class="btn" data-dismiss="modal">Close</button>
   </div>
 </div>

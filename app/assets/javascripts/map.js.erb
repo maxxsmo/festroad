@@ -117,7 +117,7 @@ map: map
   
 
 // Open InfoWindow on click
-  google.maps.event.addListener(marker, 'click', function() {
+  google.maps.event.addListener(marker, 'mouseover', function() {
   maxWidth: 350
   infowindow.setContent(fest);
   infowindow.open(map, marker);

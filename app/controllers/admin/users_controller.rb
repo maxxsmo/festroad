@@ -3,6 +3,7 @@ module Admin
   class UsersController < ApplicationController
 
     before_action :set_user, only: [:update, :edit, :destroy ]
+    before_action :check_if_admin
     
     def index 
       @users = User.all

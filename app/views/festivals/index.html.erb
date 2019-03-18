@@ -1,34 +1,67 @@
+<% x = 0 %>
 
-<div style="padding-top:220px;">
-</div>
-<h1>La carte des festivals : </h1>
-
-
+<div style="padding-top:120px;"></div>
+<h2 class="text-center mb-5">La carte des festivals</h2>
 
 <div class="row">
-
   <div class="cont_map col-8">
-  <div id="map"></div>
-  <%= javascript_include_tag('map.js') %>
+    <div id="map"></div>
+    <%= javascript_include_tag('map.js') %>
   </div>
 
-  <div class="row cont_fest col-4">
-    <div class="d-flex flex-column bd-highlight col-centered">
-      <% @fest.each do |fest| %>
-          <div class="card mb-30 card_index">
-          <%= image_tag 'https://festivalhommesforts.ca/wp-content/uploads/2017/06/Festival_music_374x230.jpg' %>
-            <div class="card-body">
-              <h4 class="card-title"><%= fest.title %></h4><br>
-              <p><strong>Du : </strong><%= fest.start_date.strftime("%d/%m/%Y") %></p>
-              <p><strong>Au : </strong><%= fest.end_date.strftime("%d/%m/%Y") %></p>
-              <button class="btn btn-style-4 btn-primary" type="submit">Details</button>
+
+
+
+    <div class="row cont_fest col-4">
+      <div class="d-flex flex-column bd-highlight col-centered">
+        <% @fests.each do |fest| %>
+            <div class="card mb-30 card_index">
+            <%= image_tag 'https://festivalhommesforts.ca/wp-content/uploads/2017/06/Festival_music_374x230.jpg' %>
+              <div class="card-body">
+                <h4 class="card-title"><%= fest.title %></h4><br>
+                <p><strong>Du : </strong><%= fest.start_date.strftime("%d/%m/%Y") %></p>
+                <p><strong>Au : </strong><%= fest.end_date.strftime("%d/%m/%Y") %></p>
+
+              <% x += 1 %>
+
+
+              
+
+                <%= link_to "Open modal", festival_path(fest.id), :class => "btn btn-style-4 btn-primary",:remote => true, "data-toggle" => "modal", "data-target" => "#modalLarge#{x}" %>
+
+
+
+
+                <div class="modal fade" id="<%= "modalLarge#{x}" %>" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-lg" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="modal-title">Modal title</h4>
+                      <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+
+                      <h1><%= fest.title %></h1>
+                      
+                    </div>
+                    <div class="modal-footer">
+                      <button class="btn btn-secondary btn-sm" type="button" data-dismiss="modal">Close</button>
+                      <button class="btn btn-primary btn-sm" type="button">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+              <div class="card-footer text-muted text-sm"><span class="opacity-75">Last updated 3 mins ago</span></div>
             </div>
-            <div class="card-footer text-muted text-sm"><span class="opacity-75">Last updated 3 mins ago</span></div>
-          </div> 
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['API_KEY_GOOGLE_MAPS']%>&callback=initMap"
-    async defer></script>
+
+
+
+<div style="height: 100px;"></div>
+
+<script src=<%="https://maps.googleapis.com/maps/api/js?key=#{ENV['API_KEY_GOOGLE_MAPS']}&callback=initMap"%> type="text/javascript"></script>

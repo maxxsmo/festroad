@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 2019_03_16_160723) do
 
   # These are extensions that must be enabled in order to support this database
+  enable_extension "citext"
   enable_extension "plpgsql"
 
   create_table "active_storage_attachments", force: :cascade do |t|
@@ -46,7 +47,7 @@ ActiveRecord::Schema.define(version: 2019_03_16_160723) do
   end
 
   create_table "fests", force: :cascade do |t|
-    t.string "title"
+    t.citext "title"
     t.datetime "start_date"
     t.datetime "end_date"
     t.string "address"

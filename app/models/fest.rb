@@ -82,13 +82,22 @@ class Fest < ApplicationRecord
   def self.start_date(date, festival)
     result = []
     festival.each do |fest|
-      Fest.where(start_date: date).each do |date|
-        if date.start_date >=  fest.start_date
+        if date >=  fest.start_date
           result << fest
         end
-      end
     end
     result
+  end
+
+  def self.end_date(date, festival)
+    result = []
+    festival.each do |fest|
+        if date >=  fest.end_date
+          result << fest
+        end
+    end
+    result << festival
+    result.flatten.uniq
   end
 
   def self.carousel

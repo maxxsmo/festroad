@@ -5,9 +5,11 @@ class FestivalsController < ApplicationController
       @fests = @fests.music(params[:music], @fests) if params[:music].present?
       @fests = Fest.location(params[:location], @fests) if params[:location].present?
       @fests = Fest.start_date(params[:start_date], @fests) if params[:start_date].present?
+      @fests = Fest.end_date(params[:end_date], @fests) if params[:end_date].present?
     else
       @fests = Fest.title(params[:title]) if params[:title].present?   
     end  
+
     @fest = Fest.all
     gon.fest = @fest
   end

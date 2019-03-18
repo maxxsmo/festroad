@@ -10,6 +10,7 @@ gem 'stripe'
 gem 'mailjet'
 gem 'mail_form'
 gem 'mini_magick'
+gem 'nokogiri'
 
 gem 'jquery-rails'
 

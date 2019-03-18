@@ -1,8 +1,9 @@
 class AdminController < ApplicationController
-  before_action :is_admin?
 
   def index
-    @admins = User.where(:all, :conditions => {:is_admin => true})
+    @admins = User.where(is_admin: true)
+    @fests = Fest.all
+    @users = User.all
   end
   
 end

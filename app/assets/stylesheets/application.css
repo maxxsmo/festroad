@@ -405,11 +405,6 @@ padding-top: 10%;
 }
 
 
-.page-container{
-  padding-top: 150px;
-}
-
-
 /* CSS FOR BANNER */
 .banner-overlay {
   background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(cover_concerts.jpg);

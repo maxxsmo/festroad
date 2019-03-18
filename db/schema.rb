@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_16_160723) do
+ActiveRecord::Schema.define(version: 2019_03_18_205516) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -48,8 +48,8 @@ ActiveRecord::Schema.define(version: 2019_03_16_160723) do
 
   create_table "fests", force: :cascade do |t|
     t.citext "title"
-    t.datetime "start_date"
-    t.datetime "end_date"
+    t.date "start_date"
+    t.date "end_date"
     t.string "address"
     t.text "description"
     t.string "website"

@@ -106,12 +106,19 @@ position: new google.maps.LatLng(gon.fest[i].latitude,gon.fest[i].longitude),
 map: map
 });
 
+
 //content marker popup window
-	let fest = '<div>' + gon.fest[i].title + '</div>' + '<a href="' + gon.fest[i].website + '">' + gon.fest[i].website + '</a>' + '</div>';
+	let fest = 
+  '<div>' + gon.fest[i].title + " " + '<a href="' + gon.fest[i].website + '">' + '<i class="far fa-star" style:"color:#f4d942;"></i>' + '</a>' + '</div>' + 
+  '<div>' + gon.fest[i].start_date + ' - ' + gon.fest[i].start_date + '</div>' + 
+  '<div>' + gon.fest[i].address + '</div>' +  
+  '<a href="' + gon.fest[i].website + '">' + gon.fest[i].website + '</a>' + '</div>';
+
   
 
 // Open InfoWindow on click
   google.maps.event.addListener(marker, 'click', function() {
+  maxWidth: 350
   infowindow.setContent(fest);
   infowindow.open(map, marker);
   });

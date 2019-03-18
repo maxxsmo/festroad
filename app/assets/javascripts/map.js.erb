@@ -100,11 +100,20 @@ content: ""
 
 for(let i = 0; i < gon.fest.length; i++){
 
- // every marker that match the search request
- let marker = new google.maps.Marker({
-	position: new google.maps.LatLng(gon.fest[i].latitude,gon.fest[i].longitude),
-	map: map
-  });
+// every marker that match the search request
+let marker = new google.maps.Marker({
+position: new google.maps.LatLng(gon.fest[i].latitude,gon.fest[i].longitude),
+map: map
+});
 
+//festival name
+	let fest = '<div>' + gon.fest[i].title + '</div>' + '<a href="' + gon.fest[i].website + '">' + gon.fest[i].website + '</a>' + '</div>';
+  
+
+// Open InfoWindow on click
+  google.maps.event.addListener(marker, 'click', function() {
+  infowindow.setContent(fest);
+  infowindow.open(map, marker);
+  });
  }
 }

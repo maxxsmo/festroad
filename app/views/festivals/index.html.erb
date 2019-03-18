@@ -1,20 +1,12 @@
 
-<div style="padding-top:220px;">
-</div>
+<div style="padding-top:220px;"></div>
 <h1>La carte des festivals : </h1>
 
-
-
 <div class="row">
-
   <div class="cont_map col-8">
-   <br><br><br><br><br><br><br>
-   <h1>La carte des festivals : </h1>
-  <div id="map"></div>
-  <%= javascript_include_tag('map.js') %>
+    <div id="map"></div>
+    <%= javascript_include_tag('map.js') %>
   </div>
-
-
 
   <div class="row cont_fest col-4">
     <div class="d-flex flex-column bd-highlight col-centered">
@@ -35,5 +27,4 @@
   </div>
 </div>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['API_KEY_GOOGLE_MAPS']%>&callback=initMap"
-    async defer></script>
+<script src=<%="https://maps.googleapis.com/maps/api/js?key=#{ENV['API_KEY_GOOGLE_MAPS']}&callback=initMap"%> type="text/javascript"></script>

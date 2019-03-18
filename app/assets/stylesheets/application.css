@@ -374,11 +374,13 @@ color:#E54F26;
 /* CSS for index fest */
 .cont_map{
 background-color: grey;
+/* height: 70%; */
 height: 800px;
 }
 
 .cont_fest {
 background-color: white;
+/* height: 70%; */
 height: 800px;
 overflow-y: scroll;
 padding-top: 10%;
@@ -392,11 +394,6 @@ padding-top: 10%;
 
 .card_index {
   width: auto;
-}
-
-
-.page-container{
-  padding-top: 150px;
 }
 
 

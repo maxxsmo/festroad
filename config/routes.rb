@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  get 'subscribers/index'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :wish_lists, only: [:index, :destroy]
   resources :home, only: [:index]
   resources :kitui, only: [:index]
   resources :contact, only: [:new, :create]
+  resources :fest_submissions, only: [:new, :create]
   resources :festivals, only: [:index, :show]
   root 'home#index'
   resources :subscribers

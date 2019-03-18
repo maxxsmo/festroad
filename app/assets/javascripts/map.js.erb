@@ -1,12 +1,97 @@
 function initMap() {
 
+      
 // Generate Map and Related CSS
-let map = new google.maps.Map(document.getElementById('map'), {
-  center: {lat: 47.824905, lng: 2.618787},
+  let map = new google.maps.Map(document.getElementById('map'), {
+  center: {lat: 46.2276382, lng: 2.2137489},
   zoom: 6,
   disableDefaultUI: true,
-  
+  styles: [
+    {
+        "featureType": "road",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "stylers": [
+            {
+                "hue": 149
+            },
+            {
+                "saturation": -78
+            },
+            {
+                "lightness": 0
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "stylers": [
+            {
+                "hue": -31
+            },
+            {
+                "saturation": -40
+            },
+            {
+                "lightness": 2.8
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "label",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "stylers": [
+            {
+                "hue": 163
+            },
+            {
+                "saturation": -26
+            },
+            {
+                "lightness": -1.1
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "stylers": [
+            {
+                "hue": 3
+            },
+            {
+                "saturation": -24.24
+            },
+            {
+                "lightness": -38.57
+            }
+        ]
+    }
+  ]
 });
+      
 
 // For the time being : none
 let infowindow = new google.maps.InfoWindow({

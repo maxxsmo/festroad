@@ -373,7 +373,7 @@ color:#E54F26;
 /*CSS FOR MAP*/
 
 #map {
-  height: 600px; width: 800px;
+  height: 700px; width: 850px;
 }
 /* Optional: Makes the sample page fill the window. */
 html, body {
@@ -384,15 +384,12 @@ html, body {
 
 /* CSS for index fest */
 .cont_map{
-background-color: grey;
-/* height: 70%; */
-height: 800px;
+height: 700px;
 }
 
 .cont_fest {
 background-color: white;
-/* height: 70%; */
-height: 800px;
+height: 700px;
 overflow-y: scroll;
 padding-top: 10%;
 }

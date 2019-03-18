@@ -9,9 +9,7 @@ class FestivalsController < ApplicationController
     else
       @fests = Fest.title(params[:title]) if params[:title].present?   
     end  
-
-    @fest = Fest.all
-    gon.fest = @fest
+    gon.fest = @fests
   end
 
   def show

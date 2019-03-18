@@ -7,12 +7,12 @@ gem 'table_print'
 gem 'faker'
 gem 'dotenv-rails'
 gem 'devise'
-gem 'stripe'
+
 
 gem 'gon'
+gem 'jquery-rails'
 
 
-gem 'mailjet'
 gem 'mail_form'
 gem 'mini_magick'
 

@@ -1,6 +1,7 @@
 class FestivalsController < ApplicationController
-  def index 
+  def index
     @fest = Fest.all
+    gon.fest = @fest
   end
 
   def show
@@ -12,6 +13,4 @@ class FestivalsController < ApplicationController
       format.js{
       }
     end
-
-  end
 end

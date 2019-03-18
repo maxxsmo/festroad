@@ -3,6 +3,7 @@ module Admin
   class FestsController < ApplicationController
 
     before_action :set_fest, only: [:update, :edit, :destroy ]
+    before_action :check_if_admin
     
     def index 
       @fests = Fest.all

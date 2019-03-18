@@ -8,8 +8,8 @@
               <div class="widget widget-contacts widget-light-skin mb-4">
                 <h4 class="widget-title">FestRoad</h4>
                 <ul>
-                  <li class="align-items-center"><i class="footer-icon fas fa-search"></i><a href="<%=festivals_path %>"><span>Trouver mon fest</span></a></li>
-                  <li class="align-items-center"><i class="footer-icon fas fa-envelope"></i><a href="<% new_contact_path%>"><span>Nous contacter</span></a></li>
+                  <li class="align-items-center"><i class="footer-icon fas fa-search"></i><%= link_to "Trouver mon fest",festivals_path %></li>
+                  <li class="align-items-center"><i class="footer-icon fas fa-envelope"></i><%= link_to 'Nous contacter', new_contact_path %></li>
                   <li class="align-items-center"><i class="footer-icon fas fa-balance-scale"></i><span>Mentions légales</span></li>
                 </ul>
               </div>
@@ -21,12 +21,12 @@
                  <% if current_user %>
                   <ul>
                     <li class="align-items-center"><%= link_to "Mon espace", profile_path(current_user)%></li>
-                    <li class="align-items-center"><a href="<%= destroy_user_session_path%>">Déconnexion</a></li>
+                    <li class="align-items-center"><%= link_to "Déconnexion", destroy_user_session_path%></li>
                   </ul>
                   <% else %>
                   <ul>
-                    <li class="align-items-center"><i class="footer-icon fas fa-sign-in-alt"></i><a href="<%= new_user_session_path %>">Connexion</a></li>
-                    <li class="align-items-center"><i class="footer-icon fas fa-user-plus"></i><a href="<%= new_user_registration_path %>">Inscription</a></li>
+                    <li class="align-items-center"><i class="footer-icon fas fa-sign-in-alt"></i><%=link_to "Connexion", new_user_session_path %></li>
+                    <li class="align-items-center"><i class="footer-icon fas fa-user-plus"></i><%= link_to "Inscription", new_user_registration_path %></li>
                   </ul>
                    <% end %>
               </div>

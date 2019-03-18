@@ -12,7 +12,8 @@ class Fest < ApplicationRecord
   validate :date_not_in_past
   validate :incorrect_dates
   validates :end_date, presence: true
-
+  geocoded_by :address
+  after_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
 
   def date_not_in_past
     if start_date < DateTime.now
@@ -29,4 +30,12 @@ class Fest < ApplicationRecord
     end
   end
 
+  def self.carousel
+    result = []
+    Fest.all.each do |fest|
+      result << fest
+    end
+    result = result.sort! {|a,b| a.start_date <=> b.start_date}
+    result
+  end
 end

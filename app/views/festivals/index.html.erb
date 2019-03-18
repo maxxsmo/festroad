@@ -1,11 +1,14 @@
 <% x = 0 %>
-</div>
-  <div class="row">
 
-    <div class="cont_map col-8">
-    <br><br><br><br><br><br><br>
-    <h1>Ici se trouvera la MAP </h1>
-    </div>
+<div style="padding-top:220px;"></div>
+<h1>La carte des festivals : </h1>
+
+<div class="row">
+  <div class="cont_map col-8">
+    <div id="map"></div>
+    <%= javascript_include_tag('map.js') %>
+  </div>
+
 
 
 
@@ -48,8 +51,6 @@
                   </div>
                 </div>
               </div>
-
-
               </div>
               <div class="card-footer text-muted text-sm"><span class="opacity-75">Last updated 3 mins ago</span></div>
             </div>
@@ -61,4 +62,4 @@
 
 
 
-
+<script src=<%="https://maps.googleapis.com/maps/api/js?key=#{ENV['API_KEY_GOOGLE_MAPS']}&callback=initMap"%> type="text/javascript"></script>

@@ -1,5 +1,4 @@
 require 'rails_helper'
-
 RSpec.describe Fest, type: :model do
 
   before(:each) do 
@@ -31,6 +30,4 @@ RSpec.describe Fest, type: :model do
     it { should have_many(:tags) }
     it { should have_many(:fest_locations) }
   end
-
-
 end

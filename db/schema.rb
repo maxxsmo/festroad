@@ -71,12 +71,6 @@ ActiveRecord::Schema.define(version: 2019_03_16_160723) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "subscribers", force: :cascade do |t|
-    t.string "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "tags", force: :cascade do |t|
     t.bigint "music_type_id"
     t.bigint "fest_id"

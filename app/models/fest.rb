@@ -67,6 +67,18 @@ class Fest < ApplicationRecord
     result
   end
 
+  def self.location(location, festival)
+    result = []
+    festival.each do |fest|
+      FestLocation.where(location_type_id: location).each do |location|
+        if location.fest == fest
+          result << fest
+        end
+      end
+    end
+    result
+  end
+
   def self.carousel
     result = []
     Fest.all.each do |fest|

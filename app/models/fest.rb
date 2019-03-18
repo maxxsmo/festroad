@@ -79,6 +79,18 @@ class Fest < ApplicationRecord
     result
   end
 
+  def self.start_date(date, festival)
+    result = []
+    festival.each do |fest|
+      Fest.where(start_date: date).each do |date|
+        if date.start_date >=  fest.start_date
+          result << fest
+        end
+      end
+    end
+    result
+  end
+
   def self.carousel
     result = []
     Fest.all.each do |fest|

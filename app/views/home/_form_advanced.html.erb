@@ -2,6 +2,7 @@
   <div class= "row justify-content-center">
   <%= select_tag :music, options_for_select(music.collect{ |u| [u.style, u.id] }), class: "form-control w-25 mr-5" %><br><br>
   <%= select_tag :location, options_for_select(location.collect{ |u| [u.location, u.id] }), class: "form-control w-25 mr-5" %>
+  <%= date_field_tag :start_date %>
   <%= hidden_field_tag :advanced, true %>
   <%= submit_tag 'Rechercher', class: "btn btn-primary"  do %>
       <i class="footer-icon fas fa-search"></i>

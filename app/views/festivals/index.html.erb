@@ -1,4 +1,4 @@
-
+<% x = 0 %>
 </div>
   <div class="row">
 
@@ -19,29 +19,35 @@
                 <p><strong>Du : </strong><%= fest.start_date.strftime("%d/%m/%Y") %></p>
                 <p><strong>Au : </strong><%= fest.end_date.strftime("%d/%m/%Y") %></p>
 
-
-                <button class="btn btn-style-4 btn-primary" type="submit" data-toggle="modal" data-target="#modalLarge">Détails</button>
-
+              <% x += 1 %>
 
 
+              
 
-                <%= link_to "Open modal", festival_path(:fest_id) , :class => "btn", :remote => true, "data-toggle" => "modal", "data-target" => "my-modal" %>
-                <div class="modal hide fade" id="my-modal" title="My modal">
-                  <div class="modal-header">
-                    <button aria-hidden="true" class="close" data-dismiss="modal" type="button">×</button>
-                    <h3 id="myModalLabel">New Post</h3>
-                  </div>
-                  <div class="modal-body a-unique-class">
-                    New Post Body
-                  </div>
-                  <div class="modal-footer">
-                    <button aria-hidden="true" class="btn" data-dismiss="modal">Close</button>
+                <%= link_to "Open modal", festival_path(fest.id), :class => "btn btn-style-4 btn-primary",:remote => true, "data-toggle" => "modal", "data-target" => "#modalLarge#{x}" %>
+
+
+
+
+                <div class="modal fade" id="<%= "modalLarge#{x}" %>" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-lg" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="modal-title">Modal title</h4>
+                      <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+
+                      <h1><%= fest.title %></h1>
+                      
+                    </div>
+                    <div class="modal-footer">
+                      <button class="btn btn-secondary btn-sm" type="button" data-dismiss="modal">Close</button>
+                      <button class="btn btn-primary btn-sm" type="button">Save changes</button>
+                    </div>
                   </div>
                 </div>
-
-
-
-
+              </div>
 
 
               </div>
@@ -54,42 +60,5 @@
 
 
 
-<%# ---- MODAL ---- %>
-
-<div class="modal fade" id="modalLarge" tabindex="-1" role="dialog">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">Modal title</h4>
-        <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      </div>
-      <div class="modal-body">
-<% #render template: "festivals/show" %> 
-  
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-secondary btn-sm" type="button" data-dismiss="modal">Close</button>
-        <button class="btn btn-primary btn-sm" type="button">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 
-
-
-<%# ---- AJAX ---- %>
-
-<%= link_to "Open modal", :class => "btn", :remote => true, "data-toggle" => "modal", "data-target" => "my-modal" %>
-<div class="modal hide fade" id="my-modal" title="My modal">
-  <div class="modal-header">
-    <button aria-hidden="true" class="close" data-dismiss="modal" type="button">×</button>
-    <h3 id="myModalLabel">New Post</h3>
-  </div>
-  <div class="modal-body a-unique-class">
-    New Post Body
-  </div>
-  <div class="modal-footer">
-    <button aria-hidden="true" class="btn" data-dismiss="modal">Close</button>
-  </div>
-</div>

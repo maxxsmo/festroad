@@ -3,6 +3,36 @@
     
     <div class="container">
       <h1 class= "h4 block-title text-center pt-3">Modifier le festival</h1>
+
+        <!-- festival image change upload-->
+        <div class="container-fluid">
+          <div class="row"> 
+            <div class="col-md-4"></div>
+              <div class="col-md-2"> 
+              <label> Image du festival </label>
+              </div>
+              <div class= "col-md-6">
+                <%if @fest.festpic.attached?%>
+                  <%= image_tag @fest.festpic.variant(resize: "100x100"), alt: 'festival image' %>
+                <%else%>
+                  <%= image_tag "Music_Festival_default.jpg", alt: "festival image default" %> 
+                <%end%>
+              </div>
+            </div>
+
+            <div class="row"> 
+              <div class="col-md-4"></div>
+                <div class="col-md-2"></div>
+                  <div class= "col-md-6">
+                    <%= form_tag admin_fest_festpics_path(@fest), multipart: true do %><%= file_field_tag :festpic %><%= submit_tag "changer festival image",class:"btn btn-warning btn-sm justify-content" %>
+                    <% end %>
+                </div>
+              </div>
+
+        </div>
+        <br>
+          <!-- end-->
+
         <div class="container-fluid">
           <%= form_tag url_for(action: 'update'), method: "put" do %>
             <div class="row"> 
@@ -12,9 +42,6 @@
                   </div>
                     <div class= "col-md-6">
                   <p><%= text_field_tag 'title', @fest.title %></p>
-                </div>
-                <div class= "col-md-6">
-                  <p><%= text_field_tag 'title', @fest.title%></p>
                 </div>
             </div>
             <div class="row"> 
@@ -61,6 +88,7 @@
                 <div class= "col-md-6">
                   <p><%= text_field_tag 'website', @fest.website %></p>
                 </div>
+              </div>
 
               <!--Validation Button-->
         <div class="container">

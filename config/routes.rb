@@ -19,7 +19,9 @@ Rails.application.routes.draw do
 
   resources :admin, only: [:index]
   namespace :admin do
-    resources :fests
+    resources :fests do
+      resources :festpics
+    end
     resources :users, only: [:index, :edit, :update, :destroy]
   end
 

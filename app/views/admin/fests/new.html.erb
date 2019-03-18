@@ -1,10 +1,11 @@
 <div class="page-container">
-  <!-- Backoffice CReation Fests-->
+  <!-- Backoffice Creation Fests-->
 
    <div class="container">
       <h1 class= "h4 block-title text-center pt-3">Créer une nouveau festival</h1>
+
         <div class="container-fluid">
-          <%= form_tag url_for(action: 'create'), method: "post" do %>
+          <%= form_tag url_for(action: 'create'), method: "post",  multipart: true do %>
             <div class="row"> 
               <div class="col-md-4"></div>
                 <div class="col-md-2">
@@ -73,4 +74,7 @@
           <% end %>  
         </div>
     </div>
+  
+  </div>
+
 </div>

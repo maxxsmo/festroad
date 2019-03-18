@@ -5,6 +5,6 @@ class FestivalsController < ApplicationController
   end
 
   def show
-    
+    @fest = Fest.all
   end
 end

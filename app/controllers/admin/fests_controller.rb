@@ -16,6 +16,7 @@ module Admin
     def create 
       @fest = Fest.new(title: params[:title], description: params[:description], start_date: params[:start_date], end_date: params[:end_date], address: params[:address], website: params[:website])
       if @fest.save 
+        @fest.festpic.attach(params[:festpic])
         redirect_to({action: :index}, success: "Le festival a bien été créé")
       else 
         render "new"
@@ -46,10 +47,17 @@ module Admin
       @fest = Fest.find(params[:id])
     end
 
-    private
     def fest_params
       params.require(:fest).permit(:title, :description, :start_date, :end_date, :address, :website)
     end
+
+    def check_if_admin
+      if current_user && current_user.is_admin == false
+      redirect_to root_path
+      end
+    end
+
+    
   end
 
 end

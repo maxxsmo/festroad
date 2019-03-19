@@ -23,7 +23,7 @@
 
                 <div class="d-flex justify-content-around">
                   <%= link_to "Détails", festival_path(fest.id), :class => "btn btn-style-4 btn-primary", "data-toggle" => "modal", "data-target" => "#modalLarge#{x}" %>
-                  <i class="far fa-heart center fa-3x"></i>
+                  <%= link_to "", wish_lists_path(fest.id), :class => "far fa-heart btn btn-primary", method: "create" %>
                 </div>
 
 
@@ -52,7 +52,7 @@
                     
                     <div class="modal-footer">
                       <button class="btn btn-secondary btn-sm" type="button" data-dismiss="modal">Fermer</button>
-                      <button class="btn btn-primary btn-sm" type="button"><i class="far fa-heart"></i></button>
+                      <%= link_to "", wish_lists_path(fest.id), :class => "far fa-heart btn btn-primary btn-sm", method: "create" %>
                     </div>
 
                   </div>

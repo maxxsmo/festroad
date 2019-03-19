@@ -145,6 +145,13 @@
   margin-bottom: 10%;
  }
 
+ .form-date {
+  width: 15%;
+}
+
+.form-date-2 {
+  width: 17%;
+}
  .custom-control-label::after {
   background-color:#E54F26 !important;
 }

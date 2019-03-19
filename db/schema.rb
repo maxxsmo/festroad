@@ -10,9 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_16_160723) do
+ActiveRecord::Schema.define(version: 2019_03_18_205516) do
 
   # These are extensions that must be enabled in order to support this database
+  enable_extension "citext"
   enable_extension "plpgsql"
 
   create_table "active_storage_attachments", force: :cascade do |t|
@@ -46,9 +47,9 @@ ActiveRecord::Schema.define(version: 2019_03_16_160723) do
   end
 
   create_table "fests", force: :cascade do |t|
-    t.string "title"
-    t.datetime "start_date"
-    t.datetime "end_date"
+    t.citext "title"
+    t.date "start_date"
+    t.date "end_date"
     t.string "address"
     t.text "description"
     t.string "website"
@@ -84,7 +85,7 @@ ActiveRecord::Schema.define(version: 2019_03_16_160723) do
     t.string "last_name"
     t.string "first_name"
     t.text "description"
-    t.boolean "is_admin"
+    t.boolean "is_admin", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false

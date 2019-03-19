@@ -21,8 +21,23 @@
  *= require_self
 
  */
+/* CSS NAVBAR */
 
+#home #navbar{
+  display: block;
+  padding: 0;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  padding: 0 30px;
+  border: 0;
+  background: none;
 
+}
+
+#home #navbar a{
+  color:white !important;
+}
  /*CSS COLORS CHOSEN*/
 
  .color-table{
@@ -110,7 +125,19 @@
   color: #000;
  }
 
+  /*CSS FOR BUTTONS*/
 
+ .btn-primary:hover, .btn-style-4:hover, .btn:hover {
+  color: #fff !important;
+  box-shadow: none !important;
+  background-color: #e8613d !important;
+  }
+
+  /*CSS FOR CARROUSSEL BUTTONS*/
+
+  .owl-dot.active {
+    background-color: #E54F26 !important;
+  }
 
 
  /*CSS OF THE FOOTER*/
@@ -129,12 +156,22 @@
   background-color:#E54F26 !important;
  }
 
-   /*line under footer header*/
-.block-title::after, .animated-digits::after,.widget-title::after,h3.step-title::after{
- background: linear-gradient(to right, #FFCF0F 0%, #E54F26 20%, #4A1836 100%) !important;
+ .widget-title {
+   border-bottom: none !important;
  }
 
+.widget-contacts ul > li > a, .widget-contacts ul > li > span {
+   padding-top: 10px !important;
+ }
+   /*line under footer header*/
+/* .block-title::after, .animated-digits::after,.widget-title::after,h3.step-title::after{
+ background: linear-gradient(to right, #FFCF0F 0%, #E54F26 20%, #4A1836 100%) !important;
+ } */
 
+ .bg-gradient, .block-title::after, .animated-digits::after, .step .step-title::after, .btn-gradient, .btn-style-2.btn-gradient::after, .btn-style-2.btn-gradient:hover::before, .btn-style-6.btn-gradient::before, .accordion-style-3 .card-body::after, .accordion-style-3 [data-toggle='collapse'], .widget-title::after, .tag-link::before, .noUi-connect, .mobile-menu .dropdown-header::after, .blog-card .post-title::after {
+  display: none !important;
+ }
+ 
  /*CSS FOR FORMS*/
  .container-form{
   width: 60%;
@@ -145,6 +182,13 @@
   margin-bottom: 10%;
  }
 
+ .form-date {
+  width: 15%;
+}
+
+.form-date-2 {
+  width: 17%;
+}
  .custom-control-label::after {
   background-color:#E54F26 !important;
 }
@@ -373,7 +417,7 @@ color:#E54F26;
 /*CSS FOR MAP*/
 
 #map {
-  height: 600px; width: 800px;
+  height: 700px; width: 850px;
 }
 /* Optional: Makes the sample page fill the window. */
 html, body {
@@ -384,13 +428,12 @@ html, body {
 
 /* CSS for index fest */
 .cont_map{
-background-color: grey;
-height: 800px;
+height: 700px;
 }
 
 .cont_fest {
 background-color: white;
-height: 800px;
+height: 700px;
 overflow-y: scroll;
 }
 
@@ -411,6 +454,7 @@ overflow-y: scroll;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+  height:100%;
   color: #fff;
   padding-top: 200px;
   padding-bottom:200px;

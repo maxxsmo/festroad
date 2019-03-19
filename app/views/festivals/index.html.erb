@@ -1,5 +1,12 @@
 <% x = 0 %>
+<<<<<<< HEAD
 <div style="padding-top:220px;"></div>
+=======
+
+<div style="padding-top:120px;"></div>
+<h2 class="text-center mb-5">La carte des festivals</h2>
+
+>>>>>>> development
 <div class="row">
   <div class="cont_map col-8">
     <div id="map"></div>
@@ -7,7 +14,7 @@
   </div>
     <div class="row cont_fest col-4">
       <div class="d-flex flex-column bd-highlight col-centered">
-        <% @fest.each do |fest| %>
+        <% @fests.each do |fest| %>
             <div class="card mb-30 card_index">
 
             <%= image_tag 'https://festivalhommesforts.ca/wp-content/uploads/2017/06/Festival_music_374x230.jpg' %>
@@ -55,6 +62,7 @@
                   </div>
                 </div>
               </div>
+            </div>
               </div>
             </div>
          <% x += 1 %>
@@ -64,4 +72,10 @@
   </div>
 
 
+
+
+<div style="height: 100px;"></div>
+
 <script src=<%="https://maps.googleapis.com/maps/api/js?key=#{ENV['API_KEY_GOOGLE_MAPS']}&callback=initMap"%> type="text/javascript"></script>
+
+

@@ -32,8 +32,8 @@
                 <td><%=fest.website%></td>
                 <td><% fest.tags.each do |tag|%><%=tag.music_type.style%><% end %></td> 
                 <td><% fest.fest_locations.each do |fest_location|%><%=fest_location.location_type.location%><% end %></td>
-                <td><%=link_to 'Éditer', edit_admin_fest_path(fest.id) %></td>
-                <td><%=link_to 'Supprimer', admin_fest_path(fest.id), method: :delete %></td>
+                <td><%=link_to 'Éditer', edit_admin_festival_path(fest.id) %></td>
+                <td><%=link_to 'Supprimer', admin_festival_path(fest.id), method: :delete %></td>
               </tr>
                 <% end %>
               </table>
@@ -50,7 +50,7 @@
       <!-- Button to create a fest-->
               <div class="col-12 text-center">
                 <div class="d-flex flex-wrap justify-content-center align-items-center ">
-                  <%=link_to 'Créer un nouveau festival', new_admin_fest_path, class: "btn btn-primary text-center" %>
+                  <%=link_to 'Créer un nouveau festival', new_admin_festival_path, class: "btn btn-primary text-center" %>
                 </div>
               </div>
 </div>

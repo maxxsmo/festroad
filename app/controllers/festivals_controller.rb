@@ -22,4 +22,6 @@ class FestivalsController < ApplicationController
       }
     end
   end
+
+
 end

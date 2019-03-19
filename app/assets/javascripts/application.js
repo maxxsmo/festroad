@@ -32,7 +32,6 @@
 //= require js/owl.carousel.min
 //= require js/parallax-scroll.min
 //= require js/popper.min
-//= require banner
 //= require_tree .
 
 document.addEventListener("turbolinks:load", function() {

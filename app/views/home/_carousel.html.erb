@@ -13,7 +13,7 @@
                   <p><i class="fas fa-map-marker-alt"></i><%= fest.fest_locations.each do |location| %><%= location.location_type.location%><%end%></p>
                 <% end %>
                 <%if fest.tags != [] %>
-                  <%= fest.tags.each do |tag| %><a class="tag-link"><%= tag.music_types.style%> </a><%end%>
+                  <%= fest.tags.each do |tag| %><a class="tag-link"><%= tag.music_type.style%> </a><%end%>
                 <% end %>
               </div>
               <div class="card-footer text-muted text-sm">

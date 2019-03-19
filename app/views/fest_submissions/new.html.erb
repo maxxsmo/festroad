@@ -1,4 +1,9 @@
-  <!-- Submission Fests Form-->
+ <%= form_tag do %>
+  <%= file_field_tag :festpic %>
+  <%= submit_tag "uploader la photo du festival" %>
+<% end %>
+
+ <!-- Submission Fests Form-->
   <section class="bg-secondary bg-cover bg-no-repeat pt-5 pb-4"  data-offset-top="-10" id="contacts">
       <div class="container py-2 page-container">
         <h2 class="h3 contact-form block-title text-center">Soumettre un nouveau festival</h2>
@@ -48,6 +53,14 @@
                     <%= f.text_field :website,required: true,  class:"form-control"%>
                   </div>
               </div>
+
+            <div class="row">
+              <div class="col-md-6"></div>
+                  <label> Photo </label>
+                </div>
+                  <p><%= file_field_tag :catpic %></p>                                    
+              </div>
+            </div>
 
           <!--Validation button-->
               <div class="row"> 

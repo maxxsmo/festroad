@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
-  get 'fest_submissions/create'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :wish_lists, only: [:index, :destroy]
-  resources :home, only: [:index]
+  resources :wish_lists, only: [:index, :destroy, :new, :create]
+  resources :home, only: [:index, :show]
   resources :kitui, only: [:index]
   resources :contact, only: [:new, :create]
   resources :fest_submissions, only: [:new, :create]
   resources :festivals, only: [:index, :show]
   root 'home#index'
-  
+
 
   devise_for :users, :controllers => { registrations: 'registrations' }
   
@@ -16,8 +15,11 @@ Rails.application.routes.draw do
     resources :avatars, only: [:create]
   end
 
+  resources :admin, only: [:index]
   namespace :admin do
-    resources :fests
+    resources :festivals do
+      resources :festpics, only: [:create]
+    end
     resources :users, only: [:index, :edit, :update, :destroy]
   end
 

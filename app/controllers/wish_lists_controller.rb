@@ -12,4 +12,12 @@ class WishListsController < ApplicationController
       format.js
     end
   end
+
+
+  def create
+  @fest = Fest.find(params[:format])  
+  @wishlist = WishList.create(user: current_user, fest: @fest)
+    redirect_to '/festivals'
+  end 
+
 end

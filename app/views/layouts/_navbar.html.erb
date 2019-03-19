@@ -1,13 +1,17 @@
 
-<header class="navbar-wrapper navbar-boxed navbar-floating navbar-sticky" id="navbar">
+<navbar class="navbar-wrapper navbar-boxed navbar-sticky" id="navbar">
       <div class="container-fluid">
         <div class="d-table-cell align-middle pr-md-3">
-          <%= link_to "Fest Road", root_path ,class:"navbar-brand mr-1"%><img src="#" alt="FestRoad"/>
+        <%= link_to root_path do %>
+         <%= image_tag 'logo-fest.svg', class:"navbar-brand mr-5" %>
+        <%end%>
         </div>
         <div class="d-table-cell w-100 align-middle pl-md-3">
           <div class="navbar justify-content-end justify-content-lg-between">
             <ul class="navbar-nav d-none d-lg-block">
               <li class="nav-item mega-dropdown-toggle">
+              </li>
+              <li class="nav-item"><%= link_to 'Accueil', root_path , class:"nav-link" %>
               </li>
               <li class="nav-item"><%= link_to 'Les festivals', festivals_path , class:"nav-link" %>
               </li>
@@ -16,6 +20,8 @@
                <li class="nav-item">
                 <%= link_to 'Contact', new_contact_path, class: 'nav-link' %>
               </li>
+            <% if current_user && current_user.is_admin == true %> <li class="nav-item"> <%= link_to 'Espace Admin', admin_index_path, class: 'nav-link' %>
+              </li> <%end%>
             </ul>
            <% if current_user%>
           <!-- Components-->
@@ -29,5 +35,5 @@
         </div>
       </div>
     </div>
-  </header>
+  </navbar>
 

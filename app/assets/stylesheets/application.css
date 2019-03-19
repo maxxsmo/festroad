@@ -110,7 +110,19 @@
   color: #000;
  }
 
+  /*CSS FOR BUTTONS*/
 
+ .btn-primary:hover, .btn-style-4:hover, .btn:hover {
+  color: #fff !important;
+  box-shadow: none !important;
+  background-color: #e8613d !important;
+  }
+
+  /*CSS FOR CARROUSSEL BUTTONS*/
+
+  .owl-dot.active {
+    background-color: #E54F26 !important;
+  }
 
 
  /*CSS OF THE FOOTER*/

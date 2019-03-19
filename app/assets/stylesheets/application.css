@@ -21,8 +21,23 @@
  *= require_self
 
  */
+/* CSS NAVBAR */
 
+#home #navbar{
+  display: block;
+  padding: 0;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  padding: 0 30px;
+  border: 0;
+  background: none;
 
+}
+
+#home #navbar a{
+  color:white !important;
+}
  /*CSS COLORS CHOSEN*/
 
  .color-table{
@@ -411,6 +426,7 @@ padding-top: 10%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+  height:100%;
   color: #fff;
   padding-top: 200px;
   padding-bottom:200px;

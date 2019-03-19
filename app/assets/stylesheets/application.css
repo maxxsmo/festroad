@@ -612,18 +612,18 @@ color: #fff;
 background: none;
 }
 
-#main_icon
-{
+#main_icon {
   float:right;
  padding-right: 65px;
  padding-top:20px;
 }
-.sub_icon
-{
+
+.sub_icon {
   float:right;
  padding-right: 65px;
  padding-top:10px;
 }
+
 .content-header {
 height: 65px;
 line-height: 65px;
@@ -640,16 +640,22 @@ display: inline-block;
   #wrapper {
   padding-left: 70px;
   transition: all .4s ease 0s;
-}
+}}
+
 #sidebar-wrapper {
   left: 70px;
 }
+
 #wrapper.active {
   padding-left: 150px;
 }
+
 #wrapper.active #sidebar-wrapper {
   left: 150px;
   width: 150px;
   transition: all .2s ease 0s;
 }
+
+.red-font {
+  color : #E54F26 ;
 }

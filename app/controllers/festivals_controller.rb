@@ -17,6 +17,7 @@ class FestivalsController < ApplicationController
       format.html
       format.js
     end
+    @multiple = Fest.all 
   end
   
 

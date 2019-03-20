@@ -8,12 +8,12 @@ class Fest < ApplicationRecord
   has_one_attached :festpic
   
   validates :title, presence: true, length: { in: 4..140 }
-  # validates :description, length: { in: 4..1000 }
-  # validates :address, presence: true
-  # validates :start_date, presence: true
-  # validate :date_not_in_past
-  # validate :incorrect_dates
-  # validates :end_date, presence: true
+  validates :description, length: { in: 4..1000 }
+  validates :address, presence: true
+  validates :start_date, presence: true
+  validate :date_not_in_past
+  validate :incorrect_dates
+  validates :end_date, presence: true
   geocoded_by :address
   after_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
 

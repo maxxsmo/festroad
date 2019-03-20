@@ -6,7 +6,7 @@ module Admin
     before_action :check_if_admin
     
     def index 
-      @fests = Fest.all
+      @fests = Fest.order("lower(title) ASC").all
     end
 
     def new 

@@ -44,7 +44,7 @@
 # Fest.create(title: "Art Rock", start_date: DateTime.new(2019,6,7), end_date: DateTime.new(2019,6,9),address: "Saint-Brieuc", description: "Charlotte Gainsbourg, Angèle, Lomepal ou encore Delgres vous attendent à Saint-Brieuc, les vendredi 7, samedi 8 et dimanche 9 juin 2019, à l'occasion de la nouvelle édition Bretonne du Festival Art Rock." , website: "https://www.artrock.org/")
 # Fest.create(title: "Papillons de nuit", start_date: DateTime.new(2019,6,7), end_date: DateTime.new(2019,6,9),address: "Saint-Laurent-De-Cuves", description: "Ne manquez pas l'édition 2019 du Festival Papillons de Nuit qui se déroule à Saint-Laurent-de-Cuves, du vendredi 7 au dimanche 9 juin prochain. Au menu ? Maître Gims, Kendji Girac, Zazie, Trois Cafés Gourmands ou encore Hoshi." , website: "https://papillonsdenuit.com/")
 
-Fest.destroy_all
+# Fest.destroy_all
 
 records = JSON.parse(File.read('db/festivals_details.json'))
 records.each do |record|

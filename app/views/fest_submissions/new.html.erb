@@ -3,59 +3,75 @@
       <div class="container py-2 page-container">
         <h2 class="h3 contact-form block-title text-center">Soumettre un nouveau festival</h2>
 
-
-        <%= form_for @fest, url: fest_submissions_path  do |f| %>
-
-        <form class="needs-validation pt-4 pb-5">
+        <%= form_tag url_for(action: 'create'), method: "post" do %>
 
           <% if flash[:error].present? %>
               <p> flash[:error]</p>
           <% end %>
 
               <div class="row">
-                  <div class="col-md-4">
-                    <%= f.label :Titre %><span class="text-danger font-weight-medium">*</span>
-                    <%= f.text_field :title, required: true, class: 'form-control'%>
+                  <div class="col-md-6">
+                    <label> Titre </label><span class="text-danger font-weight-medium">*</span>
+                    <%= text_field_tag 'title', @fest.title, :size =>"60x1", :required => true , class: "form-control"%>
                     <div class="invalid-feedback">Merci de renseigner le nom du festival!</div>
                   </div>
 
-                  <div class="col-md-4">
-                    <%= f.label :date_de_début %>  <span class="text-danger font-weight-medium">*</span>
-                    <%= f.datetime_field :start_date,required: true,  class:"form-control"%>
+                  <div class="col-md-3">
+                    <label> Date de début </label><span class="text-danger font-weight-medium">*</span>
+                    <%= datetime_field_tag 'start_date', @fest.start_date, :size =>"60x1",:required => true, class: "form-control"%>
+                    <div class="invalid-feedback">Merci de renseigner la date de début du festival!</div>
                   </div>
 
-                  <div class="col-md-4">
-                    <%= f.label :date_de_fin %>  <span class="text-danger font-weight-medium">*</span>
-                    <%= f.datetime_field :end_date,required: true,  class:"form-control"%>
+                  <div class="col-md-3">
+                    <label> Date de fin </label><span class="text-danger font-weight-medium">*</span>
+                    <%= datetime_field_tag 'end_date', @fest.end_date, :size =>"60x1",:required => true, class: "form-control"%>
+                    <div class="invalid-feedback">Merci de renseigner la date de fin du festival!</div>
                   </div>
               </div>
 
-                <div class="row">
-                  <div class="col-md-12">
-                    <%= f.label :description %>  <span class="text-danger font-weight-medium">*</span><br/>
-                    <%= f.text_area :description, required: true,  class:"form-control"%>
-                  </div>
+              <br>
+
+              <div class="row">
+
+                <div class="col-md-6">
+                  <label> Adresse </label><span class="text-danger font-weight-medium">*</span><br>
+                  <%= text_field_tag 'address', @fest.address, :size =>"60x1", :required => true, class: "form-control"%>
+                  <div class="invalid-feedback">Merci de renseigner l'adresse du festival!</div>
+                  <br>
+                  <label> Website </label><span class="text-danger font-weight-medium">*</span><br>
+                  <%= text_field_tag 'website', @fest.website, :size =>"60x1", :required => true, class: "form-control" %>
+                  <div class="invalid-feedback">Merci de renseigner une page internet pour le festival!</div>
                 </div>
 
-              <div class="row"> 
-                  <div class="col-md-6">
-                    <%= f.label :adresse %> <span class="text-danger font-weight-medium">*</span><br>
-                    <%= f.text_field :address, required: true,  class:"form-control"%>
-                  </div>
+                <div class="col-md-6">
+                  <label> Description </label><span class="text-danger font-weight-medium">*</span><br/>
+                  <%= text_area_tag 'description', @fest.description,:required => true, :size =>"60x6", class: "form-control" %>
+                  <div class="invalid-feedback">Merci de renseigner une description pour le festival!</div>
+                </div>
 
-                  <div class="col-md-6">
-                    <%= f.label :website %> <span class="text-danger font-weight-medium">*</span><br>
-                    <%= f.text_field :website,required: true,  class:"form-control"%>
-                  </div>
               </div>
-              
+
           <!--Validation button-->
               <div class="row"> 
                 <div class= "py-5 col-sm-12 text-center">
-                  <%= f.submit 'Valider mon nouveau festival', class: "btn btn-primary" %>
+                  <%= submit_tag 'Valider mon nouveau festival', class: "btn btn-primary" %>
                 </div>
               </div>
           <!--End Button-->
-    </form>
+
+          <!--Message error-->
+              <div class="col-md-3"></div>
+                  <% if @fest.errors.any? %>
+                  <p>Nous n'avons pas réussi à enregistrer le festival pour la (ou les) raison(s) suivante(s) :</p>
+                <ul>
+                  <% @fest.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                </ul>
+              </div>
+          <!--Message error end-->
+
           <% end %> 
+          <% end %> 
+      </div>
   </section>

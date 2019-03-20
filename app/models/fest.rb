@@ -108,7 +108,7 @@ class Fest < ApplicationRecord
       result << fest
     end
     result = result.sort! {|a,b| a.start_date <=> b.start_date}
-    result
+    result.first(6)
   end
 
 #   #Importing JSON in Database

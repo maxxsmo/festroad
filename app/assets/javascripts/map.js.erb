@@ -109,18 +109,21 @@ map: map
 
 //content marker popup window
 	let fest = 
-  '<div>' + gon.fest[i].title + " " + '<a href="' + gon.fest[i].website + '">' + '<i class="far fa-star" style:"color:#f4d942;"></i>' + '</a>' + '</div>' + 
-  '<div>' + gon.fest[i].start_date + ' - ' + gon.fest[i].start_date + '</div>' + 
-  '<div>' + gon.fest[i].address + '</div>' +  
-  '<a href="' + gon.fest[i].website + '">' + gon.fest[i].website + '</a>' + '</div>';
+  '<div><strong>' + gon.fest[i].title + '</strong></div>' +  '<div>' + gon.fest[i].address + '</div>';
+   
 
-  
-
-// Open InfoWindow on click
+// show InfoWindow on mouseover event
   google.maps.event.addListener(marker, 'mouseover', function() {
   maxWidth: 350
   infowindow.setContent(fest);
   infowindow.open(map, marker);
+  });
+  
+// open modal on click event
+  google.maps.event.addListener(marker, 'click', function() {
+    event.preventDefault();
+    jQuery.noConflict();
+    $('#modalLarge'+i).modal('show');
   });
  }
 }

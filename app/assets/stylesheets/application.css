@@ -38,6 +38,10 @@
 #home #navbar a{
   color:white !important;
 }
+
+#home #navbar .dropdown-item{
+  color:black !important;
+}
  /*CSS COLORS CHOSEN*/
 
  .color-table{

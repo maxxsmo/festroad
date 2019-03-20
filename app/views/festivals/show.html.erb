@@ -13,42 +13,42 @@
     </div>
   </div>
 
+<div style="background: #fff; height: 5%;"></div>
 
 
 
-<div class= "page-container mb-5 card col-lg-12 col-md-12 col-sm-12" style="background: #4A1836; color: #f8f9fa;">
+<div class= "page-container mb-5 card col-xl-12 col-lg-12 col-md-12 col-sm-12" style="background: #4A1836; color: #f8f9fa;">
   <h2 class= "card"><%= @fest.title %></h2>
   <div class="row">
-    <div class="col-lg-1 col-md-1 col-sm-1">
-    </div>
-    <div class= "mt-5 mb-5 mr-5 card col-lg-4 col-md-4 col-sm-4" style="background: #4A1836">
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1"></div>
+    <div class= "mt-5 mb-5 mr-5 card col-xl-4 col-lg-4 col-md-4 col-sm-4" style="background: #4A1836">
       <%if @fest.festpic.attached?%>
         <%= image_tag fest.festpic, alt: 'festival picture' %>
       <%else%>
         <%= image_tag 'https://festivalhommesforts.ca/wp-content/uploads/2017/06/Festival_music_374x230.jpg' %>
       <%end%>
     </div>
-    <div class="mt-5 mb-5 col-lg-3 col-md-3 col-sm-3">
+    <div class="mt-5 mb-5 col-xl-3 col-lg-3 col-md-3 col-sm-3">
       <div class="row d-flex justify-content-around mb-3">
         <p><strong>Du : </strong><%= @fest.start_date.strftime("%d/%m/%Y") %></p>
         <p><strong>Au : </strong><%= @fest.end_date.strftime("%d/%m/%Y") %></p>
         <p><strong>Localisation : </strong><%= @fest.address %></p>
       </div>
       <p><strong>Description : </strong> <%= @fest.description %></p>
+      <center><%= link_to "", wish_lists_path(@fest.id), :class => "far fa-heart btn btn-primary btn-md", method: "post", remote: true %>
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-3">
-    </div>
+    <div></div>
   </div>    
 </div>
 
 
+<div style="background: #fff; height: 5%;"></div>
 
-
- <section class="card container pb-4" id="sectionhow">
+ <section class="card container pb-4">
     <h2 class="h3 block-title text-center pt-2"> Ca se passe prochainement </h2>
     <div class="owl-carousel" data-owl-carousel='{ "nav": false, "dots": true, "loop": true, "margin": 30, "autoplay": true, "autoplayTimeout": 4000, "responsive": {"0":{"items":1},"630":{"items":2},"991":{"items":3},"1200":{"items":3}} }'>
 
-      <% @multiple.each do |fest| %>
+      <% @carousel.each do |fest| %>
           <div class="card_index">
            <%if fest.festpic.attached?%>
               <%= image_tag fest.festpic, alt: 'festival picture' %>
@@ -72,3 +72,4 @@
         <% end %>
     </div>
 </section>
+<div style="background: #fff; height: 5%;"></div>

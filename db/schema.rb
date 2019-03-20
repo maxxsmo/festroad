@@ -55,9 +55,9 @@ ActiveRecord::Schema.define(version: 2019_03_20_104312) do
     t.string "website"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "validation_admin"
     t.float "latitude"
     t.float "longitude"
-    t.boolean "validation_admin"
   end
 
   create_table "location_types", force: :cascade do |t|

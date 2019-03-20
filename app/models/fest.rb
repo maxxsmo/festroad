@@ -84,7 +84,7 @@ class Fest < ApplicationRecord
   def self.start_date(date, festival)
     result = []
     festival.each do |fest|
-        if date >=  fest.start_date
+        if date <=  fest.start_date
           result << fest
         end
     end

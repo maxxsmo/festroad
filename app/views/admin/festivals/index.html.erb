@@ -1,59 +1,53 @@
+<%= render 'admin/sidebar' %>
+
 <div class="page-container">
+
+<!-- Button to create a fest-->
+<br>
+        <div class="col-12 text-center">
+          <div class="d-flex flex-wrap justify-content-end align-items-end ">
+            <%=link_to 'Créer un nouveau festival', new_admin_festival_path, class: "btn btn-primary text-center" %>
+          </div>
+        </div>
+        
   <!-- Backoffice Fests-->
   <section class="py-5 mb-4">
     <h1 class="h4 block-title text-center pt-3">Les festivals de mon site FestRoad</h1>
 
             <div class="table-responsive">
               <table class= 'table table-striped'>
-              <thead>
-              <tr class= 'bg-gradient'>
-                <th>#</th>
-                <th>Titre</th>
-                <th>Description</th>
-                <th>Date de début</th>
-                <th>Date de fin</th>
-                <th>Adresse</th>
-                <th>Website</th>
-                <th>Type de musique</th>
-                <th>Intérieur/Extérieur</th>
-                <th>Validation admin</th>
-                <th>Éditer</th>
-                <th>Supprimer</th>
-              </tr>
-              </thead>
-              <tbody>
-              <% @fests.each do |fest|%>
-              <tr>
-                <td><%=fest.id%></td>
-                <td><%=fest.title%></td>
-                <td><%=fest.description%></td>
-                <td><%=fest.start_date%></td>
-                <td><%=fest.end_date%></td>
-                <td><%=fest.address%></td>
-                <td><%=fest.website%></td>
-                <td><% fest.tags.each do |tag|%><%=tag.music_type.style%><% end %></td> 
-                <td><% fest.fest_locations.each do |fest_location|%><%=fest_location.location_type.location%><% end %></td>
-                <td><%=fest.validation_admin%></td>
-                <td><%=link_to 'Éditer', edit_admin_festival_path(fest.id) %></td>
-                <td><%=link_to 'Supprimer', admin_festival_path(fest.id), method: :delete %></td>
-              </tr>
-                <% end %>
+                <thead>
+                <tr class= 'bg-gradient'>
+                  <th>#</th>
+                  <th>Titre</th>
+                  <th>Date de début</th>
+                  <th>Date de fin</th>
+                  <th>Adresse</th>
+                  <th>Type de musique</th>
+                  <th>Intérieur/Extérieur</th>
+                  <th>Validation admin</th>
+                  <th>Éditer</th>
+                  <th>Supprimer</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% @fests.each do |fest|%>
+                <tr>
+                  <td><%=fest.id%></td>
+                  <td><%=fest.title%></td>
+                  <td><%=fest.start_date%></td>
+                  <td><%=fest.end_date%></td>
+                  <td><%=fest.address%></td>
+                  <td><% fest.tags.each do |tag|%><%=tag.music_type.style%><% end %></td> 
+                  <td><% fest.fest_locations.each do |fest_location|%><%=fest_location.location_type.location%><% end %></td>
+                  <td><%=fest.validation_admin%></td>
+                  <td><%=link_to 'Éditer', edit_admin_festival_path(fest.id) %></td>
+                  <td><%=link_to 'Supprimer', admin_festival_path(fest.id), method: :delete %></td>
+                </tr>
+                  <% end %>
               </table>
-        </div>
-  </div>
-  </div>
+            </div>
+
   </section>
-
-          <!-- Total fests-->
-          <p class="container py-5 mb-4">
-                  <strong>Nombre total de festivals: <%= @fests.count %></strong>
-          </p>
-
-      <!-- Button to create a fest-->
-              <div class="col-12 text-center">
-                <div class="d-flex flex-wrap justify-content-center align-items-center ">
-                  <%=link_to 'Créer un nouveau festival', new_admin_festival_path, class: "btn btn-primary text-center" %>
-                </div>
-              </div>
 </div>
 

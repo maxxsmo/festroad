@@ -10,11 +10,16 @@
           <div class="navbar justify-content-end justify-content-lg-between">
             <ul class="navbar-nav d-none d-lg-block">
               <li class="nav-item">
-                  <%= link_to 'Accueil', root_path , class:"nav-link" %>
-              </li>
-              <li class="nav-item">
                   <%= link_to 'Les festivals', festivals_path , class:"nav-link" %>
               </li>
+              <% if current_user%>
+              <li class="nav-item"> 
+                <%= link_to wish_lists_path, class: "nav-link" do %>
+                          <i class="far fa-heart text-center"></i>
+                            Mes favoris
+                  <% end%>
+              </li>
+              <% end%>
                <li class="nav-item">
                  <%= link_to 'Contact', new_contact_path, class: 'nav-link' %>
               </li>
@@ -24,14 +29,12 @@
                   <li class="nav-item"> 
                     <%= link_to 'Espace Admin', admin_index_path, class: 'nav-link' %>
                 <%end%>
-         
                 <% if current_user%>
                   <li class="nav-item dropdown">
                     <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Espace personel <i class="fas fa-chevron-down"></i>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <%= link_to 'Mes favoris',wish_lists_path, class: 'dropdown-item' %>
                       <%= link_to "Mon profil", profile_path(current_user), class: 'dropdown-item' %>
                       <%= link_to "Paramètres", edit_user_registration_path(current_user), class: 'dropdown-item' %>
                       <%= link_to "Se déconnecter",  destroy_user_session_path, method: :delete, class:"dropdown-item " %>

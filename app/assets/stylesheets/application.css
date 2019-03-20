@@ -190,7 +190,11 @@
 }
 
 .form-date-2 {
-  width: 17%;
+  width: 16%;
+}
+
+.form-title {
+  width: 65%;
 }
  .custom-control-label::after {
   background-color:#E54F26 !important;
@@ -562,7 +566,7 @@ width: 100%;
   display: block;
   float: left;
   text-decoration: none;
-  width: 170px;
+  width: 150px;
   background: #252525;
   border-top: 1px solid #373737;
   border-bottom: 1px solid #1A1A1A;

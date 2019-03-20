@@ -19,10 +19,11 @@
                             Mes favoris
                   <% end%>
               </li>
-              <% end%>
+              
                <li class="nav-item">
-                 <%= link_to 'Contact', new_contact_path, class: 'nav-link' %>
+                 <%= link_to 'Proposer un festival', new_fest_submission_path, class: 'nav-link' %>
               </li>
+              <% end%>
             </ul>
             <ul class="navbar-nav d-none d-lg-block">
                 <% if current_user && current_user.is_admin == true %> 
@@ -34,6 +35,7 @@
                     <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Espace personnel <i class="fas fa-chevron-down"></i>
                     </a>
+
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                       <%= link_to "Mon profil", profile_path(current_user), class: 'dropdown-item' %>
                       <%= link_to "Paramètres", edit_user_registration_path(current_user), class: 'dropdown-item' %>

@@ -71,6 +71,12 @@ fr:
               confirmation: "Vos deux mots de passes ne sont pas identiques."
             email:
               taken: "Cet adresse email est déjà utilisée."
+        fest:
+          attributes:
+            description:
+              too_short: "Votre description doit comporter 4 caractères au minimum."
+            title:
+              too_short: "Votre description doit comporter 4 caractères au minimum."
   errors:
     messages:
       not_saved:

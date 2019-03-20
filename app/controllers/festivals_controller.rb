@@ -11,7 +11,8 @@ class FestivalsController < ApplicationController
       @fests = Fest.title(params[:title]) if params[:title].present?   
     end  
     gon.fest = @fests
-    
+    @music = MusicType.all
+    @location = LocationType.all
   end
 
   def show

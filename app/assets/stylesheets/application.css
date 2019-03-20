@@ -419,9 +419,22 @@ color:#E54F26;
   padding: 120px 20px 10px 20px;
 }
 
-/*CSS FOR MAP*/
+/*CSS FOR MAP FESTIVAL PAGE*/
 
 #map {
+  height: 700px; width: 835px;
+}
+
+.iw_title {
+  font-size: 1.2em;
+  font-weight: 500;
+  color: grey; 
+}
+
+
+/*CSS FOR MAP WISHLIST PAGE*/
+
+#map_2 {
   height: 700px; width: 850px;
 }
 /* Optional: Makes the sample page fill the window. */
@@ -664,3 +677,12 @@ display: inline-block;
 .red-font {
   color : #E54F26 ;
 }
+
+
+
+
+
+
+
+
+

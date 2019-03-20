@@ -1,11 +1,12 @@
+var map;
 function initMap() {
 
       
 // Generate Map and Related CSS
-  let map = new google.maps.Map(document.getElementById('map'), {
+  map = new google.maps.Map(document.getElementById('map'), {
   center: {lat: 46.2276382, lng: 2.2137489},
   zoom: 6,
-  disableDefaultUI: true,
+  mapTypeControl: true,
   styles: [
     {
         "featureType": "road",
@@ -95,29 +96,34 @@ function initMap() {
 
 // For the time being : none
 let infowindow = new google.maps.InfoWindow({
-content: ""
+  content: ""
 });
 
 for(let i = 0; i < gon.fest.length; i++){
 
 // every marker that match the search request
 let marker = new google.maps.Marker({
-position: new google.maps.LatLng(gon.fest[i].latitude,gon.fest[i].longitude),
-map: map
+  position: new google.maps.LatLng(gon.fest[i].latitude,gon.fest[i].longitude),
+  map: map
 });
 
 
 //content marker popup window
 	let fest = 
-  '<div><strong>' + gon.fest[i].title + '</strong></div>' +  '<div>' + gon.fest[i].address + '</div>';
+  '<div class="iw_container"><div class="iw_title"><strong>' + gon.fest[i].title + '</strong></div>' +  '<div class="iw_address">' + gon.fest[i].address + '</div></div>';
    
 
 // show InfoWindow on mouseover event
   google.maps.event.addListener(marker, 'mouseover', function() {
-  maxWidth: 350
-  infowindow.setContent(fest);
-  infowindow.open(map, marker);
+    maxWidth: 350
+    infowindow.setContent(fest);
+    infowindow.open(map, marker);
   });
+
+  google.maps.event.addListener(marker, 'mouseout', function() {
+    maxWidth: 350
+    infowindow.close(map, marker);
+    });
   
 // open modal on click event
   google.maps.event.addListener(marker, 'click', function() {
@@ -125,5 +131,14 @@ map: map
     jQuery.noConflict();
     $('#modalLarge'+i).modal('show');
   });
+
+// google.maps.event.addDomListener(window, "load", initMap);
+
+// function showMarker(id) {
+//  google.maps.event.trigger(marker[id], 'mouseover');
+//}
+
  }
+ 
 }
+

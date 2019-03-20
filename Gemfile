@@ -8,7 +8,6 @@ gem 'faker'
 gem 'dotenv-rails'
 gem 'devise'
 
-
 gem 'gon'
 gem 'jquery-rails'
 

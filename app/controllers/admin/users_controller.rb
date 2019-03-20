@@ -6,7 +6,7 @@ module Admin
     before_action :check_if_admin
     
     def index 
-      @users = User.all
+      @users = User.order("lower(first_name) ASC").all
     end
 
     def new 

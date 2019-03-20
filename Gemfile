@@ -9,6 +9,7 @@ gem 'dotenv-rails'
 gem 'devise'
 
 gem 'gon'
+gem 'jquery-turbolinks'
 gem 'jquery-rails'
 
 gem 'mailjet'
@@ -18,7 +19,6 @@ gem 'nokogiri'
 gem 'json'
 gem 'mime'
 
-gem 'jquery-rails'
 gem 'smtpapi'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

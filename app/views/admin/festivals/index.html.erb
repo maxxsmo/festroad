@@ -16,6 +16,7 @@
                 <th>Website</th>
                 <th>Type de musique</th>
                 <th>Intérieur/Extérieur</th>
+                <th>Validation admin</th>
                 <th>Éditer</th>
                 <th>Supprimer</th>
               </tr>
@@ -32,6 +33,7 @@
                 <td><%=fest.website%></td>
                 <td><% fest.tags.each do |tag|%><%=tag.music_type.style%><% end %></td> 
                 <td><% fest.fest_locations.each do |fest_location|%><%=fest_location.location_type.location%><% end %></td>
+                <td><%=fest.validation_admin%></td>
                 <td><%=link_to 'Éditer', edit_admin_festival_path(fest.id) %></td>
                 <td><%=link_to 'Supprimer', admin_festival_path(fest.id), method: :delete %></td>
               </tr>

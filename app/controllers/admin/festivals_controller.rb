@@ -6,7 +6,7 @@ module Admin
     before_action :check_if_admin
     
     def index 
-      @fests = Fest.all
+      @fests = Fest.order("lower(title) ASC").all
     end
 
     def new 
@@ -28,7 +28,7 @@ module Admin
 
     def update
       @fest = Fest.find(params[:id])
-      if @fest.update(title: params[:title], description: params[:description], start_date: params[:start_date], end_date: params[:end_date], address: params[:address], website: params[:website], festpic: params[:festpic])
+      if @fest.update(title: params[:title], description: params[:description], start_date: params[:start_date], end_date: params[:end_date], address: params[:address], website: params[:website], festpic: params[:festpic], validation_admin: params[:validation_admin])
         redirect_to({action: :index}, success: "Le festival a bien été modifié")
       else 
         render "edit"

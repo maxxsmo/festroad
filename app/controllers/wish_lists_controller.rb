@@ -2,6 +2,7 @@ class WishListsController < ApplicationController
   before_action :authenticate_user!, only: [:index, :destroy, :create]
   def index
     @wishlist = WishList.where(user: current_user)
+    
   end
 
   def destroy

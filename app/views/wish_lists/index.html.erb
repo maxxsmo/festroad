@@ -22,7 +22,10 @@
   <% else %>
     <div class= "container">
       <div class= "row">
-        <div class= "col-sm-0 col-md-6"></div>
+        <div class= "col-sm-0 col-md-6">
+        <div id="map_2"></div>
+        <%= javascript_include_tag('map_2.js') %>
+        </div>
         <div class="col-sm-3 col-md-6">
           <% @wishlist.each do |wishlist| %>
             <% fest = wishlist.fest %>
@@ -35,3 +38,7 @@
  </div>
   <% end %> 
 </div>
+
+<script src=<%="https://maps.googleapis.com/maps/api/js?key=#{ENV['API_KEY_GOOGLE_MAPS']}&callback=initMap"%> type="text/javascript"></script>
+
+

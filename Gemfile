@@ -14,6 +14,11 @@ gem 'jquery-rails'
 gem 'mailjet'
 gem 'mail_form'
 gem 'mini_magick'
+gem 'nokogiri'
+gem 'json'
+gem 'mime'
+
+gem 'jquery-rails'
 gem 'smtpapi'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

@@ -8,12 +8,12 @@ class Fest < ApplicationRecord
   has_one_attached :festpic
   
   validates :title, presence: true, length: { in: 4..140 }
-  validates :description, length: { in: 4..1000 }
-  validates :address, presence: true
-  validates :start_date, presence: true
-  validate :date_not_in_past
-  validate :incorrect_dates
-  validates :end_date, presence: true
+  # validates :description, length: { in: 4..1000 }
+  # validates :address, presence: true
+  # validates :start_date, presence: true
+  # validate :date_not_in_past
+  # validate :incorrect_dates
+  # validates :end_date, presence: true
   geocoded_by :address
   after_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
 
@@ -110,4 +110,19 @@ class Fest < ApplicationRecord
     result = result.sort! {|a,b| a.start_date <=> b.start_date}
     result
   end
+
+#   #Importing JSON in Database
+#   DECLARE @json
+#   SET @json = festivals_details.json
+  
+#   SELECT * FROM  
+#    OPENJSON ( @json )  
+#   WITH (   
+#     title   varchar '$.Fest.Title'   
+#     website varchar '$.Fest.Website' 
+#     address  varchar '$.Fest.Address'
+#     start_date date '$.Fest.StartDate'
+#     end_date date '$.Fest.EndDate'  
+#    )
+
 end

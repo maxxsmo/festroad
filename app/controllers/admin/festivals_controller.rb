@@ -1,6 +1,6 @@
 module Admin
   
-  class FestsController < ApplicationController
+  class FestivalsController < ApplicationController
 
     before_action :set_fest, only: [:update, :edit, :destroy ]
     before_action :check_if_admin
@@ -28,7 +28,7 @@ module Admin
 
     def update
       @fest = Fest.find(params[:id])
-      if @fest.update(title: params[:title], description: params[:description], start_date: params[:start_date], end_date: params[:end_date], address: params[:address], website: params[:website])
+      if @fest.update(title: params[:title], description: params[:description], start_date: params[:start_date], end_date: params[:end_date], address: params[:address], website: params[:website], festpic: params[:festpic])
         redirect_to({action: :index}, success: "Le festival a bien été modifié")
       else 
         render "edit"
@@ -46,10 +46,17 @@ module Admin
       @fest = Fest.find(params[:id])
     end
 
-    private
     def fest_params
-      params.require(:fest).permit(:title, :description, :start_date, :end_date, :address, :website)
+      params.require(:fest).permit(:title, :description, :start_date, :end_date, :address, :website, :festpic)
     end
+
+    def check_if_admin
+      if current_user && current_user.is_admin == false
+      redirect_to root_path
+      end
+    end
+
+    
   end
 
 end

@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :wish_lists, only: [:index, :destroy, :new, :create]
   resources :home, only: [:index, :show]
@@ -8,7 +7,7 @@ Rails.application.routes.draw do
   resources :fest_submissions, only: [:new, :create]
   resources :festivals, only: [:index, :show]
   root 'home#index'
-  resources :fests, only: [:index]
+
 
   devise_for :users, :controllers => { registrations: 'registrations' }
   
@@ -18,7 +17,9 @@ Rails.application.routes.draw do
 
   resources :admin, only: [:index]
   namespace :admin do
-    resources :fests
+    resources :festivals do
+      resources :festpics, only: [:create]
+    end
     resources :users, only: [:index, :edit, :update, :destroy]
   end
 

@@ -20,8 +20,8 @@
                 <h4 class="widget-title">Espace Perso</h4>
                  <% if current_user %>
                   <ul>
-                    <li class="align-items-center"><%= link_to "Mon espace", profile_path(current_user)%></li>
-                    <li class="align-items-center"><%= link_to "Déconnexion", destroy_user_session_path%></li>
+                    <li class="align-items-center"><i class="footer-icon fas fa-user-plus"></i><%= link_to "Mon espace", profile_path(current_user)%></li>
+                    <li class="align-items-center"><i class="footer-icon fas fa-sign-in-alt"></i><%= link_to "Déconnexion", destroy_user_session_path%></li>
                   </ul>
                   <% else %>
                   <ul>

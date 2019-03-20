@@ -27,9 +27,8 @@
 
                 <div class="d-flex justify-content-around">
                   <%= link_to "Détails", festival_path(fest.id), :class => "btn btn-style-4 btn-primary", "data-toggle" => "modal", "data-target" => "#modalLarge#{x}" %>
-                  <%= link_to "", wish_lists_path(fest.id), :class => "far fa-heart btn btn-primary", method: "create" %>
+                  <%= link_to "", wish_lists_path(fest.id), :class => "no-fav far fa-heart btn btn-primary", method: "post", remote: true %>
                 </div>
-
 
               <div class="modal fade" id="<%= "modalLarge#{x}" %>" tabindex="-1" role="dialog">
                 <div class="modal-dialog modal-lg" role="document">
@@ -61,7 +60,7 @@
                     
                     <div class="modal-footer">
                       <button class="btn btn-secondary btn-sm" type="button" data-dismiss="modal">Fermer</button>
-                      <%= link_to "", wish_lists_path(fest.id), :class => "far fa-heart btn btn-primary btn-sm", method: "create" %>
+                      <%= link_to "", wish_lists_path(fest.id), :class => "far fa-heart btn btn-primary btn-sm", method: "post", remote: true  %>
                     </div>
 
                   </div>

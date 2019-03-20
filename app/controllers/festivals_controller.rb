@@ -10,16 +10,15 @@ class FestivalsController < ApplicationController
       @fests = Fest.title(params[:title]) if params[:title].present?   
     end  
     gon.fest = @fests
+    
   end
 
   def show
     @fest = Fest.find(params[:id])
     respond_to do |format|
-      format.html{
-        redirect_to root_path
-      }
-      format.js{
-      }
+      format.html
+      format.js
     end
   end
+  
 end

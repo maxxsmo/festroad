@@ -17,21 +17,33 @@
     </div>
   </div>
 <div class= "page-container">
-  <% if @wishlist.count == 0 %>
-    <h1>Pour l'instant, vous n'avez ajouté aucun festival à vos favoris </h1>
-  <% else %>
+  
     <div class= "container">
       <div class= "row">
-        <div class= "col-sm-0 col-md-6"></div>
+        <div class= "col-sm-0 col-md-6">
+          <%= javascript_include_tag('map.js') %>
+        </div>
+       
+        <% if @wishlist.count != 0 %>
         <div class="col-sm-3 col-md-6">
+           <h3 class= "text-center"> Ma liste de favoris</h3>
           <% @wishlist.each do |wishlist| %>
             <% fest = wishlist.fest %>
             <div id= <%= wishlist.id %>>
             <%= render 'fest_cart', wishlist: wishlist, fest: fest %>
             </div>
-          <% end %>
+            <%end%>
+        </div>
+        <% else %>
+          <div class="col-sm-3 col-md-6">
+             <h3 class= "text-center"> Ma liste de favoris</h3>
+            <h4> Vous n'avez pas encore ajouté de festival à votre liste.</h4>  
+          </div>
+        <%end%>
         </div>
     </div>
- </div>
-  <% end %> 
 </div>
+
+<script src=<%="https://maps.googleapis.com/maps/api/js?key=#{ENV['API_KEY_GOOGLE_MAPS']}&callback=initMap"%> type="text/javascript"></script>
+
+

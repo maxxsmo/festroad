@@ -14,10 +14,10 @@
                 <p><strong><%= fest.start_date.strftime("%d/%m/%Y") %> - <%= fest.end_date.strftime("%d/%m/%Y") %></strong></p>
                 <p> Du côté de <%= fest.address%> </p>
                 <%if fest.fest_locations != []%>
-                  <p><i class="fas fa-map-marker-alt"></i><%= fest.fest_locations.each do |location| %><%= location.location_type.location%><%end%></p>
+                  <p><i class="fas fa-map-marker-alt"></i><% fest.fest_locations.each do |location| %><%= location.location_type.location%><%end%></p>
                 <% end %>
                 <%if fest.tags != [] %>
-                  <%= fest.tags.each do |tag| %><a class="tag-link"><%= tag.music_type.style%> </a><%end%>
+                  <% fest.tags.each do |tag| %><p class="tag-link"><%= tag.music_type.style%> </p><%end%>
                 <% end %>
               </div>
               <div class="card-footer text-muted text-sm">

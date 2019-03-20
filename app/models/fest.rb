@@ -111,6 +111,15 @@ class Fest < ApplicationRecord
     result.first(6)
   end
 
+  def self.date(fests)
+    result = []
+    fests.each do |fest|
+      result << fest
+    end
+    result = result.sort! {|a,b| a.start_date <=> b.start_date}
+    result.first(6)
+  end
+
 #   #Importing JSON in Database
 #   DECLARE @json
 #   SET @json = festivals_details.json

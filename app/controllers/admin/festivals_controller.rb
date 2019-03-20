@@ -6,7 +6,15 @@ module Admin
     before_action :check_if_admin
     
     def index 
-      @fests = Fest.order("lower(title) ASC").all
+      @fests = Fest.where(nil)
+        
+      @fests = @fests.where(validation_admin: params[:validation]) if params[:validation].present?
+      @fests = @fests.music(params[:music], @fests) if params[:music].present?
+      @fests = @fests.title(params[:title]) if params[:title].present?
+      @fests = Fest.location(params[:location], @fests) if params[:location].present?
+      @fests = Fest.date(@fests)
+      @music = MusicType.all
+      @location = LocationType.all
     end
 
     def new 

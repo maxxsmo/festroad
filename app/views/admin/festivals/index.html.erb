@@ -1,4 +1,6 @@
 <div class="page-container">
+
+
   <!-- Backoffice Fests-->
   <section class="py-5 mb-4">
     <h1 class="h4 block-title text-center pt-3">Les festivals de mon site FestRoad</h1>
@@ -7,18 +9,28 @@
               <table class= 'table table-striped'>
               <thead>
               <tr class= 'bg-gradient'>
+              <%= form_tag(admin_festivals_path, method: :get ) do %>
+  
+    
                 <th>#</th>
-                <th>Titre</th>
+                <th>Titre<%= text_field_tag :title, params[:title], class: "form-control form-title", placeholder: "Nom d'un festival"  %>
+                </th>
                 <th>Description</th>
                 <th>Date de début</th>
                 <th>Date de fin</th>
                 <th>Adresse</th>
                 <th>Website</th>
-                <th>Type de musique</th>
-                <th>Intérieur/Extérieur</th>
-                <th>Validation admin</th>
+                <th>Type de musique<%= select_tag :music, options_for_select(@music.collect{ |u| [u.style, u.id] }), include_blank: "Type de musique" , class: "form-control form-date-2 mr-2" %>
+                </th>
+                <th>Intérieur/Extérieur <%= select_tag :location, options_for_select(@location.collect{ |u| [u.location, u.id] }.slice(0..-2)), include_blank:"Type de festival" , class: "form-control form-date-2 mr-2" %>
+</th>
+                <th>validation admin<%= select_tag :validation, options_for_select([true, false, ["nil", nil]]), include_blank:"Validation admin" , class: "form-control form-title" %></th>
                 <th>Éditer</th>
                 <th>Supprimer</th>
+                <th><%= button_tag 'Rechercher', class: "btn btn-primary"  do %>
+                    <i class="fas fa-search"></i>
+                  <% end %>  
+                <% end %></th>
               </tr>
               </thead>
               <tbody>

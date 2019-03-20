@@ -1,6 +1,7 @@
 class FestivalsController < ApplicationController
+
   def index 
-    @fests = Fest.where(nil)
+    @fests = Fest.where(validation_admin: true)
     if params[:advanced]
       @fests = @fests.music(params[:music], @fests) if params[:music].present?
       @fests = Fest.location(params[:location], @fests) if params[:location].present?

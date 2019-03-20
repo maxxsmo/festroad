@@ -21,23 +21,22 @@
               <%= form_tag(admin_festivals_path, method: :get ) do %>
   
     
-                <th>#</th>
-                <th>Titre<%= text_field_tag :title, params[:title], class: "form-control form-title", placeholder: "Nom d'un festival"  %>
+                <th class="backoffice-table">ID</th>
+                <th class="backoffice-table">Titre<%= text_field_tag :title, params[:title], placeholder: "Nom d'un festival"  %>
                 </th>
                
-                <th>Date de début</th>
-                <th>Date de fin</th>
-                <th>Adresse</th>
+                <th class="backoffice-table">Date début</th>
+                <th class="backoffice-table">Date fin</th>
+                <th class="backoffice-table">Adresse<%= text_field_tag :address, params[:address], placeholder: "Nom ville"  %></th>
                 
-                <th>Type de musique<%= select_tag :music, options_for_select(@music.collect{ |u| [u.style, u.id] }), include_blank: "Type de musique" , class: "form-control form-date-2 mr-2" %>
+                <th class="backoffice-table">Type de musique<%= select_tag :music, options_for_select(@music.collect{ |u| [u.style, u.id] }), include_blank: "Type de musique" %>
                 </th>
-                <th>Intérieur/Extérieur <%= select_tag :location, options_for_select(@location.collect{ |u| [u.location, u.id] }.slice(0..-2)), include_blank:"Type de festival" , class: "form-control form-date-2 mr-2" %>
+                <th class="backoffice-table">Intérieur/Extérieur <%= select_tag :location, options_for_select(@location.collect{ |u| [u.location, u.id] }.slice(0..-2)), include_blank:"Type de festival" %>
 </th>
-                <th>validation admin<%= select_tag :validation, options_for_select([true, false, ["nil", nil]]), include_blank:"Validation admin" , class: "form-control form-title" %></th>
-                <th>Éditer</th>
-                <th>Supprimer</th>
+                <th class="backoffice-table">validation admin<%= select_tag :validation, options_for_select([true, false, ["nil", nil]]), include_blank:"Validation admin" %></th>
+                <th class="backoffice-table"></th>
                 <th><%= button_tag 'Rechercher', class: "btn btn-primary"  do %>
-                    <i class="fas fa-search"></i>
+                    <i class="fas fa-search fa-2x"></i>
                   <% end %>  
                 <% end %></th>
               </tr>

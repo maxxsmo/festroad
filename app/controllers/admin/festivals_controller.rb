@@ -7,7 +7,7 @@ module Admin
     
     def index 
       @fests = Fest.where(nil)
-        
+      @fests = @fests.where(address: params[:address]) if params[:address].present?
       @fests = @fests.where(validation_admin: params[:validation]) if params[:validation].present?
       @fests = @fests.music(params[:music], @fests) if params[:music].present?
       @fests = @fests.title(params[:title]) if params[:title].present?

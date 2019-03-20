@@ -667,3 +667,8 @@ display: inline-block;
 .red-font {
   color : #E54F26 ;
 }
+
+/*** TABLE BACKOFFICE ADMIN ***/
+.backoffice-table {
+  vertical-align: top !important;
+}

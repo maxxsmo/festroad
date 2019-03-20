@@ -458,7 +458,7 @@ overflow-y: scroll;
 
 /* CSS FOR BANNER */
 .banner-overlay {
-  background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(cover_concerts.jpg);
+  background: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,.3)), url(cover_concerts.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;

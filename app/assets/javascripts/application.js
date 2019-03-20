@@ -10,10 +10,10 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 
+
 //= require jquery3
 //= require jquery_ujs
 //= require activestorage
-//= require turbolinks
 //= require js/bootstrap.min
 //= require js/card.min
 //= require js/gmap3.min
@@ -33,6 +33,3 @@
 //= require js/parallax-scroll.min
 //= require js/popper.min
 //= require_tree .
-
-document.addEventListener("turbolinks:load", function() {
- });

@@ -7,8 +7,8 @@
             <%= form_tag(festivals_path, method: :get ) do %>
                 <div class= "row justify-content-center">
                 <%= text_field_tag :title, params[:title], class: "form-control form-title", placeholder: "Nom d'un festival"  %>
-                <a class= "btn btn-primary" id= "searchA"><i class="fas fa-plus"></i></a><br/>
-                <a class= "btn btn-primary" id= "searchB"><i class="fas fa-minus"></i></a><br/>
+                <span class= "btn btn-primary" id= "searchA"><i class="fas fa-plus"></i></span><br/>
+                <span class= "btn btn-primary" id= "searchB"><i class="fas fa-minus"></i></span><br/>
                 <%= button_tag 'Rechercher', class: "btn btn-primary"  do %>
                     <i class="fas fa-search"></i>
                 <% end %>            

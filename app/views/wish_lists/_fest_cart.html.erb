@@ -8,7 +8,7 @@
       <%end%>
     </a>
 
-    <%= link_to(wish_list_path(wishlist.id), method: :delete, data: {confirm: "Es-tu sûr?"},  class: "remove-item mr-3", remote: true) do %>
+    <%= link_to(wish_list_path(wishlist.id), method: :delete, data: {confirm: "Es-tu sûr?"},  class: "remove-item mr-3") do %>
       <i class="fas fa-times"></i>
     <% end %>
          
@@ -17,7 +17,7 @@
         <%= fest.title %></a>
       </h4>
       <p class="text-muted"> 
-        <span><i class="fe-icon-clock"></i> Du <%= fest.start_date.strftime("%d/%m/%Y") %> au <%= fest.end_date.strftime("%d/%m/%Y") %></span>
+        <span><i class="far fa-clock"></i> Du <%= fest.start_date.strftime("%d/%m/%Y") %> au <%= fest.end_date.strftime("%d/%m/%Y") %></span>
       </p>
       
       <% if fest.description != nil %>

@@ -47,8 +47,8 @@
                 <td><%=fest.start_date%></td>
                 <td><%=fest.end_date%></td>
                 <td><%=fest.address%></td>
-                <td><% fest.tags.each do |tag|%><%=tag.music_type.style%><% end %></td> 
-                <td><% fest.fest_locations.each do |fest_location|%><%=fest_location.location_type.location%><% end %></td>
+                <td><% fest.tags.each do |tag|%> <%=tag.music_type.style%><% end %></td> 
+                <td><% fest.fest_locations.each do |fest_location|%> <%=fest_location.location_type.location%><% end %></td>
                 <td><%=fest.validation_admin%></td>
                 <td><%=link_to 'Éditer', edit_admin_festival_path(fest.id) %></td>
                 <td><%=link_to 'Supprimer', admin_festival_path(fest.id), method: :delete %></td>

@@ -225,6 +225,11 @@
 }
 
 /*CSS FOR ICON TABLE*/
+
+.backoffice {
+  background-color: #4A1836;
+  color: #FFFFFF;
+}
 .icon-table td {
   text-align: center;
   padding-top: .5em;

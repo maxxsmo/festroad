@@ -6,6 +6,7 @@ class AdminController < ApplicationController
     @admins = User.where(is_admin: true)
     @fests = Fest.all
     @users = User.all
+    @festlive = @fests.where(validation_admin: true)
   end
   
 end

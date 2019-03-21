@@ -44,10 +44,12 @@
    $("#searchA").toggle();
    $("#searchB").toggle();
    $("#form").toggle();
+   $(".arrow").css("top", "140px");
  })
  $("#searchB").click(function(){
   $("#form").toggle();
   $("#searchA").toggle();
   $("#searchB").toggle();
+  $(".arrow").css("top", "200px");
 })
 });

@@ -23,7 +23,7 @@ class FestivalsController < ApplicationController
       format.html
       format.js
     end
-    @multiple = Fest.all 
+    @carousel = Fest.all 
   end
   
 

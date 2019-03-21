@@ -69,6 +69,7 @@
                         <p><strong>Localisation : </strong><%= fest.address %></p>
                       </div>
                        <p><strong>Description : </strong> <%= fest.description %></p>
+                       <p><strong>Site officiel : </strong> <%= link_to fest.website, fest.website %></p>
                         <center><%= link_to "", wish_lists_path(fest.id), :class => "far fa-heart btn btn-primary btn-md", method: "post", remote: true %>
                     </div>
                   </div>    

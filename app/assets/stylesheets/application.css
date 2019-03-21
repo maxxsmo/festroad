@@ -237,9 +237,6 @@
 }
 
 /*CSS FOR HOW SECTION*/
-.icons-step{
-  color:#f73f00;
-}
 
 .step.step-with-icon .step-icon::after {
   border: 1px dashed #e54f2699 ;
@@ -247,8 +244,12 @@
 
 .step.step-with-icon .step-icon::before {
   transform: scale(0);
-  background-color:#e54f2647;
   opacity: 0;
+}
+
+
+.go-up:hover {
+  margin-bottom: 2%;
 }
 
 #sectionhow{

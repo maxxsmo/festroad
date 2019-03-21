@@ -108,7 +108,7 @@ class Fest < ApplicationRecord
       result << fest
     end
     result = result.sort! {|a,b| a.start_date <=> b.start_date}
-    result.first(6)
+    result.uniq.first(6)
   end
 
   def self.date(fests)

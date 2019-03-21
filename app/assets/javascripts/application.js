@@ -33,8 +33,6 @@
 //= require assets/javascripts/parallax-scroll.min
 //= require assets/javascripts/popper.min
 //= require fav
-//= require vendor.min
-//= require theme.min
 //= require rails-ujs
 //= require_tree .
 
@@ -46,12 +44,10 @@
    $("#searchA").toggle();
    $("#searchB").toggle();
    $("#form").toggle();
-   $(".arrow").css("top", "140px");
  })
  $("#searchB").click(function(){
   $("#form").toggle();
   $("#searchA").toggle();
   $("#searchB").toggle();
-  $(".arrow").css("top", "200px");
 })
 });

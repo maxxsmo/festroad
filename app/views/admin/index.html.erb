@@ -1,19 +1,37 @@
-   <%= render 'admin/sidebar' %>
+<%= render 'admin/sidebar' %>
 
-        <div class="page-container">
-                <!-- Backoffice for Admin-->
-                <section class="container py-5 mb-4">
-                        <h1 class="h4 block-title text-center pt-3">Back Office Admin de mon site FestRoad</h1>
+<div class="page-container">
 
-                        <!-- Total users-->
-                        <p class="container py-5 mb-4">
-                                <strong>Nombre total d'utilisateurs: <%= @users.count %></strong>
-                        </p>
+	<!-- Backoffice for Admin-->
+	<section class="container py-5 mb-4">
+		<h1 class="h4 block-title text-center pt-3">Back Office Admin de mon site FestRoad</h1>
 
-                        <!-- Total fests-->
-                        <p class="container py-5 mb-4">
-                                <strong>Nombre total de festivals: <%= @fests.count %></strong>
-                        </p>
-                </section>
-        </div>
+		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 row">
 
+			<!-- Total users-->
+			<div class="container py-5 mb-4 col-xl-6 col-lg-6 col-md-6 col-sm-6 row"><p><strong>Nombre total d'utilisateurs: <%= @users.count %></strong></p>
+
+				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 row">
+					<div col-xl-1 col-lg-1 col-md-1 col-sm-1><p><strong>Nom</strong></p></div>
+					<div col-xl-1 col-lg-1 col-md-1 col-sm-1><p><strong>Prénom</strong></p></div>
+					<div col-xl-1 col-lg-1 col-md-1 col-sm-1><p><strong>email</strong></p></div>
+					<div col-xl-1 col-lg-1 col-md-1 col-sm-1><p><strong>Admin?</strong></p></div>
+				</div>
+
+			
+
+			</div>
+
+			
+
+			<!-- Total fests-->
+			<p class="container py-5 mb-4 col-xl-6 col-lg-6 col-md-6 col-sm-6 "><strong>Nombre total de festivals: <%= @fests.count %></strong>
+			
+			
+			</p>
+
+
+		</div>
+	</section>
+</div>
+<div style="background: #4A1836; height: 10%;"></div>

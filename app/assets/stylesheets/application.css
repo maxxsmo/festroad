@@ -664,3 +664,7 @@ display: inline-block;
   transition: all .2s ease 0s;
 }
 
+.back-color2 {
+  background: #f8f9fa;
+}
+

@@ -12,7 +12,6 @@ module Admin
       @fests = @fests.music(params[:music], @fests) if params[:music].present?
       @fests = @fests.title(params[:title]) if params[:title].present?
       @fests = Fest.location(params[:location], @fests) if params[:location].present?
-      @fests = Fest.date(@fests)
       @music = MusicType.all
       @location = LocationType.all
     end

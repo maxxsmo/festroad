@@ -434,7 +434,8 @@ color:#E54F26;
 /*CSS FOR MAP FESTIVAL PAGE*/
 
 #map {
-  height: 700px; width: 835px;
+  height: 100%; 
+  width: 100%;
 }
 
 .iw_title {
@@ -447,7 +448,8 @@ color:#E54F26;
 /*CSS FOR MAP WISHLIST PAGE*/
 
 #map_2 {
-  height: 500px; width:550px;
+  height: 100%;
+   width:100%;
 }
 
 /* Optional: Makes the sample page fill the window. */
@@ -455,6 +457,10 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+}
+
+a {
+  color: #E54F26 ;
 }
 
 /* CSS for index fest */
@@ -516,6 +522,14 @@ overflow-y: scroll;
 
 /*** BUTTONS ***/
 
+.fa-heart:before, .text-accent{
+  color:#E54F26 ;
+}
+
+.no-fav{
+text-decoration: none;  
+
+}
 .btn-primary{
   border-radius: var(--border-button-border-radius, 4px);
 }

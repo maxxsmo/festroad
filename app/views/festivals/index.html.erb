@@ -32,21 +32,20 @@
                   <%= image_tag 'https://festivalhommesforts.ca/wp-content/uploads/2017/06/Festival_music_374x230.jpg' %>
               <%end%>
               <div class="card-body card" onmouseover=<%="showMarker(#{x})"%>>
-                  <center><h6 class="card-title"><%= fest.title %></h6></center><br>
+                  <h6 class="card-title text-center"><%= fest.title %></h6><br>
                 <div class="d-flex justify-content-around">
                   <p><strong>Du : </strong><%= fest.start_date.strftime("%d/%m/%Y") %></p>
                   <p><strong>Au : </strong><%= fest.end_date.strftime("%d/%m/%Y") %></p>
                 </div>
               <div class="d-flex justify-content-around">
-                <div class="col-md-6">
+                <div class="col-md-6 text-center">
                   <%= link_to "Détails", festival_path(fest.id), :class => "btn btn-style-4 btn-primary", "data-toggle" => "modal", "data-target" => "#modalLarge#{x}" %>
                 </div>
-                <div class= "col-md-6 justify-content-center">
-                  <% if @result.include?(fest) %><i class="fas fa-heart"></i><% else %><%= link_to "", wish_lists_path(fest.id), :class => "no-fav far fa-heart btn btn-primary", method: "post", id: "fav", onclick: "changeClass()"  %><%end%>
+                <div class= "col-md-6 text-center align-self-center">
+                  <% if @result.include?(fest) %><i class="fas fa-heart fa-2x text-accent"></i>
+                  <% else %><%= link_to "", wish_lists_path(fest.id), :class => "no-fav far fa-heart fa-2x text-accent", method: "post" %><%end%>
                 </div>
               </div>
-
-
 
               <div class="modal fade mt-5 pt-5" id="<%= "modalLarge#{x}" %>" tabindex="-1" role="dialog">
                 <div class= "modal-dialog modal-lg mb-2 card col-xl-12 col-lg-12 col-md-12 col-sm-12" role="document">
@@ -71,7 +70,8 @@
                       </div>
                        <p><strong>Description : </strong> <%= fest.description %></p>
                        <p><strong>Site officiel : </strong> <%= link_to fest.website, fest.website %></p>
-                        <center><%= link_to "", wish_lists_path(fest.id), :class => "far fa-heart btn btn-primary btn-md", method: "post", remote: true %>
+                        <% if @result.include?(fest) %><i class="fas fa-heart fa-2x text-accent"></i>
+                        <% else %><%= link_to "", wish_lists_path(fest.id), :class => "no-fav far fa-heart fa-2x text-accent", method: "post" %><%end%>
                     </div>
                   </div>    
                 </div>

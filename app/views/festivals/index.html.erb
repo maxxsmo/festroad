@@ -30,7 +30,7 @@
                   <%= image_tag 'https://festivalhommesforts.ca/wp-content/uploads/2017/06/Festival_music_374x230.jpg' %>
               <%end%>
                           
-              <div class="card-body" onmouseover=<%="showMarker(#{x})"%>>
+              <div class="card-body" data-id=<%=x%> onmouseover=<%="showMarker(#{x})"%>>
                    <center><h6 class="card-title red-font"><%= fest.title %></h6></center><br>
                 <div class="d-flex justify-content-around">
                   <p><strong>Du : </strong><%= fest.start_date.strftime("%d/%m/%Y") %></p>
@@ -100,3 +100,8 @@
 
 
 
+<script>
+$('.card-body').on('click', function(e){
+  $(this).data(id)
+})
+</script>

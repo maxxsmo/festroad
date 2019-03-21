@@ -6,12 +6,13 @@
 
             <%= form_tag(festivals_path, method: :get ) do %>
                 <div class= "row justify-content-center">
-                <%= text_field_tag :title, params[:title], class: "form-control form-title", placeholder: "Nom d'un festival"  %>
-                <a class= "btn btn-primary" id= "searchA"><i class="fas fa-plus"></i></a><br/>
-                <a class= "btn btn-primary" id= "searchB"><i class="fas fa-minus"></i></a><br/>
-                <%= button_tag 'Rechercher', class: "btn btn-primary"  do %>
+                <%= text_field_tag :title, params[:title], class: "form-title search_bar", placeholder: "  Nom d'un festival"  %>
+                <%= button_tag 'Rechercher', class: "btn btn_search"  do %>
                     <i class="fas fa-search"></i>
-                <% end %>            
+                <% end %>  
+                <span class= "btn btn_advanced" id= "searchA"><i class="fas fa-plus"></i></span><br/>
+                <span class= "btn btn_advanced" id= "searchB"><i class="fas fa-minus"></i></span><br/>
+                          
                
                 </div>
                 <div class= "row justify-content-center mt-3" id= "form">
@@ -24,13 +25,17 @@
                 
             <%end%><br/>
             <div>
-        <%= link_to("#services", class: "scroll-to btn btn-style-4 btn-primary btn-lg mt-3") do %>
-            <i class="fas fa-arrow-down"></i>
+        <%= link_to("#services", class: "arrow") do %>
+            <i class="fas fa-chevron-down fa-2x"></i>
         <% end %>
       </div>
+      
           </div>
+          
           </div>
+          
         </div>
+        
     </div>
 </div>
 

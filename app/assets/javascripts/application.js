@@ -10,10 +10,11 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 
-
 //= require jquery3
 //= require jquery_ujs
 //= require activestorage
+//= require assets/javascripts/vendor.min
+//= require assets/javascripts/theme.min
 //= require assets/javascripts/bootstrap.min
 //= require assets/javascripts/card.min
 //= require assets/javascripts/gmap3.min
@@ -32,7 +33,7 @@
 //= require assets/javascripts/owl.carousel.min
 //= require assets/javascripts/parallax-scroll.min
 //= require assets/javascripts/popper.min
-//= require fav
+
 //= require rails-ujs
 //= require_tree .
 

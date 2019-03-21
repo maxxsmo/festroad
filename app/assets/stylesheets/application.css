@@ -225,6 +225,11 @@
 }
 
 /*CSS FOR ICON TABLE*/
+
+.backoffice {
+  background-color: #4A1836;
+  color: #FFFFFF;
+}
 .icon-table td {
   text-align: center;
   padding-top: .5em;
@@ -245,9 +250,6 @@
 }
 
 /*CSS FOR HOW SECTION*/
-.icons-step{
-  color:#f73f00;
-}
 
 .step.step-with-icon .step-icon::after {
   border: 1px dashed #e54f2699 ;
@@ -255,8 +257,12 @@
 
 .step.step-with-icon .step-icon::before {
   transform: scale(0);
-  background-color:#e54f2647;
   opacity: 0;
+}
+
+
+.go-up:hover {
+  margin-bottom: 2%;
 }
 
 #sectionhow{
@@ -516,7 +522,7 @@ overflow-y: scroll;
 
 
 .banner-overlay {
-  background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(cover_concerts.jpg);
+  background: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,.3)), url(cover_concerts.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -722,8 +728,8 @@ display: inline-block;
   transition: all .2s ease 0s;
 }
 
-.red-font {
-  color : #E54F26 ;
+.back-color2 {
+  background: #f8f9fa;
 }
 
 /*** TABLE BACKOFFICE ADMIN ***/

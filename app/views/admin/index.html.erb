@@ -1,19 +1,29 @@
-   <%= render 'admin/sidebar' %>
+<%= render 'admin/sidebar' %>
 
-        <div class="page-container">
-                <!-- Backoffice for Admin-->
-                <section class="container py-5 mb-4">
-                        <h1 class="h4 block-title text-center pt-3">Back Office Admin de mon site FestRoad</h1>
 
-                        <!-- Total users-->
-                        <p class="container py-5 mb-4">
-                                <strong>Nombre total d'utilisateurs: <%= @users.count %></strong>
-                        </p>
+	<div class="page-container">
 
-                        <!-- Total fests-->
-                        <p class="container py-5 mb-4">
-                                <strong>Nombre total de festivals: <%= @fests.count %></strong>
-                        </p>
-                </section>
-        </div>
+		<!-- Backoffice for Admin-->
+		<section class="container py-5 mb-4">
+			<h1 class="h4 block-title text-center pt-3">Back Office Admin de mon site FestRoad</h1>
 
+
+				<!-- Total users-->
+				<div class="row">
+					<div class="col-sm-4">
+						<p><strong>Nombre total d'utilisateurs: <%= @users.count %></strong></p>
+					</div>
+				
+				<!--Fests online-->
+					<div class="col-sm-4">
+						<p><strong>Nombre de festivals en ligne: <%= @festlive.count %></strong></p>
+					</div>
+
+				<!-- Total fests-->
+					<div class="col-sm-4">
+						<p><strong>Nombre total de festivals: <%= @fests.count %></strong></p>
+					</div>
+				</div>
+		</section>
+	</div>
+<div style="background: #4A1836; height: 10%;"></div>

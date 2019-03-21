@@ -700,3 +700,9 @@ display: inline-block;
 .backoffice-table {
   vertical-align: top !important;
 }
+
+table a {
+  color: #4A1836 !important;
+  text-decoration: underline;
+  background-color: transparent;
+}

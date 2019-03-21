@@ -3,58 +3,49 @@
 <div class="page-container">
     <!-- Backoffice Users-->
     
-    <div class="container">
-      <h1 class= "h4 block-title text-center pt-3">Modifier l'utilisateur</h1>
-        <div class="container-fluid">
+    <section class="bg-secondary bg-cover bg-no-repeat pt-5 pb-4"  data-offset-top="-10" id="contacts">
+      <div class="container py-2 page-container">
+        <h1 class= "h4 block-title text-center pt-3">Modifier l'utilisateur</h1>
+
           <%= form_tag url_for(action: 'update'), method: "put" do %>
-            <div class="row"> 
-              <div class="col-md-4"></div>
-                <div class="col-md-2">
-                  <label> Prénom </label>
-                </div>
-                <div class= "col-md-6">
-                  <p><%= text_field_tag 'first_name', @user.first_name %></p>
-                </div>
-              </div>
-            <div class="row"> 
-              <div class="col-md-4"></div>
-                <div class="col-md-2">
-                  <label> Nom </label>
-                </div>
-                <div class= "col-md-6">
-                  <p><%= text_field_tag 'last_name', @user.last_name %></p>
-                </div>
-            </div>
-            <div class="row"> 
-              <div class="col-md-4"></div>
-                <div class="col-md-2">
-                  <label> Email </label>
-                </div>
-                <div class= "col-md-6">
-                  <p><%= text_field_tag 'email', @user.email%></p>
-                </div>
-            </div>
+
             <div class="row">
-              <div class="col-md-4"></div>
-                <div class="col-md-2">
-                  <label> Administrateur </label>
-                </div>
-                <div class= "col-md-6">
-                  <p><%= radio_button_tag 'is_admin',true %> Oui</p>
-                  <p><%= radio_button_tag 'is_admin',false %> Non</p>
-                </div>                                                        
+              <div class="col-md-6">
+                <label> Prénom </label><span class="text-danger font-weight-medium">*</span>
+                <%= text_field_tag 'first_name', @user.first_name, :size =>"60x1", :required => true , class: "form-control" %>
+                <div class="invalid-feedback">Merci de renseigner le prénom!</div>
+              </div>
+              <div class="col-md-6">
+                <label> Nom </label><span class="text-danger font-weight-medium">*</span>
+                <%= text_field_tag 'last_name', @user.last_name, :size =>"60x1", :required => true , class: "form-control" %>
+                <div class="invalid-feedback">Merci de renseigner le nom!</div>
+              </div>
             </div>
 
-        <!--Validation Button-->
-        <div class="container">
-          <div class="container-fluid">
-            <div class="row"> 
-              <div class= "col-sm-4"></div>
-            <%= submit_tag 'Valider mes modifications de l\'utilisateur', class: "btn btn-primary text-center" %>
+            <br>
+
+            <div class="row">
+              <div class="col-md-6">
+                <label> Email </label><span class="text-danger font-weight-medium">*</span>
+                <%= text_field_tag 'email', @user.email, :size =>"60x1", :required => true , class: "form-control"%>  
+                <div class="invalid-feedback">Merci de renseigner l'email de l'utilisateur!</div>
               </div>
+
+              <div class="col-md-6">
+                <label> Administrateur </label><span class="text-danger font-weight-medium">*</span>
+                <p><%= radio_button_tag 'is_admin',true %> Oui</p><p><%= radio_button_tag 'is_admin',false %> Non</p>
+              </div>   
+            </div> 
+
+        <!--Validation Button-->
+          <div class="row "> 
+            <div class= "py-5 col-sm-12 text-center">
+            <%= submit_tag 'Valider mes modifications de l\'utilisateur', class: "btn btn-primary" %>
             </div>
           </div>
             <% end %>
-        </div>
-    </div>
+
+
+      </div>
+    </section>
 </div>

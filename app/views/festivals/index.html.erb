@@ -23,14 +23,14 @@
     <div class="row cont_fest col-4">
       <div class="d-flex flex-column bd-highlight col-centered">
         <% @fests.each do |fest| %>
-            <div class="card mb-30 card_index">
+            <div class="card mb-30 card_index" id="hello">
               <%if fest.festpic.attached?%>
                 <%= image_tag fest.festpic, alt: 'festival picture' %>
               <%else%>
                   <%= image_tag 'https://festivalhommesforts.ca/wp-content/uploads/2017/06/Festival_music_374x230.jpg' %>
               <%end%>
                           
-              <div class="card-body">
+              <div class="card-body" onmouseover=<%="showMarker(#{x})"%>>
                    <center><h6 class="card-title red-font"><%= fest.title %></h6></center><br>
                 <div class="d-flex justify-content-around">
                   <p><strong>Du : </strong><%= fest.start_date.strftime("%d/%m/%Y") %></p>
@@ -97,5 +97,6 @@
 <div style="height: 100px;"></div>
 
 <script src=<%="https://maps.googleapis.com/maps/api/js?key=#{ENV['API_KEY_GOOGLE_MAPS']}&callback=initMap"%> type="text/javascript"></script>
+
 
 

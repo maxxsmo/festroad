@@ -73,7 +73,7 @@
 
   <br>
 
-  <a class="scroll-to btn btn-style-4 btn-gradient btn-icon-right btn-lg mt-5" href="#">Home Action<i class="fe-icon-arrow-down"></i></a>
+  <span class="scroll-to btn btn-style-4 btn-gradient btn-icon-right btn-lg mt-5">Home Action<i class="fe-icon-arrow-down"></i></span>
 
   <br>
   <br>
@@ -228,11 +228,15 @@
         </div>
       </div>
       <div class="wizard">
-        <nav class="list-group list-group-flush"><a class="list-group-item" data-remote="true" href="/mon_profil">
-          <i class="fas fa-user text-muted"></i>Informations Profil</a>
+        <nav class="list-group list-group-flush">
+          <%= link_to(profile_path(current_user.id) ,class: "list-group-item") do %>
+            <i class="fas fa-user text-muted"></i>Informations Profil
+          <% end %>
           <div class="d-flex justify-content-between align-items-center">
-          </div><a class="list-group-item" data-remote="true" rel="nofollow" data-method="post" href="/mon_profil">
-          <i class="fas fa-shopping-bag text-muted"></i>Ma Wishlist</a>                
+          </div>
+          <%= link_to(profile_path(current_user.id), class: "list-group-item", rel: "nofollow") do %>
+            <i class="fas fa-shopping-bag text-muted"></i>Ma Wishlist
+          <% end %>                
         </nav>
       </div>
     </div>

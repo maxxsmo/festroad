@@ -44,13 +44,13 @@
 
                   <div class="col-md-3">
                     <label> Date de début </label><span class="text-danger font-weight-medium">*</span>
-                    <%= datetime_field_tag 'start_date', @fest.start_date, :size =>"60x1",:required => true, class: "form-control"%>
+                    <%= date_field_tag 'start_date', @fest.start_date, :size =>"60x1",:required => true, class: "form-control", value: @start_date %>
                     <div class="invalid-feedback">Merci de renseigner la date de début du festival!</div>
                   </div>
 
                   <div class="col-md-3">
                     <label> Date de fin </label><span class="text-danger font-weight-medium">*</span>
-                    <%= datetime_field_tag 'end_date', @fest.end_date, :size =>"60x1",:required => true, class: "form-control"%>
+                    <%= date_field_tag 'end_date', @fest.end_date, :size =>"60x1",:required => true, class: "form-control", value: @end_date  %>
                     <div class="invalid-feedback">Merci de renseigner la date de fin du festival!</div>
                   </div>
               </div>
@@ -77,13 +77,30 @@
 
               </div>
 
+              <div class="row">
+
+                <div class="col-md-6">
+                  <label> Type de musique </label><span class="text-danger font-weight-medium">*</span><br>
+                  <%= select_tag :music_types, options_for_select(MusicType.all.collect { |u| [u.style, u.id]}), include_blank:"Type de musique", class: "form-control" %>
+                  <div class="invalid-feedback">Merci de renseigner un type de musique pour le festival!</div>
+
+                </div>
+
+                <div class="col-md-6">
+                  <label> Type de festival </label><span class="text-danger font-weight-medium">*</span><br/>
+                  <%= select_tag :location, options_for_select(LocationType.all.collect{ |u| [u.location, u.id] }.slice(0..-2)), include_blank:"Type de festival", :required => true, class: "form-control"%>
+                  <div class="invalid-feedback">Merci de renseigner un type de festival!</div>
+                </div>
+
+              </div>
+
               <div class="row justify-content-around">
               <div class="row justify-content-start align-items-center">
                   <div>
                     <label class="mt-3"> Validation Administrateur </label><span class="text-danger font-weight-medium">*</span><br/>
                     <div class= "row justify-content-around">
-                    <p><%= radio_button_tag 'validation_admin',true %> Oui</p>
-                    <p><%= radio_button_tag 'validation_admin',false %> Non</p>
+                    <p><%= radio_button_tag 'validation_admin',true, value: @validation_admin %> Oui</p>
+                    <p><%= radio_button_tag 'validation_admin',false, value: @validation_admin %> Non</p>
                     </div>
                   </div>
               </div>       

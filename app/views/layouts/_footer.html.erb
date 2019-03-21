@@ -21,7 +21,11 @@
                  <% if current_user %>
                   <ul>
                     <li class="align-items-center"><i class="footer-icon fas fa-user-plus"></i><%= link_to "Mon espace", profile_path(current_user)%></li>
+<<<<<<< HEAD
                     <li class="align-items-center"><i class="footer-icon fas fa-sign-in-alt"></i><%= link_to "Se déconnecter",  destroy_user_session_path, method: :delete %></li>
+=======
+                    <li class="align-items-center"><i class="footer-icon fas fa-sign-in-alt"></i><%= link_to "Déconnexion", destroy_user_session_path, method: :delete%></li>
+>>>>>>> development
                   </ul>
                   <% else %>
                   <ul>
@@ -30,7 +34,7 @@
                   </ul>
                    <% end %>
               </div>
-              <div class="widget pt-2"><a class="#" href="#"></a></div>
+              <div class="widget pt-2"></div>
             </div>
             <!-- Newsletter -->
             <div class="col-lg-6">

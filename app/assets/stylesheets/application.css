@@ -225,6 +225,11 @@
 }
 
 /*CSS FOR ICON TABLE*/
+
+.backoffice {
+  background-color: #4A1836;
+  color: #FFFFFF;
+}
 .icon-table td {
   text-align: center;
   padding-top: .5em;
@@ -434,7 +439,8 @@ color:#E54F26;
 /*CSS FOR MAP FESTIVAL PAGE*/
 
 #map {
-  height: 700px; width: 835px;
+  height: 100%; 
+  width: 100%;
 }
 
 .iw_title {
@@ -447,7 +453,8 @@ color:#E54F26;
 /*CSS FOR MAP WISHLIST PAGE*/
 
 #map_2 {
-  height: 500px; width:550px;
+  height: 100%;
+   width:100%;
 }
 
 /* Optional: Makes the sample page fill the window. */
@@ -455,6 +462,10 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+}
+
+a {
+  color: #E54F26 ;
 }
 
 /* CSS for index fest */
@@ -480,6 +491,41 @@ overflow-y: scroll;
 
 
 /* CSS FOR BANNER */
+.btn_search {
+  margin-left: -71px;
+  margin-right: 4px;
+}
+
+.btn_search:hover {
+  background-color: white !important;
+  color: black !important;
+  border-radius: 4px !important;
+}
+
+
+.search_bar {
+  border-top-left-radius: 7px !important ;
+  border-bottom-left-radius: 7px  !important;
+  border: none !important;
+}
+.search_bar:focus {
+  outline: none;
+}
+.btn_advanced {
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  background-color: #E54F26 !important;
+  color: white;
+}
+.arrow {
+  position: relative;
+  top: 200px;
+  background-color: transparent;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+
 .banner-overlay {
   background: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,.3)), url(cover_concerts.jpg);
   background-repeat: no-repeat;
@@ -516,6 +562,14 @@ overflow-y: scroll;
 
 /*** BUTTONS ***/
 
+.fa-heart:before, .text-accent{
+  color:#E54F26 ;
+}
+
+.no-fav{
+text-decoration: none;  
+
+}
 .btn-primary{
   border-radius: var(--border-button-border-radius, 4px);
 }
@@ -694,4 +748,10 @@ display: inline-block;
 /*** TABLE BACKOFFICE ADMIN ***/
 .backoffice-table {
   vertical-align: top !important;
+}
+
+table a {
+  color: #4A1836 !important;
+  text-decoration: underline;
+  background-color: transparent;
 }

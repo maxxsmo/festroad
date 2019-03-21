@@ -33,6 +33,8 @@
 //= require assets/javascripts/parallax-scroll.min
 //= require assets/javascripts/popper.min
 //= require fav
+//= require vendor.min
+//= require theme.min
 //= require rails-ujs
 //= require_tree .
 

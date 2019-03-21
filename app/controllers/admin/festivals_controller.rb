@@ -18,10 +18,14 @@ module Admin
 
     def new 
       @fest = Fest.new
+      @tag = Tag.new
+      @fest_location = FestLocation.new
     end
 
     def create 
       @fest = Fest.new(title: params[:title], description: params[:description], start_date: params[:start_date], end_date: params[:end_date], address: params[:address], website: params[:website])
+      @tag = Tag.create(music_type_id: params[:music_types], fest: @fest)
+      @fest_location = FestLocation.create(location_type_id: params[:location], fest: @fest)
       if @fest.save 
         redirect_to({action: :index}, success: "Le festival a bien été créé")
       else 

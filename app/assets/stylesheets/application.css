@@ -10,16 +10,17 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require iziToast.min
- *= require jquery.fancybox.min
- *= require nouislider.min
- *= require owl.carousel.min
- *= require socicon.min
+ *= require assets/css/iziToast.min
+ *= require assets/css/jquery.fancybox.min
+ *= require assets/css/nouislider.min
+ *= require assets/css/owl.carousel.min
+ *= require assets/css/socicon.min
  *= require theme
  *= require_self
 *= require_tree .
 
  */
+
 /* CSS NAVBAR */
 
 #home #navbar{
@@ -244,9 +245,6 @@
 }
 
 /*CSS FOR HOW SECTION*/
-.icons-step{
-  color:#f73f00;
-}
 
 .step.step-with-icon .step-icon::after {
   border: 1px dashed #e54f2699 ;
@@ -254,8 +252,12 @@
 
 .step.step-with-icon .step-icon::before {
   transform: scale(0);
-  background-color:#e54f2647;
   opacity: 0;
+}
+
+
+.go-up:hover {
+  margin-bottom: 2%;
 }
 
 #sectionhow{
@@ -429,11 +431,25 @@ color:#E54F26;
   padding: 120px 20px 10px 20px;
 }
 
-/*CSS FOR MAP*/
+/*CSS FOR MAP FESTIVAL PAGE*/
 
 #map {
-  height: 700px; width: 850px;
+  height: 700px; width: 835px;
 }
+
+.iw_title {
+  font-size: 1.2em;
+  font-weight: 500;
+  color: grey; 
+}
+
+
+/*CSS FOR MAP WISHLIST PAGE*/
+
+#map_2 {
+  height: 500px; width:550px;
+}
+
 /* Optional: Makes the sample page fill the window. */
 html, body {
   height: 100%;
@@ -465,7 +481,7 @@ overflow-y: scroll;
 
 /* CSS FOR BANNER */
 .banner-overlay {
-  background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(cover_concerts.jpg);
+  background: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,.3)), url(cover_concerts.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -671,8 +687,8 @@ display: inline-block;
   transition: all .2s ease 0s;
 }
 
-.red-font {
-  color : #E54F26 ;
+.back-color2 {
+  background: #f8f9fa;
 }
 
 /*** TABLE BACKOFFICE ADMIN ***/

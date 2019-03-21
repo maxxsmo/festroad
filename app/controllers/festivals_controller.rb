@@ -11,6 +11,10 @@ class FestivalsController < ApplicationController
     gon.fest = @fests
     @music = MusicType.all
     @location = LocationType.all
+    @result = []
+    if current_user
+      wishlist = WishList.where(user: current_user).each {|w| @result << w.fest}
+    end
   end
 
   def show
@@ -19,7 +23,7 @@ class FestivalsController < ApplicationController
       format.html
       format.js
     end
-    @multiple = Fest.all 
+    @carousel = Fest.all 
   end
   
 

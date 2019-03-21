@@ -3,80 +3,80 @@
 <div class="page-container">
   <!-- Backoffice Creation Fests-->
 
-   <div class="container">
-      <h1 class= "h4 block-title text-center pt-3">Créer une nouveau festival</h1>
+  <section class="bg-secondary bg-cover bg-no-repeat pt-5 pb-4"  data-offset-top="-10" id="contacts">
+      <div class="container py-2 page-container">
+        <h2 class="h3 contact-form block-title text-center">Créer un nouveau festival</h2>
 
-        <div class="container-fluid">
+        
           <%= form_tag url_for(action: 'create'), method: "post",  multipart: true do %>
-            <div class="row"> 
-              <div class="col-md-4"></div>
-                <div class="col-md-2">
-                  <label> Titre </label>
-                </div>
-                <div class= "col-md-6">
-                  <p><%= text_field_tag 'title', @fest.title%></p>
-                </div>
-            </div>
-            <div class="row"> 
-              <div class="col-md-4"></div>
-                <div class="col-md-2">
-                  <label> Date de début </label>
-                </div>
-                <div class= "col-md-6">
-                  <p><%= datetime_field_tag 'start_date', @fest.start_date%></p>
-                </div>
-            </div>
-            <div class="row"> 
-              <div class="col-md-4"></div>
-                <div class="col-md-2">
-                  <label> Date de fin </label>
-                </div>
-                <div class= "col-md-6">
-                  <p><%= datetime_field_tag 'end_date', @fest.end_date%></p>
-                </div>
-            </div>
+          
+            <% if flash[:error].present? %>
+            <p> flash[:error]</p>
+        <% end %>
+
             <div class="row">
-              <div class="col-md-4"></div>
-                <div class="col-md-2">
-                  <label> Description </label>
+                <div class="col-md-6">
+                  <label> Titre </label><span class="text-danger font-weight-medium">*</span>
+                  <%= text_field_tag 'title', @fest.title, :size =>"60x1", :required => true , class: "form-control"%>
+                  <div class="invalid-feedback">Merci de renseigner le nom du festival!</div>
                 </div>
-                <div class= "col-md-6">
-                  <p><%= text_area_tag 'description', @fest.description %></p>
+
+                <div class="col-md-3">
+                  <label> Date de début </label><span class="text-danger font-weight-medium">*</span>
+                  <%= datetime_field_tag 'start_date', @fest.start_date, :size =>"60x1",:required => true, class: "form-control"%>
+                  <div class="invalid-feedback">Merci de renseigner la date de début du festival!</div>
+                </div>
+
+                <div class="col-md-3">
+                  <label> Date de fin </label><span class="text-danger font-weight-medium">*</span>
+                  <%= datetime_field_tag 'end_date', @fest.end_date, :size =>"60x1",:required => true, class: "form-control"%>
+                  <div class="invalid-feedback">Merci de renseigner la date de fin du festival!</div>
                 </div>
             </div>
-            <div class="row"> 
-              <div class="col-md-4"></div>
-                <div class="col-md-2">
-                  <label> Adresse </label>
-                </div>
-                <div class= "col-md-6">
-                  <p><%= text_field_tag 'address', @fest.address%></p>
-                </div>
-            </div>
+
+            <br>
+
             <div class="row">
-              <div class="col-md-4"></div>
-                <div class="col-md-2">
-                  <label> Website </label>
-                </div>
-                <div class= "col-md-6">
-                  <p><%= text_field_tag 'website', @fest.website %></p>
-                </div>
-            </div>  
-          </div> 
+
+              <div class="col-md-6">
+                <label> Adresse </label><span class="text-danger font-weight-medium">*</span><br>
+                <%= text_field_tag 'address', @fest.address, :size =>"60x1", :required => true, class: "form-control"%>
+                <div class="invalid-feedback">Merci de renseigner l'adresse du festival!</div>
+                <br>
+                <label> Website </label><span class="text-danger font-weight-medium">*</span><br>
+                <%= text_field_tag 'website', @fest.website, :size =>"60x1", :required => true, class: "form-control" %>
+                <div class="invalid-feedback">Merci de renseigner une page internet pour le festival!</div>
+              </div>
+
+              <div class="col-md-6">
+                <label> Description </label><span class="text-danger font-weight-medium">*</span><br/>
+                <%= text_area_tag 'description', @fest.description,:required => true, :size =>"60x6", class: "form-control" %>
+                <div class="invalid-feedback">Merci de renseigner une description pour le festival!</div>
+              </div>
+
+            </div>
 
         <!--Validation button-->
-        <div class="container">
-          <div class="container-fluid">
             <div class="row"> 
-              <div class= "col-sm-4"></div>
-            <%= submit_tag 'Valider mon nouveau festival', class: "btn btn-primary text-center" %>
+              <div class= "py-5 col-sm-12 text-center">
+                <%= submit_tag 'Valider mon nouveau festival', class: "btn btn-primary" %>
               </div>
             </div>
-          </div>
-          <% end %>  
-        </div>
-    </div>
-  
-  </div>
+        <!--End Button-->
 
-</div>
+        <!--Message error-->
+            <div class="col-md-3"></div>
+                <% if @fest.errors.any? %>
+                <p>Nous n'avons pas réussi à enregistrer le festival pour la (ou les) raison(s) suivante(s) :</p>
+              <ul>
+                <% @fest.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+        <!--Message error end-->
+
+        <% end %> 
+        <% end %> 
+    </div>
+</section>

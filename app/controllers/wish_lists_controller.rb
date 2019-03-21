@@ -7,24 +7,26 @@ class WishListsController < ApplicationController
     gon.fest = result
   end
 
+  def create
+    @fest = Fest.find(params[:format])  
+    @wishlist = WishList.new(user: current_user, fest: @fest)
+    if @wishlist.save
+      flash[:success] = "Le festival a bien été ajoutée à votre liste de favoris"
+      redirect_to festivals_path
+    else 
+      render 'new'
+    end
+  end 
+
   def destroy
-    @destroy = WishList.find(params[:id])
-    @destroy.destroy
-    respond_to do |format|
-      format.html {redirect_to wish_lists_path}
-      format.js
+    @favfest = WishList.find(params[:id])
+    @favfest.destroy
+    if @favfest.destroy
+    flash[:danger] = "Le festival a été supprimé de votre liste"
+    redirect_to wish_lists_path
+    else 
+      render 'new'
     end
   end
-
-
-  def create
-  @fest = Fest.find(params[:format])  
-  @wishlist = WishList.create(user: current_user, fest: @fest)
-  puts "créée"
-  respond_to do |format|
-    format.html {redirect_to '/festivals'}
-    format.js
-  end
-  end 
 
 end

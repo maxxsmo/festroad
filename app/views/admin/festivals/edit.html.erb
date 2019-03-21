@@ -2,117 +2,120 @@
 
 <div class="page-container">
     <!-- Backoffice Fests-->
-    
-    <div class="container">
+    <section class="bg-secondary bg-cover bg-no-repeat pt-5 pb-4"  data-offset-top="-10" id="contacts">
+      <div class="container py-2 page-container">
       <h1 class= "h4 block-title text-center pt-3">Modifier le festival</h1>
 
-        <!-- festival image change upload-->
-        <div class="container-fluid">
-          <div class="row"> 
-            <div class="col-md-4"></div>
-              <div class="col-md-2"> 
-              <label> Image du festival </label>
-              </div>
-              <div class= "col-md-6">
-                <%if @fest.festpic.attached?%>
-                  <%= image_tag @fest.festpic.variant(resize: "100x100"), alt: 'festival image' %>
-                <%else%>
-                  <%= image_tag "Music_Festival_default.jpg", alt: "festival image default" %> 
-                <%end%>
-              </div>
-            </div>
-
-            <div class="row"> 
-              <div class="col-md-4"></div>
-                <div class="col-md-2"></div>
-                  <div class= "col-md-6">
-                    <%= form_tag  admin_festival_festpics_path(@fest.id), multipart: true do %>
-                    <%= file_field_tag :festpic %>
-                    <%= submit_tag "changer festival image",class:"btn btn-warning btn-sm justify-content" %>
-                    <% end %>
-                </div>
-              </div>
-
-        </div>
-        <br>
-          <!-- end-->
-
-        <div class="container-fluid">
-          <%= form_tag url_for(action: 'update'), method: "put" do %>
-            <div class="row"> 
-              <div class="col-md-4"></div>
-                <div class="col-md-2">
-                  <label> Titre </label>
+                <!-- festival image change upload-->
+                <div class="row">
+                  <div class="col-md-3">
+                    <label> Image du festival </label>
+                    
+                      <%if @fest.festpic.attached?%>
+                        <%= image_tag @fest.festpic.variant(resize: "100x100"), alt: 'festival image' %>
+                      <%else%>
+                        <%= image_tag "Music_Festival_default.jpg", alt: "festival image default" %> 
+                      <%end%>
+                    
                   </div>
-                    <div class= "col-md-6">
-                  <p><%= text_field_tag 'title', @fest.title %></p>
+                  <div class="row align-items-center ml-3 "> 
+                    <%= form_tag  admin_festival_festpics_path(@fest.id), class: "col-md-3", multipart: true do %>
+                    <%= file_field_tag :festpic, class: "mt-4" %>
+                    <%= submit_tag "changer l'image du festival",class:"btn btn-warning btn-sm justify-content mt-3" %>
+                    <% end %>
+                  </div>
                 </div>
-            </div>
-            <div class="row"> 
-              <div class="col-md-4"></div>
-                <div class="col-md-2">
-                  <label> Date de début </label>
-                </div>
-                <div class= "col-md-6">
-                  <p><%= text_field_tag 'start_date', @fest.start_date%></p>
-                </div>
-            </div>
-            <div class="row"> 
-              <div class="col-md-4"></div>
-                <div class="col-md-2">
-                  <label> Date de fin </label>
-                </div>
-                <div class= "col-md-6">
-                  <p><%= text_field_tag 'end_date', @fest.end_date%></p>
-                </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4"></div>
-                <div class="col-md-2">
-                  <label> Description </label>
-                </div>
-                <div class= "col-md-6">
-                  <p><%= text_area_tag 'description', @fest.description %></p>
-                </div>
-            </div>
-            <div class="row"> 
-              <div class="col-md-4"></div>
-                <div class="col-md-2">
-                  <label> Adresse </label>
-                </div>
-                <div class= "col-md-6">
-                  <p><%= text_field_tag 'address', @fest.address%></p>
-                </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4"></div>
-                <div class="col-md-2">
-                  <label> Website </label>
-                </div>
-                <div class= "col-md-6">
-                  <p><%= text_field_tag 'website', @fest.website %></p>
-                </div>
-              </div>
-            <div class="row">
-              <div class="col-md-4"></div>
-                <div class="col-md-2">
-                  <label> Validation Administrateur </label>
-                </div>
-                <div class= "col-md-6">
-                  <p><%= radio_button_tag 'validation_admin',true %> Oui</p>
-                  <p><%= radio_button_tag 'validation_admin',false %> Non</p>
-                </div>   
+            
+            <br>
+              <!-- end-->
 
-              <!--Validation Button-->
-        <div class="container">
-          <div class="container-fluid">
-            <div class="row"> 
-              <div class= "col-sm-4"></div>
-            <%= submit_tag 'Valider mes modifications de festival', class: "btn btn-primary text-center" %>
+        <div class="row">
+          <%= form_tag url_for(action: 'update'), method: "put" do %>
+             <% if flash[:error].present? %>
+              <p> flash[:error]</p>
+          <% end %>
+
+              <div class="row">
+                  <div class="col-md-6">
+                    <label> Titre </label><span class="text-danger font-weight-medium">*</span>
+                    <%= text_field_tag 'title', @fest.title, :size =>"60x1", :required => true , class: "form-control"%>
+                    <div class="invalid-feedback">Merci de renseigner le nom du festival!</div>
+                  </div>
+
+                  <div class="col-md-3">
+                    <label> Date de début </label><span class="text-danger font-weight-medium">*</span>
+                    <%= datetime_field_tag 'start_date', @fest.start_date, :size =>"60x1",:required => true, class: "form-control"%>
+                    <div class="invalid-feedback">Merci de renseigner la date de début du festival!</div>
+                  </div>
+
+                  <div class="col-md-3">
+                    <label> Date de fin </label><span class="text-danger font-weight-medium">*</span>
+                    <%= datetime_field_tag 'end_date', @fest.end_date, :size =>"60x1",:required => true, class: "form-control"%>
+                    <div class="invalid-feedback">Merci de renseigner la date de fin du festival!</div>
+                  </div>
               </div>
-            </div>
-          </div>
-            <% end %>
-        </div>
+
+              <br>
+
+              <div class="row">
+
+                <div class="col-md-6">
+                  <label> Adresse </label><span class="text-danger font-weight-medium">*</span><br>
+                  <%= text_field_tag 'address', @fest.address, :size =>"60x1", :required => true, class: "form-control"%>
+                  <div class="invalid-feedback">Merci de renseigner l'adresse du festival!</div>
+                  <br>
+                  <label> Website </label><span class="text-danger font-weight-medium">*</span><br>
+                  <%= text_field_tag 'website', @fest.website, :size =>"60x1", :required => true, class: "form-control" %>
+                  <div class="invalid-feedback">Merci de renseigner une page internet pour le festival!</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label> Description </label><span class="text-danger font-weight-medium">*</span><br/>
+                  <%= text_area_tag 'description', @fest.description,:required => true, :size =>"60x6", class: "form-control" %>
+                  <div class="invalid-feedback">Merci de renseigner une description pour le festival!</div>
+                </div>
+
+              </div>
+
+              <div class="row justify-content-around">
+              <div class="row justify-content-start align-items-center">
+                  <div>
+                    <label class="mt-3"> Validation Administrateur </label><span class="text-danger font-weight-medium">*</span><br/>
+                    <div class= "row justify-content-around">
+                    <p><%= radio_button_tag 'validation_admin',true %> Oui</p>
+                    <p><%= radio_button_tag 'validation_admin',false %> Non</p>
+                    </div>
+                  </div>
+              </div>       
+              <!--Validation button-->
+                  <div class="row "> 
+                <div class= "py-5 col-sm-12">
+                  <%= submit_tag 'Valider mon nouveau festival', class: "btn btn-primary" %>
+                </div>
+              </div>
+              </div>
+              <!--End Button-->
+
+          
+              
+          
+
+          <!--Message error-->
+              <div class="col-md-3">
+                  <% if @fest.errors.any? %>
+                  <p>Nous n'avons pas réussi à enregistrer le festival pour la (ou les) raison(s) suivante(s) :</p>
+                <ul>
+                  <% @fest.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                </ul>
+              </div>
+          <!--Message error end-->
+
+          <% end %> 
+          <% end %> 
+        
     </div>
+</div>
+</section>
 </div>

@@ -14,28 +14,29 @@
 //= require jquery3
 //= require jquery_ujs
 //= require activestorage
-//= require js/bootstrap.min
-//= require js/card.min
-//= require js/gmap3.min
-//= require js/imagesloaded.pkgd.min
-//= require js/isotope.pkgd.min
-//= require js/iziToast.min
-//= require js/jquery.animateNumber.min
-//= require js/jquery.countdown.min
-//= require js/jquery.easing.min
-//= require js/jquery.easy-autocomplete.min
-//= require js/jquery.fancybox.min
-//= require js/jquery.inview.min
-//= require js/jquery.min
-//= require js/modernizr.min
-//= require js/nouislider.min
-//= require js/owl.carousel.min
-//= require js/parallax-scroll.min
-//= require js/popper.min
+//= require assets/javascripts/bootstrap.min
+//= require assets/javascripts/card.min
+//= require assets/javascripts/gmap3.min
+//= require assets/javascripts/imagesloaded.pkgd.min
+//= require assets/javascripts/isotope.pkgd.min
+//= require assets/javascripts/iziToast.min
+//= require assets/javascripts/jquery.animateNumber.min
+//= require assets/javascripts/jquery.countdown.min
+//= require assets/javascripts/jquery.easing.min
+//= require assets/javascripts/jquery.easy-autocomplete.min
+//= require assets/javascripts/jquery.fancybox.min
+//= require assets/javascripts/jquery.inview.min
+//= require assets/javascripts/jquery.min
+//= require assets/javascripts/modernizr.min
+//= require assets/javascripts/nouislider.min
+//= require assets/javascripts/owl.carousel.min
+//= require assets/javascripts/parallax-scroll.min
+//= require assets/javascripts/popper.min
+//= require fav
+//= require rails-ujs
 //= require_tree .
 
-document.addEventListener("turbolinks:load", function() {
- });
+
  $(function(){
  $('#form').hide();
  $("#searchB").hide();

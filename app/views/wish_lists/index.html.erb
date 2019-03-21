@@ -1,44 +1,41 @@
-
 <div class="jumbotron">
-    <div class="container">
-      <div class="h1 text-uppercase">
-        <span class="d-inline-block mr-2" data-parallax='{"y" : -20}'>M</span>
-        <span class="d-inline-block mr-2" data-parallax='{"y" : 20}'>e</span>
-        <span class="d-inline-block mr-2" data-parallax='{"y" : -20}'>s</span>
-        <span> </span>
-        <span class="d-inline-block mr-2" data-parallax='{"y" : 25}'>f</span>
-        <span class="d-inline-block mr-2" data-parallax='{"y" : -25}'>a</span>
-        <span class="d-inline-block mr-2" data-parallax='{"y" : 30}'>v</span>
-        <span class="d-inline-block mr-2" data-parallax='{"y" : -30}'>o</span>
-        <span class="d-inline-block mr-2" data-parallax='{"y" : 35}'>r</span>
-        <span class="d-inline-block mr-2" data-parallax='{"y" : -35}'>i</span>
-        <span class="d-inline-block mr-2" data-parallax='{"y" : 40}'> s</span>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<div class="h1 text-uppercase">
+<span class="d-inline-block mr-2" data-parallax='{"y" : -20}'>M</span>
+<span class="d-inline-block mr-2" data-parallax='{"y" : 20}'>e</span>
+<span class="d-inline-block mr-2" data-parallax='{"y" : -20}'>s</span>
+<span> </span>
+<span class="d-inline-block mr-2" data-parallax='{"y" : 25}'>f</span>
+<span class="d-inline-block mr-2" data-parallax='{"y" : -25}'>a</span>
+<span class="d-inline-block mr-2" data-parallax='{"y" : 30}'>v</span>
+<span class="d-inline-block mr-2" data-parallax='{"y" : -30}'>o</span>
+<span class="d-inline-block mr-2" data-parallax='{"y" : 35}'>r</span>
+<span class="d-inline-block mr-2" data-parallax='{"y" : -35}'>i</span>
+<span class="d-inline-block mr-2" data-parallax='{"y" : 40}'> s</span>
+</div>
+</div>
+</div>
 <div class= "page-container">
-  <% if @wishlist.count == 0 %>
-    <h1>Pour l'instant, vous n'avez ajouté aucun festival à vos favoris </h1>
-  <% else %>
-    <div class= "container">
-      <div class= "row">
-        <div class= "col-sm-0 col-md-6">
-        <div id="map_2"></div>
-        <%= javascript_include_tag('map_2.js') %>
-        </div>
-        <div class="col-sm-3 col-md-6">
-          <% @wishlist.each do |wishlist| %>
-            <% fest = wishlist.fest %>
-            <div id= <%= wishlist.id %>>
-            <%= render 'fest_cart', wishlist: wishlist, fest: fest %>
-            </div>
-          <% end %>
-        </div>
-    </div>
- </div>
-  <% end %> 
+<% if @wishlist.count == 0 %>
+<h1>Pour l'instant, vous n'avez ajouté aucun festival à vos favoris </h1>
+<% else %>
+<div class= "container">
+<div class= "row">
+<div class= "col-sm-0 col-md-6">
+<div id="map_2"></div>
+<%= javascript_include_tag('map_2.js') %>
+</div>
+<div class="col-sm-3 col-md-6">
+<% @wishlist.each do |wishlist| %>
+<% fest = wishlist.fest %>
+<div id= <%= wishlist.id %>>
+<%= render 'fest_cart', wishlist: wishlist, fest: fest %>
+</div>
+<% end %>
+</div>
+</div>
+</div>
+<% end %>
 </div>
 
 <script src=<%="https://maps.googleapis.com/maps/api/js?key=#{ENV['API_KEY_GOOGLE_MAPS']}&callback=initMap"%> type="text/javascript"></script>
-
-

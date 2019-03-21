@@ -13,6 +13,8 @@
 //= require jquery3
 //= require jquery_ujs
 //= require activestorage
+//= require assets/javascripts/vendor.min
+//= require assets/javascripts/theme.min
 //= require assets/javascripts/bootstrap.min
 //= require assets/javascripts/card.min
 //= require assets/javascripts/gmap3.min
@@ -31,8 +33,7 @@
 //= require assets/javascripts/owl.carousel.min
 //= require assets/javascripts/parallax-scroll.min
 //= require assets/javascripts/popper.min
-//= require vendor.min
-//= require theme.min
+
 //= require rails-ujs
 //= require_tree .
 
@@ -44,12 +45,10 @@
    $("#searchA").toggle();
    $("#searchB").toggle();
    $("#form").toggle();
-   $(".arrow").css("top", "140px");
  })
  $("#searchB").click(function(){
   $("#form").toggle();
   $("#searchA").toggle();
   $("#searchB").toggle();
-  $(".arrow").css("top", "200px");
 })
 });

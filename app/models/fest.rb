@@ -120,18 +120,4 @@ class Fest < ApplicationRecord
     result.first(6)
   end
 
-#   #Importing JSON in Database
-#   DECLARE @json
-#   SET @json = festivals_details.json
-  
-#   SELECT * FROM  
-#    OPENJSON ( @json )  
-#   WITH (   
-#     title   varchar '$.Fest.Title'   
-#     website varchar '$.Fest.Website' 
-#     address  varchar '$.Fest.Address'
-#     start_date date '$.Fest.StartDate'
-#     end_date date '$.Fest.EndDate'  
-#    )
-
 end

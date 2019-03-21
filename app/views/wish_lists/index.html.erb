@@ -23,9 +23,8 @@
         <div class= "col-sm-0 col-md-6">
           <%= javascript_include_tag('map.js') %>
         </div>
-       
         <% if @wishlist.count != 0 %>
-        <div class="col-sm-3 col-md-6">
+        <div class="col-sm-3 col-md-6" id="favlist">
            <h3 class= "text-center"> Ma liste de favoris</h3>
           <% @wishlist.each do |wishlist| %>
             <% fest = wishlist.fest %>
@@ -35,9 +34,9 @@
             <%end%>
         </div>
         <% else %>
-          <div class="col-sm-3 col-md-6">
+          <div class="col-sm-3 col-md-6" id= favlist>
              <h3 class= "text-center"> Ma liste de favoris</h3>
-            <h4> Vous n'avez pas encore ajouté de festival à votre liste.</h4>  
+            <em> Vous n'avez pas encore ajouté de festival à votre liste.</em>  
           </div>
         <%end%>
         </div>

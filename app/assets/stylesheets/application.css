@@ -215,6 +215,15 @@
   background: linear-gradient(to bottom, #FFCF0F 0%, #E54F26 20%, #4A1836 100%) !important;
 }
 
+/* CSS FOR FAV list*/
+#favlist {
+
+  background-color: #8080800a;
+  margin-top: 5%;
+  padding: 5%;
+  margin-bottom: 5%;
+}
+
 /*CSS FOR ICON TABLE*/
 .icon-table td {
   text-align: center;

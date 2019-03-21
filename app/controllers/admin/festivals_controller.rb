@@ -7,12 +7,11 @@ module Admin
     
     def index 
       @fests = Fest.where(nil)
-        
+      @fests = @fests.where(address: params[:address]) if params[:address].present?
       @fests = @fests.where(validation_admin: params[:validation]) if params[:validation].present?
       @fests = @fests.music(params[:music], @fests) if params[:music].present?
       @fests = @fests.title(params[:title]) if params[:title].present?
       @fests = Fest.location(params[:location], @fests) if params[:location].present?
-      @fests = Fest.date(@fests)
       @music = MusicType.all
       @location = LocationType.all
     end
@@ -36,7 +35,7 @@ module Admin
 
     def update
       @fest = Fest.find(params[:id])
-      if @fest.update(title: params[:title], description: params[:description], start_date: params[:start_date], end_date: params[:end_date], address: params[:address], website: params[:website], festpic: params[:festpic], validation_admin: params[:validation_admin])
+      if @fest.update(title: params[:title], description: params[:description], start_date: params[:start_date], end_date: params[:end_date], address: params[:address], website: params[:website], validation_admin: params[:validation_admin])
         redirect_to({action: :index}, success: "Le festival a bien été modifié")
       else 
         render "edit"

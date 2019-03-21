@@ -1,5 +1,8 @@
 {
   "name": "FestRoad",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "webpack": "^4.29.6"
+  }
 }

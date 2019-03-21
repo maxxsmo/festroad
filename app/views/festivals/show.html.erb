@@ -23,7 +23,7 @@
     </div>
     <div class= "mt-5 mb-5 mr-5 card col-lg-4 col-md-4 col-sm-4" style="background: #4A1836">
       <%if @fest.festpic.attached?%>
-        <%= image_tag fest.festpic, alt: 'festival picture' %>
+        <%= image_tag @fest.festpic, alt: 'festival picture' %>
       <%else%>
         <%= image_tag 'https://festivalhommesforts.ca/wp-content/uploads/2017/06/Festival_music_374x230.jpg' %>
       <%end%>

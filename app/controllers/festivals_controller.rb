@@ -27,7 +27,7 @@ class FestivalsController < ApplicationController
     if current_user
       wishlist = WishList.where(user: current_user).each {|w| @result << w.fest}
     end
-    @carousel = Fest.all 
+    @carousel = Fest.carousel 
   end
   
 

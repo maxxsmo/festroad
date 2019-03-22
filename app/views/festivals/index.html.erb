@@ -8,8 +8,7 @@
     <%= date_field_tag :end_date,  params[:end_date], class: "form-control form-date" %> 
     <%= button_tag "", class: "btn btn-primary" do %>
       <i class="fas fa-search"></i>
-    <% end %>
-  </div>
+    <% end %></div>
 <%end%>
 
 <div style="height:5%;"></div>
@@ -20,70 +19,72 @@
     <%= javascript_include_tag('map.js') %>
   </div>
 
-  <div class="row cont_fest col-xl-4 col-lg-4 col-md-4 col-sm-4">
-    <% if  @fests.count == 0 %>
-    <div class="d-flex flex-column bd-highlight align-self-center">
-      <em class="justify-self-center" id="messageerror"> Aucun résultat ne correspond à votre recherche...<i class="far fa-sad-tear"></i></em>  
-    </div>
-    <%else%>
-    <div class="d-flex flex-column bd-highlight col-centered">
-      <% @fests.each do |fest| %>
-        <div class="mb-30 card_index">
-          <%if fest.festpic.attached?%>
-            <%= image_tag fest.festpic, alt: 'festival picture' %>
-          <%else%>
-            <%= image_tag 'https://festivalhommesforts.ca/wp-content/uploads/2017/06/Festival_music_374x230.jpg' %>
-          <%end%>
-          <div class="card-body ">
-            <h6 class="card-title text-center"><%= fest.title %></h6><br>
-            <div class="d-flex justify-content-around">
-              <p><strong>Du : </strong><%= fest.start_date.strftime("%d/%m/%Y") %></p>
-              <p><strong>Au : </strong><%= fest.end_date.strftime("%d/%m/%Y") %></p>
-            </div>
-            <div class="d-flex justify-content-around">
-              <div class="col-md-6 text-center">
-                <%= link_to "Détails", festival_path(fest.id), :class => "btn btn-style-4 btn-primary", "data-toggle" => "modal", "data-target" => "#modalLarge#{x}" %>
-              </div>
-              <div class= "col-md-6 text-center align-self-center">
-                <% if @result.include?(fest) %><i class="fas fa-heart fa-2x text-accent"></i>
-                <% else %><%= link_to "", wish_lists_path(fest.id), :class => "no-fav far fa-heart fa-2x text-accent", method: "post" %>
-                <%end%>
-              </div>
-            </div>
+    <div class="row cont_fest col-xl-4 col-lg-4 col-md-4 col-sm-4">
+     <% if  @fests.count == 0 %>
+      <div class="d-flex flex-column bd-highlight align-self-center">
+            <em class="justify-self-center" id="messageerror"> Aucun résultat ne correspond à votre recherche...<i class="far fa-sad-tear"></i> </em>  
           </div>
-          <div class="modal fade mt-5 pt-5" id="<%= "modalLarge#{x}" %>" tabindex="-1" role="dialog">
-            <div class= "modal-dialog modal-lg mb-2 card col-xl-12 col-lg-12 col-md-12 col-sm-12" role="document">
-              <div class="row justify-content-between">
-                <h2 class= "card"><%= fest.title %></h2>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              </div>
-              <div class="row">
-                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1"></div>
-                <div class= "pt-3 mt-5 mb-5 pr-5 col-xl-5 col-lg-5 col-md-5 col-sm-5">
-                  <%if fest.festpic.attached?%>
-                    <%= image_tag fest.festpic, alt: 'festival picture' %>
-                  <%else%>
-                    <%= image_tag 'https://festivalhommesforts.ca/wp-content/uploads/2017/06/Festival_music_374x230.jpg' %>
-                  <%end%>
+      </div>
+         <%else%>
+        <div class="d-flex flex-column bd-highlight col-centered">
+        <% @fests.each do |fest| %>
+            <div class="mb-30 card_index" id="hello">
+              <%if fest.festpic.attached?%>
+                <%= image_tag fest.festpic, alt: 'festival picture' %>
+              <%else%>
+                  <%= image_tag 'https://festivalhommesforts.ca/wp-content/uploads/2017/06/Festival_music_374x230.jpg' %>
+              <%end%>
+              <div class="card-body card">
+                  <h6 class="card-title text-center"><%= fest.title %></h6><br>
+                <div class="d-flex justify-content-around">
+                  <p><strong>Du : </strong><%= fest.start_date.strftime("%d/%m/%Y") %></p>
+                  <p><strong>Au : </strong><%= fest.end_date.strftime("%d/%m/%Y") %></p>
                 </div>
-                <div class="mt-5 mb-5 col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                  <div class="row d-flex ">
-                    <p style="margin-right: 15px;"><strong>Du : </strong><%= fest.start_date.strftime("%d/%m/%Y") %></p>
-                    <p><strong>Au : </strong><%= fest.end_date.strftime("%d/%m/%Y") %></p><br>
-                    <p><strong>Localisation : </strong><%= fest.address %></p>
-                  </div>
-                  <p><strong>Description : </strong> <%= fest.description %></p>
-                  <p><strong>Site officiel : </strong> <%= link_to fest.website, fest.website %></p>
+              <div class="d-flex justify-content-around">
+                <div class="col-md-6 text-center">
+                  <%= link_to "Détails", festival_path(fest.id), :class => "btn btn-style-4 btn-primary", "data-toggle" => "modal", "data-target" => "#modalLarge#{x}" %>
+                </div>
+                <div class= "col-md-6 text-center align-self-center">
                   <% if @result.include?(fest) %><i class="fas fa-heart fa-2x text-accent"></i>
-                  <% else %><%= link_to "", wish_lists_path(fest.id), :class => "no-fav far fa-heart fa-2x text-accent", method: "post" %>
-                  <%end%>
+                  <% else %><%= link_to "",wish_lists_path(fest.id), :class => "no-fav far fa-heart fa-2x text-accent", method: "post" %><%end%>
                 </div>
               </div>
-            </div>    
-          </div>
-        </div>
-      <% x += 1 %>
-      <% end %>
+           
+              <div class="modal fade mt-5 pt-5" id="<%= "modalLarge#{x}" %>" tabindex="-1" role="dialog">
+                <div class= "modal-dialog modal-lg mb-2 card col-xl-12 col-lg-12 col-md-12 col-sm-12" role="document">
+                  <div class="row justify-content-between">
+                    <h2 class= "card"><%= fest.title %></h2>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  </div>
+                  <div class="row">
+                    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1"></div>
+                    <div class= "pt-3 mt-5 mb-5 pr-5 col-xl-5 col-lg-5 col-md-5 col-sm-5">
+                      <%if fest.festpic.attached?%>
+                        <%= image_tag fest.festpic, alt: 'festival picture' %>
+                      <%else%>
+                        <%= image_tag 'https://festivalhommesforts.ca/wp-content/uploads/2017/06/Festival_music_374x230.jpg' %>
+                      <%end%>
+                    </div>
+                    <div class="mt-5 mb-5 col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                      <div class="row d-flex ">
+                        <p style="margin-right: 15px;"><strong>Du : </strong><%= fest.start_date.strftime("%d/%m/%Y") %></p>
+                        <p><strong>Au : </strong><%= fest.end_date.strftime("%d/%m/%Y") %></p><br>
+                        <p><strong>Localisation : </strong><%= fest.address %></p>
+                      </div>
+                       <p><strong>Description : </strong> <%= fest.description %></p>
+                       <p><strong>Site officiel : </strong> <%= link_to fest.website, fest.website %></p>
+                        <% if @result.include?(fest) %><i class="fas fa-heart fa-2x text-accent"></i>
+                        <% else %><%= link_to "", wish_lists_path(fest.id), :class => "no-fav far fa-heart fa-2x text-accent", method: "post" %><%end%>
+                    </div>
+                  </div>    
+                </div>
+              </div>
+            </div>
+            </div>
+             <% x += 1 %>
+          <% end %>
+       
+      </div>
     </div>
     <%end%>
   </div>
@@ -93,6 +94,4 @@
 <div style="height: 5%;"></div>
 
 <script src=<%="https://maps.googleapis.com/maps/api/js?key=#{ENV['API_KEY_GOOGLE_MAPS']}&callback=initMap"%> type="text/javascript"></script>
-
-
 

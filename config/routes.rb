@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :wish_lists, only: [:index, :destroy, :new, :create], :path => ("La-liste-des-favoris/fc9782394ze617&=!whislist")
-  resources :home, only: [:index], :path => "accueil"
+  resources :home, only: [:index, :create], :path => "accueil"
   resources :kitui, only: [:index], :path => "kit-ui"
   resources :contact, only: [:new, :create], :path => "contacte-nous"
   resources :fest_submissions, only: [:new, :create], :path => "ajoute-un-festival"

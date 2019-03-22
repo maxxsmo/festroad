@@ -316,7 +316,8 @@
 /* Form LOG IN */
 
 #login {
-  margin: 15% 10% 15% 25%;
+  margin-top: 25%;
+  margin-bottom: 25%;
 }
 #login a {
 color:#E54F26;
@@ -469,10 +470,6 @@ color:#E54F26;
   background: linear-gradient(to right, #FFCF0F 0%, #E54F26 100%) !important;
 }
 
-/*CSS FOR CONTACT FORM*/
-.contact-form{
-  padding-top: 80px;
-}
 
 /*CSS FOR CONTACT FORM*/
 .kit-container{

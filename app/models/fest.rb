@@ -17,7 +17,7 @@ class Fest < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
 
-  def date_not_in_past
+  def date_not_in_past # verify if dates enter is not in the past
     if start_date < DateTime.now
       errors.add(:start_date, "la date ne peut pas être dans le passé")
     elsif end_date < DateTime.now
@@ -26,13 +26,13 @@ class Fest < ApplicationRecord
   end
  
 
-  def incorrect_dates
+  def incorrect_dates # verify that start date is before end date
     if start_date > end_date
       errors.add(:end_date, "La date de fin ne peut pas être antérieure à la date de début")
     end
   end
 
-  def self.title(title)
+  def self.title(title) #def that search a fest by title, adress, location type and tag
     festival = Fest.all
     result = []
     festival.each do |fest|
@@ -57,7 +57,7 @@ class Fest < ApplicationRecord
     result.uniq
   end
 
-  def self.music(music, festival)
+  def self.music(music, festival) # def that search all fest with a music type in fest filtered
     result = []
     festival.each do |fest|
       Tag.where(music_type_id: music).each do |tag|
@@ -69,7 +69,7 @@ class Fest < ApplicationRecord
     result
   end
 
-  def self.location(location, festival)
+  def self.location(location, festival) # def that search all fest with a location type in fest filtered
     result = []
     festival.each do |fest|
       FestLocation.where(location_type_id: location).each do |location|
@@ -81,7 +81,7 @@ class Fest < ApplicationRecord
     result
   end
 
-  def self.start_date(date, festival)
+  def self.start_date(date, festival) # def that search all fest in function of start date in fest filtered
     result = []
     festival.each do |fest|
         if date <=  fest.start_date
@@ -91,7 +91,7 @@ class Fest < ApplicationRecord
     result
   end
 
-  def self.end_date(date, festival)
+  def self.end_date(date, festival) # def that search all fest in function of end date in fest filtered
     result = []
     festival.each do |fest|
         if date >=  fest.end_date
@@ -102,7 +102,7 @@ class Fest < ApplicationRecord
     result.flatten.uniq
   end
 
-  def self.carousel
+  def self.carousel # sort all fest with validation_admin true by start date then return the 6 first
     result = []
     Fest.where(validation_admin: true).each do |fest|
       result << fest
@@ -111,7 +111,7 @@ class Fest < ApplicationRecord
     result.uniq.first(6)
   end
 
-  def self.date(fests)
+  def self.date(fests) # sort all fest by start date then return the 6 first
     result = []
     fests.each do |fest|
       result << fest

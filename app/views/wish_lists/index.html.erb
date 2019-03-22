@@ -21,8 +21,8 @@
       <div class= "row">
         <div class= "col-sm-0 col-md-7">
           <div id="map_2"></div>
-          <%= javascript_include_tag('map_2.js') %>
-        </div>
+            <%= javascript_include_tag('map_2.js') %>
+          </div>
         <% if @wishlist.count != 0 %>
         <div class="col-sm-3 col-md-5" id="favlist">
            <h3 class= "text-center"> Ma liste de favoris</h3>
@@ -34,7 +34,7 @@
             <%end%>
         </div>
         <% else %>
-          <div class="col-sm-3 col-md-6" id= favlist>
+          <div class="col-sm-3 col-md-5" id= favlist>
              <h3 class= "text-center"> Ma liste de favoris</h3>
             <em> Vous n'avez pas encore ajouté de festival à votre liste. <i class="far fa-sad-tear"></i></em>  
           </div>

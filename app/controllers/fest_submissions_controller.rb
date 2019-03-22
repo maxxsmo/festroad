@@ -13,9 +13,14 @@ class FestSubmissionsController < ApplicationController
     if @fest.save 
       flash[:success] = "Votre festival a bien été enregistré et sera soumis à validation."
       redirect_to festivals_path
+      festsubmission_send
     else 
       render "new"
     end
+  end
+
+  def festsubmission_send
+    AdminMailer.festsubmission_email(self).deliver_now
   end
 
 end

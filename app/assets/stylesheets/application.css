@@ -20,6 +20,13 @@
  *= require_tree .
  */
 
+ /* BODY */
+
+* a:hover{
+  color:#E54F26 !important;
+
+}
+
 /* CSS NAVBAR */
 
 #home #navbar{
@@ -33,6 +40,11 @@
   background: none;
 
 }
+
+#home #navbar #mobile-menu  {
+
+}
+
 
 #home #navbar a{
   color:white !important;
@@ -285,12 +297,27 @@
 #sectionhow{
   margin-top:5%;
 }
+
+.cont-img {
+  margin: 1em 0;
+  text-align: center;
+}
+
+.cont-img img {
+  height: 15vw;
+}
+
+.img-carousel img {
+  object-fit: cover;
+}
+
 /***** CSS FOR DEVISE *******/
 
 /* Form LOG IN */
 
 #login {
-  margin: 15% 10% 15% 25%;
+  margin-top: 25%;
+  margin-bottom: 25%;
 }
 #login a {
 color:#E54F26;
@@ -303,8 +330,8 @@ color:#E54F26;
 /* Form SIGN IN */
 
 .signup-page{
-  margin-top:15%;
-  margin-bottom:10%;
+  margin-top:5%;
+  margin-bottom:5%;
 }
 
 .signup-page a {
@@ -443,10 +470,6 @@ color:#E54F26;
   background: linear-gradient(to right, #FFCF0F 0%, #E54F26 100%) !important;
 }
 
-/*CSS FOR CONTACT FORM*/
-.contact-form{
-  padding-top: 80px;
-}
 
 /*CSS FOR CONTACT FORM*/
 .kit-container{
@@ -466,6 +489,9 @@ color:#E54F26;
   color: grey; 
 }
 
+#messageerror {
+  font-size: 1.5em;
+}
 
 /*CSS FOR MAP WISHLIST PAGE*/
 
@@ -479,6 +505,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -581,6 +608,14 @@ overflow-y: scroll;
 
 .fa-heart:before, .text-accent{
   color:#E54F26 ;
+}
+
+.fa-map-sign:before, .text-accent{
+  color:#E54F26 !important ;
+}
+
+.fa-user:before, .text-accent{
+  color:#E54F26 !important ;
 }
 
 .arrow:hover, i:hover{
@@ -775,4 +810,16 @@ table a {
   color: #4A1836 !important;
   text-decoration: underline;
   background-color: transparent;
+}
+
+/*** HOME PAGE SECTION WHY ***/
+.image-why{
+  width: 450px;
+  height: 250px;
+}
+
+.image-why-right{
+  width: 450px;
+  height: 250px;
+  text-align: right;
 }

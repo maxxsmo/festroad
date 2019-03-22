@@ -41,12 +41,12 @@
  $(function(){
  $('#form').hide();
  $("#searchB").hide();
-
  $("#searchB").click(function(){
   $("#form").html( "");
   $('#form').toggle();
   
   $("#searchA").toggle();
   $("#searchB").toggle();
+  $(".arrow").css("top", "200px");
 })
 });

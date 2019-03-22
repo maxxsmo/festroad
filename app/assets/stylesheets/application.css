@@ -505,6 +505,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -809,4 +810,16 @@ table a {
   color: #4A1836 !important;
   text-decoration: underline;
   background-color: transparent;
+}
+
+/*** HOME PAGE SECTION WHY ***/
+.image-why{
+  width: 450px;
+  height: 250px;
+}
+
+.image-why-right{
+  width: 450px;
+  height: 250px;
+  text-align: right;
 }

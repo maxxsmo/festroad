@@ -1,7 +1,7 @@
     <!--<h2>Edit <%= resource_name.to_s.humanize %></h2>-->
-   <div class="jumbotron">
-    <div class="container">
-      <div class="h1 text-uppercase">
+<div class="jumbotron">
+  <div class="container">
+    <div class="h1 text-uppercase">
         <span class="d-inline-block mr-2" data-parallax='{"y" : -20}'>P</span>
         <span class="d-inline-block mr-2" data-parallax='{"y" : 20}'>a</span>
         <span class="d-inline-block mr-2" data-parallax='{"y" : -20}'>r</span>
@@ -12,12 +12,11 @@
         <span class="d-inline-block mr-2" data-parallax='{"y" : 35}'>r</span>
         <span class="d-inline-block mr-2" data-parallax='{"y" : -35}'>e</span>
         <span class="d-inline-block mr-2" data-parallax='{"y" : -35}'>s</span>       
-        </div>
-    </div>
+      </div>
   </div>
-<div class="page-container">
+</div>
+
   <div class="container mb-4">
-  
     <div class="row">
       <!-- Account Sidebar-->
         <div class="col-lg-4 pb-5">
@@ -62,7 +61,6 @@
       <!-- Profile Settings-->
         <div class="col-lg-8 pb-5">
           <h4 class="text-center">Éditer mon compte</h4>
-
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
             <%= render "devise/shared/error_messages", resource: resource %>
             <div class="row">
@@ -149,11 +147,11 @@
         <!-- Delete account-->
 
 
-<div class="container">
+<div class="container-fluid" style="margin-bottom:5%;">
   <div class="row">
     <div class= "col-md-12 text-center">
-    <h4 class="text-center">Supprimer mon compte</h4>
-    <hr class="mt-2 mb-3">
+        <h4 class="text-center">Supprimer mon compte</h4>
+        <hr class="mt-2 mb-3">
     </div>
   </div>
   <div class="row"  style= "margin-bottom:16px;" >

@@ -1,78 +1,81 @@
-
 <div class="jumbotron">
-    <div class="container">
-      <div class="h1 text-uppercase">
-        <span class="d-inline-block mr-2" data-parallax='{"y" : -20}'>D</span>
-        <span class="d-inline-block mr-2" data-parallax='{"y" : 20}'>é</span>
-        <span class="d-inline-block mr-2" data-parallax='{"y" : -20}'>t</span>
-        <span class="d-inline-block mr-2" data-parallax='{"y" : 25}'>a</span>
-        <span class="d-inline-block mr-2" data-parallax='{"y" : -25}'>i</span>
-        <span class="d-inline-block mr-2" data-parallax='{"y" : 30}'>l</span>
-        <span class="d-inline-block mr-2" data-parallax='{"y" : -30}'>s</span>
-      </div>
+  <div class="container">
+    <div class="h1 text-uppercase">
+      <span class="d-inline-block mr-2" data-parallax='{"y" : -20}'>D</span>
+      <span class="d-inline-block mr-2" data-parallax='{"y" : 20}'>é</span>
+      <span class="d-inline-block mr-2" data-parallax='{"y" : -20}'>t</span>
+      <span class="d-inline-block mr-2" data-parallax='{"y" : 25}'>a</span>
+      <span class="d-inline-block mr-2" data-parallax='{"y" : -25}'>i</span>
+      <span class="d-inline-block mr-2" data-parallax='{"y" : 30}'>l</span>
+      <span class="d-inline-block mr-2" data-parallax='{"y" : -30}'>s</span>
     </div>
   </div>
+</div>
 
 <div class="page-container">
-<div class= "mb-5 col-xl-12 col-lg-12 col-md-12 col-sm-12">
-  <h2 class="text-center"><%= @fest.title %></h2>
+  <div class="mb-5 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+    <h2 class="text-center"><%= @fest.title %></h2>
   </div>
   <div class="row">
     <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2"></div>
-    <div class= "mt-5 mb-5 mr-5 col-xl-4 col-lg-4 col-md-4 col-sm-4">
+    <div class="mt-5 mb-5 mr-5 col-xl-4 col-lg-4 col-md-4 col-sm-4">
       <%if @fest.festpic.attached?%>
-        <%= image_tag @fest.festpic, alt: 'festival picture' %>
+      <%= image_tag @fest.festpic, alt: 'festival picture' %>
       <%else%>
-        <%= image_tag 'https://festivalhommesforts.ca/wp-content/uploads/2017/06/Festival_music_374x230.jpg' %>
+      <%= image_tag 'https://festivalhommesforts.ca/wp-content/uploads/2017/06/Festival_music_374x230.jpg' %>
       <%end%>
     </div>
     <div class="mt-5 mb-5 col-xl-4 col-lg-4 col-md-4 col-sm-4">
       <div>
-        <p><strong>Du </strong><%= @fest.start_date.strftime("%d/%m/%Y") %> 
-       <strong> au </strong><%= @fest.end_date.strftime("%d/%m/%Y") %></p>
+        <p><strong>Du </strong><%= @fest.start_date.strftime("%d/%m/%Y") %>
+          <strong> au </strong><%= @fest.end_date.strftime("%d/%m/%Y") %></p>
         <p><strong>Localisation : </strong><%= @fest.address %></p>
       </div>
       <p><strong>Description : </strong> <%= @fest.description %></p>
       <p><strong>Site officiel : </strong> <%= link_to @fest.website, @fest.website %></p>
       <% if current_user %>
       <div class="row">
-        <div class= "d-flex col-md-12 justify-content-end">
-            <% if @result.include?(@fest) %><i class="fas fa-heart fa-2x text-accent"></i>
-            <% else %><%= link_to "", wish_lists_path(@fest.id), :class => "no-fav far fa-heart fa-2x text-accent", method: "post" %><%end%>
+        <div class="d-flex col-md-12 justify-content-end">
+          <% if @result.include?(@fest) %><i class="fas fa-heart fa-2x text-accent"></i>
+          <% else %><%= link_to "", wish_lists_path(@fest.id), :class => "no-fav far fa-heart fa-2x text-accent", method: "post" %><%end%>
         </div>
       </div>
       <%end%>
     </div>
   </div>
 
- <section class="container card pb-4" id="sectionhow">
+ <section class="container card pb-4">
     <h2 class="h3 block-title text-center pt-2"> Ca se passe prochainement </h2>
-    <div class="owl-carousel" data-owl-carousel='{ "nav": false, "dots": true, "loop": true, "margin": 30, "autoplay": true, "autoplayTimeout": 4000, "responsive": {"0":{"items":1},"630":{"items":2},"991":{"items":3},"1200":{"items":3}} }'>
+    <div class="owl-carousel"
+      data-owl-carousel='{ "nav": false, "dots": true, "loop": true, "margin": 30, "autoplay": true, "autoplayTimeout": 4000, "responsive": {"0":{"items":1},"630":{"items":2},"991":{"items":3},"1200":{"items":3}} }'>
       <% @carousel.each do |fest| %>
-          <div class="card_index">
-            <div class= "cont-img img-carousel">
-           <%if fest.festpic.attached?%>
-              <%= image_tag fest.festpic, alt: 'festival picture' %>
-            <%else%>
-                <%= image_tag 'https://festivalhommesforts.ca/wp-content/uploads/2017/06/Festival_music_374x230.jpg' %>
-            <%end%>
-            </div>
-              <div class="card-body">
-                <h4 class="card-title"><%= fest.title %></h4><br>
-                <p><strong><%= fest.start_date.strftime("%d/%m/%Y") %> - <%= fest.end_date.strftime("%d/%m/%Y")
+      <div class="card_index">
+        <div class="cont-img img-carousel">
+          <%if fest.festpic.attached?%>
+          <%= image_tag fest.festpic, alt: 'festival picture' %>
+          <%else%>
+          <%= image_tag 'https://festivalhommesforts.ca/wp-content/uploads/2017/06/Festival_music_374x230.jpg' %>
+          <%end%>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title"><%= fest.title %></h4><br>
+          <p><strong><%= fest.start_date.strftime("%d/%m/%Y") %> - <%= fest.end_date.strftime("%d/%m/%Y")
                  %></strong></p>
-                <p> Du côté de <%= fest.address%> </p>
-                <%if fest.fest_locations != []%>
-                  <p><i class="fas fa-map-marker-alt"></i><% fest.fest_locations.each do |location| %><%= location.location_type.location%><%end%></p>
-                <% end %>
-                <%if fest.tags != [] %>
-                  <% fest.tags.each do |tag| %><p class="tag-link"><%= tag.music_type.style%> </p><%end%>
-                <% end %>
-              </div>
-              <div class="card-footer text-muted text-sm">
-                <span class="opacity-75"></span> <%= link_to 'Détails', festival_path(fest.id), class:"btn btn-style-4 btn-primary" %></div>
-              </div>
-        <% end %>
+          <p> Du côté de <%= fest.address%> </p>
+          <%if fest.fest_locations != []%>
+          <p><i
+              class="fas fa-map-marker-alt"></i><% fest.fest_locations.each do |location| %><%= location.location_type.location%><%end%>
+          </p>
+          <% end %>
+          <%if fest.tags != [] %>
+          <% fest.tags.each do |tag| %><p class="tag-link"><%= tag.music_type.style%> </p><%end%>
+          <% end %>
+        </div>
+        <div class="card-footer text-muted text-sm">
+          <span class="opacity-75"></span>
+          <%= link_to 'Détails', festival_path(fest.id), class:"btn btn-style-4 btn-primary" %></div>
+      </div>
+      <% end %>
     </div>
-</section>
+  </section>
 </div>

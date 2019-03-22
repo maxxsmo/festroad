@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :wish_lists, only: [:index, :destroy, :new, :create], :path => ("La-liste-des-favoris/fc9782394ze617&=!whislist")
-  resources :home, only: [:index], :path => "accueil"
+  resources :home, only: [:index, :create], :path => "accueil"
   resources :kitui, only: [:index], :path => "kit-ui"
   resources :contact, only: [:new, :create], :path => "contacte-nous"
   resources :fest_submissions, only: [:new, :create], :path => "ajoute-un-festival"
@@ -9,13 +9,13 @@ Rails.application.routes.draw do
   root 'home#index'
 
 
-  devise_for :users, :controllers => { registrations: 'registrations' }, path: "utilisateur", :path_names => {sign_in: "Bon-retour-parmis-nous-ami-festivalier",
+  devise_for :users, :controllers => { registrations: 'registrations' }, path: "utilisateur", :path_names => {sign_in: "connexion",
                                  sign_out: "tu-nous-manques-déjà!", 
-                                 edit: "ici-tu-peux-mettre-à-jours-tes-informations-personnelles",
-                                 password: 'alors-ca-c-est-secret-amigo',
+                                 edit: "mettre-à-jour-tes-informations-personnelles",
+                                 password: 'secret-amigo',
                                  confirmation: 'verification', 
-                                 registration: 'connection',
-                                 sign_up: 'YAYY-rejoins-nous!',
+                                 registration: 'inscription',
+                                 sign_up: 'rejoins-nous!',
                                  new: "nouveau"}
   
   resources :profiles, only: [:show], :path => "profil" do

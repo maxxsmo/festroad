@@ -575,12 +575,7 @@ overflow-y: scroll;
   background-color: #E54F26 !important;
   color: white;
 }
-.arrow {
-  position: relative;
-  background-color: transparent;
-  color: white;
-  scroll-behavior: smooth;
-}
+
 
 
 

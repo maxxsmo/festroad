@@ -11,11 +11,11 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { registrations: 'registrations' }, path: "utilisateur", :path_names => {sign_in: "Bon-retour-parmis-nous-ami-festivalier",
                                  sign_out: "tu-nous-manques-déjà!", 
-                                 edit: "ici-tu-peux-mettre-à-jours-tes-infos-personnelles",
+                                 edit: "ici-tu-peux-mettre-à-jours-tes-informations-personnelles",
                                  password: 'alors-ca-c-est-secret-amigo',
                                  confirmation: 'verification', 
                                  registration: 'connection',
-                                 sign_up: 'YAYY-rejoins-nous-!'}
+                                 sign_up: 'YAYY-rejoins-nous!'}
   
   resources :profiles, only: [:show] do
     resources :avatars, only: [:create]

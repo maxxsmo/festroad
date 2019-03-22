@@ -837,3 +837,10 @@ table a {
   height: 250px;
   text-align: right;
 }
+
+
+.date_modal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

@@ -34,14 +34,8 @@
               <%else%>
                   <%= image_tag 'https://festivalhommesforts.ca/wp-content/uploads/2017/06/Festival_music_374x230.jpg' %>
               <%end%>
-<<<<<<< HEAD
               <div class="card-body card">
                   <h6 class="card-title text-center"><%= fest.title %></h6><br>
-=======
-                          
-              <div class="card-body" data-id=<%=x%> onmouseover=<%="showMarker(#{x})"%>>
-                   <center><h6 class="card-title red-font"><%= fest.title %></h6></center><br>
->>>>>>> 5e8e6d7cef00439f9a59d6dc8a992e11d540359e
                 <div class="d-flex justify-content-around">
                   <p><strong>Du : </strong><%= fest.start_date.strftime("%d/%m/%Y") %></p>
                   <p><strong>Au : </strong><%= fest.end_date.strftime("%d/%m/%Y") %></p>

@@ -776,3 +776,15 @@ table a {
   text-decoration: underline;
   background-color: transparent;
 }
+
+/*** HOME PAGE SECTION WHY ***/
+.image-why{
+  width: 450px;
+  height: 250px;
+}
+
+.image-why-right{
+  width: 450px;
+  height: 250px;
+  text-align: right;
+}

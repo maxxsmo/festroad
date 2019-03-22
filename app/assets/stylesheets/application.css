@@ -311,6 +311,13 @@
   object-fit: cover;
 }
 
+.hr_how {
+  margin: auto;
+  position: relative;
+  top: 50px;
+  width: 60%;
+}
+
 /***** CSS FOR DEVISE *******/
 
 /* Form LOG IN */
@@ -838,6 +845,13 @@ table a {
   text-align: right;
 }
 
+.hr_why {
+  margin: 0px auto 10px auto;
+  position: relative;
+  top: 30px;
+  width: 60%;
+}
+
 /* CSS FOR MODAL */
 
 .date_modal {
@@ -871,4 +885,27 @@ table a {
 
 .cont_wishlist {
   overflow-y: scroll;
+}
+
+
+
+
+.step.step-with-icon .step-icon::after {
+  border: 1px dashed #e54f2699;
+}
+
+.step.step-with-icon .step-icon::after {
+  border: 1px dashed rgba(172, 50, 228, 0.3);
+}
+
+.step.step-with-icon .step-icon::before, .step.step-with-icon .step-icon::after {
+  display: none !important;
+  position: none !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 0% !important;
+  height: 0% !important;
+  transition: none !important;
+  border-radius: none !important;
+  content: '';
 }

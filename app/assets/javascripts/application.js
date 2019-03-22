@@ -33,6 +33,8 @@
 //= require assets/javascripts/owl.carousel.min
 //= require assets/javascripts/parallax-scroll.min
 //= require assets/javascripts/popper.min
+//= require Chart.bundle
+//= require chartkick
 
 //= require rails-ujs
 //= require_tree .

@@ -20,6 +20,13 @@
  *= require_tree .
  */
 
+ /* BODY */
+
+* a:hover{
+  color:#E54F26 !important;
+
+}
+
 /* CSS NAVBAR */
 
 #home #navbar{
@@ -33,6 +40,12 @@
   background: none;
 
 }
+
+#home #navbar #mobile-menu  {
+s
+
+}
+
 
 #home #navbar a{
   color:white !important;
@@ -581,6 +594,14 @@ overflow-y: scroll;
 
 .fa-heart:before, .text-accent{
   color:#E54F26 ;
+}
+
+.fa-map-sign:before, .text-accent{
+  color:#E54F26 !important ;
+}
+
+.fa-user:before, .text-accent{
+  color:#E54F26 !important ;
 }
 
 .arrow:hover, i:hover{

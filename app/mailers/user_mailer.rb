@@ -9,9 +9,6 @@ class UserMailer < ApplicationMailer
       @url  = 'https://festroad.herokuapp.com/utilisateur/connexion'
 
       headers "X-SMTPAPI" => {
-        sub: {
-          "%name%" => [@user.email]
-        },
         filters:{
           templates: {
             settings: {

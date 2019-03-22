@@ -15,7 +15,8 @@ Rails.application.routes.draw do
                                  password: 'alors-ca-c-est-secret-amigo',
                                  confirmation: 'verification', 
                                  registration: 'connection',
-                                 sign_up: 'YAYY-rejoins-nous!'}
+                                 sign_up: 'YAYY-rejoins-nous!',
+                                 new: "nouveau"}
   
   resources :profiles, only: [:show], :path => "profil" do
     resources :avatars, only: [:create]

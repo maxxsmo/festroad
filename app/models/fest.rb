@@ -104,11 +104,11 @@ class Fest < ApplicationRecord
 
   def self.carousel
     result = []
-    Fest.all.each do |fest|
+    Fest.where(validation_admin: true).each do |fest|
       result << fest
     end
     result = result.sort! {|a,b| a.start_date <=> b.start_date}
-    result.first(6)
+    result.uniq.first(6)
   end
 
   def self.date(fests)
@@ -117,21 +117,7 @@ class Fest < ApplicationRecord
       result << fest
     end
     result = result.sort! {|a,b| a.start_date <=> b.start_date}
-    result.first(6)
+    result.uniq.first(6)
   end
-
-#   #Importing JSON in Database
-#   DECLARE @json
-#   SET @json = festivals_details.json
-  
-#   SELECT * FROM  
-#    OPENJSON ( @json )  
-#   WITH (   
-#     title   varchar '$.Fest.Title'   
-#     website varchar '$.Fest.Website' 
-#     address  varchar '$.Fest.Address'
-#     start_date date '$.Fest.StartDate'
-#     end_date date '$.Fest.EndDate'  
-#    )
 
 end

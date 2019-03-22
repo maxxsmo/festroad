@@ -297,6 +297,20 @@
 #sectionhow{
   margin-top:5%;
 }
+
+.cont-img {
+  margin: 1em 0;
+  text-align: center;
+}
+
+.cont-img img {
+  height: 20vw;
+}
+
+.img-carousel img {
+  object-fit: cover;
+}
+
 /***** CSS FOR DEVISE *******/
 
 /* Form LOG IN */

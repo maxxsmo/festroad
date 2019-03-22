@@ -10,16 +10,22 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require assets/css/iziToast.min
- *= require assets/css/jquery.fancybox.min
- *= require assets/css/nouislider.min
- *= require assets/css/owl.carousel.min
- *= require assets/css/socicon.min
+ *= require iziToast.min
+ *= require jquery.fancybox.min
+ *= require nouislider.min
+ *= require owl.carousel.min
+ *= require socicon.min
  *= require theme
  *= require_self
-*= require_tree .
-
+ *= require_tree .
  */
+
+ /* BODY */
+
+* a:hover{
+  color:#E54F26 !important;
+
+}
 
 /* CSS NAVBAR */
 
@@ -35,13 +41,29 @@
 
 }
 
+#home #navbar #mobile-menu  {
+
+}
+
+
 #home #navbar a{
   color:white !important;
 }
 
 #home #navbar .dropdown-item{
   color:black !important;
+ 
 }
+
+#home #navbar .dropdown-menu .dropdown-item:hover{
+  color:#E54F26 !important;
+
+}
+#home .nav-item .nav-link:hover{
+    color: #E54F26 !important;
+  }
+
+
  /*CSS COLORS CHOSEN*/
 
  .color-table{
@@ -143,7 +165,10 @@
     background-color: #E54F26 !important;
   }
 
+ .dropdown-menu .dropdown-item:hover{
+   color:#E54F26 !important;
 
+  }
  /*CSS OF THE FOOTER*/
 
  footer{
@@ -207,8 +232,13 @@
   margin : auto;
 }
 
+.page-container{
+  margin-bottom: 5%;
+}
 
-
+.nav-item .nav-link:hover{
+  color: #E54F26 !important;
+}
 
 /*CSS FOR PROFILE CARD*/
 .bg-gradient-vertical, .gallery-item::before, .team-card-style-1::before, .team-card-style-2::after, .author-card .author-card-cover::after {
@@ -219,7 +249,6 @@
 /* CSS FOR FAV list*/
 #favlist {
   background-color: #8080800a;
-  margin-top: 5%;
   padding: 5%;
   margin-bottom: 5%;
 }
@@ -268,6 +297,20 @@
 #sectionhow{
   margin-top:5%;
 }
+
+.cont-img {
+  margin: 1em 0;
+  text-align: center;
+}
+
+.cont-img img {
+  height: 20vw;
+}
+
+.img-carousel img {
+  object-fit: cover;
+}
+
 /***** CSS FOR DEVISE *******/
 
 /* Form LOG IN */
@@ -439,7 +482,8 @@ color:#E54F26;
 /*CSS FOR MAP FESTIVAL PAGE*/
 
 #map {
-  height: 700px; width: 835px;
+  height: 100%; 
+  width: 100%;
 }
 
 .iw_title {
@@ -452,7 +496,8 @@ color:#E54F26;
 /*CSS FOR MAP WISHLIST PAGE*/
 
 #map_2 {
-  height: 500px; width:550px;
+  height: 100%;
+   width:100%;
 }
 
 /* Optional: Makes the sample page fill the window. */
@@ -461,6 +506,10 @@ html, body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+}
+
+a {
+  color: #E54F26 ;
 }
 
 /* CSS for index fest */
@@ -551,12 +600,32 @@ overflow-y: scroll;
     background-size: cover;
     background-position: center center;
     color: #fff;
-    padding-top: 200px;
-    padding-bottom:200px;
+    padding-top: 20%;
+    padding-bottom:15%;
   }
 
 /*** BUTTONS ***/
 
+.fa-heart:before, .text-accent{
+  color:#E54F26 ;
+}
+
+.fa-map-sign:before, .text-accent{
+  color:#E54F26 !important ;
+}
+
+.fa-user:before, .text-accent{
+  color:#E54F26 !important ;
+}
+
+.arrow:hover, i:hover{
+  color:#E54F26 ;
+}
+
+.no-fav{
+text-decoration: none;  
+
+}
 .btn-primary{
   border-radius: var(--border-button-border-radius, 4px);
 }
@@ -735,4 +804,10 @@ display: inline-block;
 /*** TABLE BACKOFFICE ADMIN ***/
 .backoffice-table {
   vertical-align: top !important;
+}
+
+table a {
+  color: #4A1836 !important;
+  text-decoration: underline;
+  background-color: transparent;
 }

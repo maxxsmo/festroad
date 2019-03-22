@@ -315,14 +315,22 @@
 
 /* Form LOG IN */
 
+.passpage {
+  margin-top: 10% !important;
+  margin-bottom: 10% !important;
+  margin-left: 33% !important;
+}
+
 #login {
-  margin-top: 10%;
-  margin-bottom: 10%;
-  margin-left: 33%;
+  margin-top: 25%;
+  margin-bottom: 25%;
+
 }
+
 #login a {
-color:#E54F26;
-}
+  color:#E54F26;
+  }
+
 
 .form-heading{
   padding-bottom: 5%;

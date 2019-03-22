@@ -10,18 +10,16 @@
 
 				<!-- Total users-->
 				<div class="row">
-					<div class="col-sm-4">
-						<p><strong>Nombre total d'utilisateurs: <%= @users.count %></strong></p>
-					</div>
-				
-				<!--Fests online-->
-					<div class="col-sm-4">
-						<p><strong>Nombre de festivals en ligne: <%= @festlive.count %></strong></p>
+					<div class="col-sm-6 text-center">
+						<p><strong>Nombre total d'utilisateurs:  <%= @users.count %>, dont admin: <%= @admins.count %></strong></p>
+						<%= pie_chart User.group(:is_admin).count, colors: ["#4A1836", "#E54F26 "] %>
+
 					</div>
 
 				<!-- Total fests-->
-					<div class="col-sm-4">
-						<p><strong>Nombre total de festivals: <%= @fests.count %></strong></p>
+					<div class="col-sm-6 text-center">
+						<p><strong>Nombre total de festivals: <%= @fests.count %>, dont <%= @festlive.count %> en ligne </strong></p>
+						<%= pie_chart Fest.group(:validation_admin).count, colors: ["#FFCF0F", "#4A1836"] %>
 					</div>
 				</div>
 		</section>

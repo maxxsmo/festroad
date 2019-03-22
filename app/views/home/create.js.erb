@@ -1,0 +1,6 @@
+$(function(){
+$("#searchA").hide();
+$("#searchB").show();
+$('#form').show();
+$("#form").html("<%= j render 'form_advanced', music: @music, location: @location %>");
+});

@@ -33,6 +33,8 @@
 //= require assets/javascripts/owl.carousel.min
 //= require assets/javascripts/parallax-scroll.min
 //= require assets/javascripts/popper.min
+//= require Chart.bundle
+//= require chartkick
 
 //= require rails-ujs
 //= require_tree .
@@ -41,14 +43,10 @@
  $(function(){
  $('#form').hide();
  $("#searchB").hide();
- $("#searchA").click(function(){
-   $("#searchA").toggle();
-   $("#searchB").toggle();
-   $("#form").toggle();
-   $(".arrow").css("top", "140px");
- })
  $("#searchB").click(function(){
-  $("#form").toggle();
+  $("#form").html( "");
+  $('#form').toggle();
+  
   $("#searchA").toggle();
   $("#searchB").toggle();
   $(".arrow").css("top", "200px");

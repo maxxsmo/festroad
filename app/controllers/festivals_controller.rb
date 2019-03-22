@@ -7,7 +7,7 @@ class FestivalsController < ApplicationController
     @fests = Fest.location(params[:location], @fests) if params[:location].present?
     @fests = Fest.start_date(params[:start_date], @fests) if params[:start_date].present?
     @fests = Fest.end_date(params[:end_date], @fests) if params[:end_date].present?
-      
+    @carousel = Fest.carousel
     gon.fest = @fests
     @music = MusicType.all
     @location = LocationType.all
@@ -23,7 +23,11 @@ class FestivalsController < ApplicationController
       format.html
       format.js
     end
-    @carousel = Fest.all 
+    @result = []
+    if current_user
+      wishlist = WishList.where(user: current_user).each {|w| @result << w.fest}
+    end
+    @carousel = Fest.carousel 
   end
   
 

@@ -18,10 +18,14 @@ module Admin
 
     def new 
       @fest = Fest.new
+      @tag = Tag.new
+      @fest_location = FestLocation.new
     end
 
     def create 
       @fest = Fest.new(title: params[:title], description: params[:description], start_date: params[:start_date], end_date: params[:end_date], address: params[:address], website: params[:website])
+      @tag = Tag.create(music_type_id: params[:music_types], fest: @fest)
+      @fest_location = FestLocation.create(location_type_id: params[:location], fest: @fest)
       if @fest.save 
         redirect_to({action: :index}, success: "Le festival a bien été créé")
       else 
@@ -31,11 +35,25 @@ module Admin
 
     def edit 
       @fest = Fest.find(params[:id])
+      @music = MusicType.all
+      @location = LocationType.all
+      @start_date = @fest.start_date.strftime('%Y-%m-%d')
+      @end_date = @fest.end_date.strftime('%Y-%m-%d')
+
+      @tag = Fest.find(params[:id]).tags
+      result = []
+      @music_type = @tag.each { |tag| result << tag.music_type.style}
+
+      # @fest_location = FestLocation.find(params[:id])
+      # @location = @fest_location.location_types
+
     end
 
     def update
       @fest = Fest.find(params[:id])
       if @fest.update(title: params[:title], description: params[:description], start_date: params[:start_date], end_date: params[:end_date], address: params[:address], website: params[:website], validation_admin: params[:validation_admin])
+        Tag.create(music_type_id: params[:music_types], fest: @fest)
+        FestLocation.create(location_type_id: params[:location], fest: @fest)
         redirect_to({action: :index}, success: "Le festival a bien été modifié")
       else 
         render "edit"

@@ -1,14 +1,17 @@
  <!-- Submission Fests Form-->
   <section class="bg-secondary bg-cover bg-no-repeat pt-5 pb-4"  data-offset-top="-10" id="contacts">
       <div class="container py-2 page-container">
+
         <h2 class="h3 contact-form block-title text-center">Soumettre un nouveau festival</h2>
+        <span class="contact-form block-title text-center">Vous souhaitez faire connaître un festival près de chez vous? Vous organisez un festival et souhaitez que nous le référencions? Remplissez le formulaire ci-dessous et nous nous chargerons de le publier!</span>
+
 
         <%= form_tag url_for(action: 'create'), method: "post" do %>
 
           <% if flash[:error].present? %>
               <p> flash[:error]</p>
           <% end %>
-
+              <br>
               <div class="row">
                   <div class="col-md-6">
                     <label> Titre </label><span class="text-danger font-weight-medium">*</span>
@@ -18,13 +21,13 @@
 
                   <div class="col-md-3">
                     <label> Date de début </label><span class="text-danger font-weight-medium">*</span>
-                    <%= datetime_field_tag 'start_date', @fest.start_date, :size =>"60x1",:required => true, class: "form-control"%>
+                    <%= date_field_tag 'start_date', @fest.start_date, :size =>"60x1",:required => true, class: "form-control"%>
                     <div class="invalid-feedback">Merci de renseigner la date de début du festival!</div>
                   </div>
 
                   <div class="col-md-3">
                     <label> Date de fin </label><span class="text-danger font-weight-medium">*</span>
-                    <%= datetime_field_tag 'end_date', @fest.end_date, :size =>"60x1",:required => true, class: "form-control"%>
+                    <%= date_field_tag 'end_date', @fest.end_date, :size =>"60x1",:required => true, class: "form-control"%>
                     <div class="invalid-feedback">Merci de renseigner la date de fin du festival!</div>
                   </div>
               </div>
@@ -47,6 +50,25 @@
                   <label> Description </label><span class="text-danger font-weight-medium">*</span><br/>
                   <%= text_area_tag 'description', @fest.description,:required => true, :size =>"60x6", class: "form-control" %>
                   <div class="invalid-feedback">Merci de renseigner une description pour le festival!</div>
+                </div>
+
+              </div>
+
+              <br>
+
+              <div class="row">
+
+                <div class="col-md-6">
+                  <label> Type de musique </label><span class="text-danger font-weight-medium">*</span><br>
+                  <%= select_tag :music_types, options_for_select(MusicType.all.collect { |u| [u.style, u.id]}), include_blank:"Type de musique", class: "form-control" %>
+                  <div class="invalid-feedback">Merci de renseigner un type de musique pour le festival!</div>
+
+                </div>
+
+                <div class="col-md-6">
+                  <label> Type de festival </label><span class="text-danger font-weight-medium">*</span><br/>
+                  <%= select_tag :location, options_for_select(LocationType.all.collect{ |u| [u.location, u.id] }.slice(0..-2)), include_blank:"Type de festival", :required => true, class: "form-control"%>
+                  <div class="invalid-feedback">Merci de renseigner un type de festival!</div>
                 </div>
 
               </div>

@@ -104,11 +104,11 @@ class Fest < ApplicationRecord
 
   def self.carousel
     result = []
-    Fest.all.each do |fest|
+    Fest.where(validation_admin: true).each do |fest|
       result << fest
     end
     result = result.sort! {|a,b| a.start_date <=> b.start_date}
-    result.first(6)
+    result.uniq.first(6)
   end
 
   def self.date(fests)
@@ -117,7 +117,7 @@ class Fest < ApplicationRecord
       result << fest
     end
     result = result.sort! {|a,b| a.start_date <=> b.start_date}
-    result.first(6)
+    result.uniq.first(6)
   end
 
 end

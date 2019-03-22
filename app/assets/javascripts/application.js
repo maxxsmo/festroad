@@ -43,14 +43,10 @@
  $(function(){
  $('#form').hide();
  $("#searchB").hide();
- $("#searchA").click(function(){
-   $("#searchA").toggle();
-   $("#searchB").toggle();
-   $("#form").toggle();
-   $(".arrow").css("top", "140px");
- })
  $("#searchB").click(function(){
-  $("#form").toggle();
+  $("#form").html( "");
+  $('#form').toggle();
+  
   $("#searchA").toggle();
   $("#searchB").toggle();
   $(".arrow").css("top", "200px");

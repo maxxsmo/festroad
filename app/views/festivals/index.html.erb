@@ -11,7 +11,6 @@
     <% end %></div>
 <%end%>
 
-
 <div style="height:5%;"></div>
 <div class="row">
 
@@ -21,7 +20,13 @@
   </div>
 
     <div class="row cont_fest col-xl-4 col-lg-4 col-md-4 col-sm-4">
-      <div class="d-flex flex-column bd-highlight col-centered">
+     <% if  @fests.count == 0 %>
+      <div class="d-flex flex-column bd-highlight align-self-center">
+            <em class="justify-self-center" id="messageerror"> Aucun résultat ne correspond à votre recherche...<i class="far fa-sad-tear"></i> </em>  
+          </div>
+      </div>
+         <%else%>
+        <div class="d-flex flex-column bd-highlight col-centered">
         <% @fests.each do |fest| %>
             <div class="mb-30 card_index" id="hello">
               <%if fest.festpic.attached?%>
@@ -29,7 +34,7 @@
               <%else%>
                   <%= image_tag 'https://festivalhommesforts.ca/wp-content/uploads/2017/06/Festival_music_374x230.jpg' %>
               <%end%>
-              <div class="card-body card" onmouseover=<%="showMarker(#{x})"%>>
+              <div class="card-body card">
                   <h6 class="card-title text-center"><%= fest.title %></h6><br>
                 <div class="d-flex justify-content-around">
                   <p><strong>Du : </strong><%= fest.start_date.strftime("%d/%m/%Y") %></p>
@@ -44,7 +49,7 @@
                   <% else %><%= link_to "", wish_lists_path(fest.id), :class => "no-fav far fa-heart fa-2x text-accent", method: "post" %><%end%>
                 </div>
               </div>
-
+           
               <div class="modal fade mt-5 pt-5" id="<%= "modalLarge#{x}" %>" tabindex="-1" role="dialog">
                 <div class= "modal-dialog modal-lg mb-2 card col-xl-12 col-lg-12 col-md-12 col-sm-12" role="document">
                   <div class="row justify-content-between">
@@ -76,12 +81,14 @@
               </div>
             </div>
             </div>
+          <% end %>
         <% x += 1 %>
-        <% end %>
       </div>
     </div>
+    <%end%>
   </div>
 </div>
+
 
 <div style="height: 5%;"></div>
 

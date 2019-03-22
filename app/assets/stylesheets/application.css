@@ -316,7 +316,8 @@
 /* Form LOG IN */
 
 #login {
-  margin: 15% 10% 15% 25%;
+  margin-top: 25%;
+  margin-bottom: 25%;
 }
 #login a {
 color:#E54F26;
@@ -329,8 +330,8 @@ color:#E54F26;
 /* Form SIGN IN */
 
 .signup-page{
-  margin-top:15%;
-  margin-bottom:10%;
+  margin-top:5%;
+  margin-bottom:5%;
 }
 
 .signup-page a {
@@ -469,10 +470,6 @@ color:#E54F26;
   background: linear-gradient(to right, #FFCF0F 0%, #E54F26 100%) !important;
 }
 
-/*CSS FOR CONTACT FORM*/
-.contact-form{
-  padding-top: 80px;
-}
 
 /*CSS FOR CONTACT FORM*/
 .kit-container{
@@ -492,6 +489,9 @@ color:#E54F26;
   color: grey; 
 }
 
+#messageerror {
+  font-size: 1.5em;
+}
 
 /*CSS FOR MAP WISHLIST PAGE*/
 

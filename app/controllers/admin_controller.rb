@@ -3,9 +3,11 @@ class AdminController < ApplicationController
   before_action :check_if_admin
 
   def index
-    @admins = User.where(is_admin: true)
-    @fests = Fest.all
     @users = User.all
+    @notadmins = @users.where(is_admin: false)
+    @admins = @users.where(is_admin: true)
+    @fests = Fest.all
+    @festoff = @fests.where(validation_admin: nil)
     @festlive = @fests.where(validation_admin: true)
   end
   

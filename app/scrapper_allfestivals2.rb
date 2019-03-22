@@ -3,31 +3,26 @@ require 'nokogiri'
 require 'json'
 
 
-  # page list of festivals (url)
+
   x = 1
   array_festivals_url = []
   27.times do 
     page_all_festivals = Nokogiri::HTML(open('https://www.touslesfestivals.com/agenda/liste?page=' + x.to_s))
 
-
     def get_festival_url(page_all_festivals)
       fest_title = page_all_festivals.xpath('//*/ul[1]/li/a[starts-with(@href, "https://www.touslesfestivals.com")]')
-      # fest_title = page_all_festivals.css('')
-      # fest_title.each do |fest|
-      #   puts "#{fest[:href]}" 
-      # end
     end
-    # creation of the array
-    
+        
     get_festival_url(page_all_festivals).each do |link|
       array_festivals_url << link[:href]
     end
-    
-    x += 1
-  end
-  array_festivals_url.delete("https://www.touslesfestivals.com/mentions-legales")
-  # puts array_festivals_url.uniq
 
+    x += 1
+
+  end
+
+
+  array_festivals_url.delete("https://www.touslesfestivals.com/mentions-legales")
 
   array_festivals_details = []
 

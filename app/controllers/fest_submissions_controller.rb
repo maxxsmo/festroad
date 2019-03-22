@@ -22,5 +22,4 @@ class FestSubmissionsController < ApplicationController
   def festsubmission_send
     AdminMailer.festsubmission_email(self).deliver_now
   end
-
 end

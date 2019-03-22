@@ -39,14 +39,9 @@ module Admin
       @location = LocationType.all
       @start_date = @fest.start_date.strftime('%Y-%m-%d')
       @end_date = @fest.end_date.strftime('%Y-%m-%d')
-
       @tag = Fest.find(params[:id]).tags
       result = []
       @music_type = @tag.each { |tag| result << tag.music_type.style}
-
-      # @fest_location = FestLocation.find(params[:id])
-      # @location = @fest_location.location_types
-
     end
 
     def update
@@ -80,7 +75,6 @@ module Admin
       redirect_to root_path
       end
     end
-
     
   end
 

@@ -1,7 +1,6 @@
 class HomeController < ApplicationController
   def index
     @fest = Fest.carousel
-
   end
 
   def create    
@@ -12,5 +11,5 @@ class HomeController < ApplicationController
       format.js 
     end
   end
-
+  
 end

@@ -13,8 +13,7 @@ class ContactController < ApplicationController
     flash.now[:error] = "Le message ne s'est pas envoyé"
     render :new
   end
-    
   end
-
+  
 end
 

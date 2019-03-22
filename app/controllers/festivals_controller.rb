@@ -30,6 +30,4 @@ class FestivalsController < ApplicationController
     @carousel = Fest.carousel 
   end
   
-
-
 end

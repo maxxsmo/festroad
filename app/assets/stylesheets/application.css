@@ -46,7 +46,10 @@
 #home #navbar .dropdown-menu .dropdown-item:hover{
   color:#E54F26 !important;
 
- }
+}
+#home .nav-item .nav-link:hover{
+    color: #E54F26 !important;
+  }
 
 
  /*CSS COLORS CHOSEN*/
@@ -221,6 +224,9 @@
   margin-bottom: 5%;
 }
 
+.nav-item .nav-link:hover{
+  color: #E54F26 !important;
+}
 
 /*CSS FOR PROFILE CARD*/
 .bg-gradient-vertical, .gallery-item::before, .team-card-style-1::before, .team-card-style-2::after, .author-card .author-card-cover::after {

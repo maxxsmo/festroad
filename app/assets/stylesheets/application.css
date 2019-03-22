@@ -812,6 +812,20 @@ display: inline-block;
   vertical-align: top !important;
 }
 
+/*** LEGAL MENTIONS ***/
+.mention {
+  transform: translate(+25%, 0%);
+}
+
+#mention h4 {
+  margin-top: 20%;
+  margin-bottom: 5%;
+}
+
+#mention h6 {
+  margin-top: 5%;
+}
+
 table a {
   color: #4A1836 !important;
   text-decoration: underline;
@@ -828,4 +842,39 @@ table a {
   width: 450px;
   height: 250px;
   text-align: right;
+}
+
+/* CSS FOR MODAL */
+
+.date_modal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/* CSS FOR WISHLIST CARD */
+
+.rm_fest {
+  display: block;
+    position: absolute;
+    top: 12%;
+    right: -.3125rem;
+    width: 22px;
+    height: 22px;
+    padding-left: .0625rem;
+    border-radius: 50%;
+    color: black;
+    line-height: 23px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.info_wishlist {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}   
+
+.cont_wishlist {
+  overflow-y: scroll;
 }

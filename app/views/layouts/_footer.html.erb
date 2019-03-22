@@ -1,51 +1,61 @@
-<footer >
-      <!-- Second Row-->
-      <div class="pt-5" id="footer">
-        <div class="container">
-          <div class="row">
-            <!-- FestRoad-->
-            <div class="col-lg-3 col-sm-6">
-              <div class="widget widget-contacts widget-light-skin mb-4">
-                <h4 class="widget-title">FestRoad</h4>
-                <ul>
-                  <li class="align-items-center"><i class="footer-icon fas fa-search"></i><%= link_to "Trouver mon fest",festivals_path %></li>
-                  <li class="align-items-center"><i class="footer-icon fas fa-envelope"></i><%= link_to 'Nous contacter', new_contact_path %></li>
-                  <li class="align-items-center"><i class="footer-icon fas fa-balance-scale"></i><span>Mentions légales</span></li>
-                </ul>
-              </div>
-            </div>
-            <!-- Espace perso-->
-            <div class="col-lg-3 col-sm-6">
-              <div class="widget widget-contacts widget-light-skin mb-4">
-                <h4 class="widget-title">Espace Perso</h4>
-                 <% if current_user %>
-                  <ul>
-                    <li class="align-items-center"><i class="footer-icon fas fa-user-plus"></i><%= link_to "Mon espace", profile_path(current_user)%></li>
-                    <li class="align-items-center"><i class="footer-icon fas fa-sign-in-alt"></i><%= link_to "Déconnexion", destroy_user_session_path, method: :delete%></li>
-                  </ul>
-                  <% else %>
-                  <ul>
-                    <li class="align-items-center"><i class="footer-icon fas fa-sign-in-alt"></i><%=link_to "Connexion", new_user_session_path %></li>
-                    <li class="align-items-center"><i class="footer-icon fas fa-user-plus"></i><%= link_to "Inscription", new_user_registration_path %></li>
-                  </ul>
-                   <% end %>
-              </div>
-              <div class="widget pt-2"></div>
-            </div>
-            <!-- Newsletter -->
-            <div class="col-lg-6">
-              <div class="widget widget-light-skin">
-                <h4 class="widget-title">Newsletter</h4>
-                <%= render "layouts/newsletter"%>
-              </div>
-            </div>
-            
-            <!-- copyright -->
-          
-            <div class="d-flex justify-content-center py-4">
-              <p class="text-sm text-white "><span class="opacity-60">© Fait avec <i class="far fa-heart"></i> par</span> THP2019 #TeamStrasbourg</p>
-            </div>
+<footer>
+  <!-- Second Row-->
+  <div class="pt-5" id="footer">
+    <div class="container">
+      <div class="row">
+        <!-- FestRoad-->
+        <div class="col-lg-3 col-sm-6">
+          <div class="widget widget-contacts widget-light-skin mb-4">
+            <h4 class="widget-title">FestRoad</h4>
+            <ul>
+              <li class="align-items-center"><i
+                  class="footer-icon fas fa-search"></i><%= link_to "Trouver mon fest",festivals_path %></li>
+              <li class="align-items-center"><i
+                  class="footer-icon fas fa-envelope"></i><%= link_to 'Nous contacter', new_contact_path %></li>
+              <li class="align-items-center"><i
+                  class="footer-icon fas fa-balance-scale"></i><%= link_to 'Mentions Légales', legal_mentions_path %>
+              </li>
+            </ul>
           </div>
+        </div>
+        <!-- Espace perso-->
+        <div class="col-lg-3 col-sm-6">
+          <div class="widget widget-contacts widget-light-skin mb-4">
+            <h4 class="widget-title">Espace Perso</h4>
+            <% if current_user %>
+            <ul>
+              <li class="align-items-center"><i
+                  class="footer-icon fas fa-user-plus"></i><%= link_to "Mon espace", profile_path(current_user)%></li>
+              <li class="align-items-center"><i
+                  class="footer-icon fas fa-sign-in-alt"></i><%= link_to "Déconnexion", destroy_user_session_path, method: :delete%>
+              </li>
+            </ul>
+            <% else %>
+            <ul>
+              <li class="align-items-center"><i
+                  class="footer-icon fas fa-sign-in-alt"></i><%=link_to "Connexion", new_user_session_path %></li>
+              <li class="align-items-center"><i
+                  class="footer-icon fas fa-user-plus"></i><%= link_to "Inscription", new_user_registration_path %></li>
+            </ul>
+            <% end %>
+          </div>
+          <div class="widget pt-2"></div>
+        </div>
+        <!-- Newsletter -->
+        <div class="col-lg-6">
+          <div class="widget widget-light-skin">
+            <h4 class="widget-title">Newsletter</h4>
+            <%= render "layouts/newsletter"%>
+          </div>
+        </div>
 
+        <!-- copyright -->
+
+        <div class="d-flex justify-content-center py-4">
+          <p class="text-sm text-white "><span class="opacity-60">© Fait avec <i class="far fa-heart"></i> par</span>
+            THP2019 #TeamStrasbourg</p>
+        </div>
       </div>
-    </footer>
+
+    </div>
+</footer>

@@ -189,10 +189,13 @@ let marker = new google.maps.Marker({
   });
 
 // google.maps.event.addDomListener(window, "load", initMap);
-
-// function showMarker(id) {
-//  google.maps.event.trigger(marker[id], 'mouseover');
-//}
+$('.card-body').on('click', function(e){
+  var id = $(this).data('id')
+  google.maps.event.trigger(marker[id], 'mouseover');
+});
+function showMarker(id) {
+google.maps.event.trigger(marker[id], 'mouseover');
+}
 
  }
  

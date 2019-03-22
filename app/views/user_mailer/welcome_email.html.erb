@@ -1,25 +1,34 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html data-editor-version="2" class="sg-campaigns" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" /><!--[if !mso]><!-->
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-  </head>
-  <body>
-   
-    <table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;">
-      <tr>
-        <td style="padding:18px 0px 18px 0px;line-height:22px;text-align:inherit;"
-            height="100%"
-            valign="top">
-            <h1>Salut <%= @user.first_name %> et bienvenue chez Festroad!</h1>
-            <div>
-              <p>Tu t'es inscrit sur Festroad en utilisant l'e-mail suivant : <%= @user.email %>.</p>
-              <p>Pour accéder à ton espace client, connecte-toi via : <%= @url %>.</p>
-              <p> À très vite sur FestRoad ! </p>
-            </div>
-        </td>
-      </tr>
-    </table>
-  </body>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <!--[if !mso]><!-->
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+</head>
+
+<body>
+  <header>
+    <img class="max-width" border="0"
+      style="display:block;color:#000000;text-decoration:none;font-family:Helvetica, arial, sans-serif;font-size:16px;max-width:100% !important;width:100%;height:auto !important;"
+      url="https://marketing-image-production.s3.amazonaws.com/uploads/b1cca1c739d0c28c4e413e649e421e8a1409e69c8c4260577bbcb492662d546e08d427bdf80b91189ab4473f6262ced2df22b66463357d3935866a4206cdc713.png" />
+  </header>
+  <table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%"
+    style="table-layout: fixed;">
+    <tr>
+      <td style="padding:18px 0px 18px 0px;line-height:22px;text-align:inherit;" height="100%" valign="top">
+        <h1>Hello <%= @user.first_name%> et bienvenue parmi nous!</h1>
+        <div>
+          <p>Tu t'es inscrit sur Festroad en utilisant cette adresse e-mail ( <%= @user.email%>), et l'équipe Festroad
+            en a profité pour te passer le bonjour.</p>
+          <p>Viens vite nous retrouver pour paramètrer ton compte et trouver le festival de tes rêves. </p>
+          <p>Pour accéder à ton compte et selectionner tes prochains festivals, connecte-toi via : <%= @url %>.</p>
+          <p> À très vite sur FestRoad ! </p>
+        </div>
+      </td>
+    </tr>
+  </table>
+</body>
+
 </html>

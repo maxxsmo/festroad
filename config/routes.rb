@@ -9,13 +9,13 @@ Rails.application.routes.draw do
   root 'home#index'
 
 
-  devise_for :users, :controllers => { registrations: 'registrations' }, path: "utilisateur", :path_names => {sign_in: "Bon-retour-parmis-nous-ami-festivalier",
+  devise_for :users, :controllers => { registrations: 'registrations' }, path: "utilisateur", :path_names => {sign_in: "connexion",
                                  sign_out: "tu-nous-manques-déjà!", 
-                                 edit: "ici-tu-peux-mettre-à-jours-tes-informations-personnelles",
-                                 password: 'alors-ca-c-est-secret-amigo',
+                                 edit: "mettre-à-jour-tes-informations-personnelles",
+                                 password: 'secret-amigo',
                                  confirmation: 'verification', 
-                                 registration: 'connection',
-                                 sign_up: 'YAYY-rejoins-nous!',
+                                 registration: 'inscription',
+                                 sign_up: 'rejoins-nous!',
                                  new: "nouveau"}
   
   resources :profiles, only: [:show], :path => "profil" do

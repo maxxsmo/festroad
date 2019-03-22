@@ -6,7 +6,7 @@ class UserMailer < ApplicationMailer
       @user = user 
   
       #on définit une variable @url qu'on utilisera dans la view d’e-mail
-      @url  = new_user_registration_path
+      @url  = 'https://festroad.herokuapp.com/utilisateur/connexion'
 
       headers "X-SMTPAPI" => {
         sub: {

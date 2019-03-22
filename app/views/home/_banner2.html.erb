@@ -1,19 +1,20 @@
 <div class="banner-sektion banner-overlay ">
     <div class="container text-center">
         <div class="col-md-12">
-            <div class="banner-heading" style="margin-top: 5%;"> 
-            <h2 class="pt-md-5 pb-md-4 pt-3 pb-3 pt-md-0 pb-md-5">Trouve le festival qui te correspond le mieux </h2>
+            <div class="banner-heading" style="margin-top: 5%;">
+                <h2 class="pt-md-5 pb-md-4 pt-3 pb-3 pt-md-0 pb-md-5">Trouve le festival qui te correspond le mieux
+                </h2>
 
-							<%= form_tag(festivals_path, method: :get ) do %>
-							<div class="row justify-content-center">
-								<%= text_field_tag :title, params[:title], class: "form-title search_bar", placeholder: "  Nom d'un festival"  %>
-								<%= button_tag 'Rechercher', class: "btn btn_search"  do %>
-								<i class="fas fa-search"></i>
-								<% end %>
-								<%=link_to(home_index_path,class: "btn btn_advanced", id: "searchA",method: :post, remote: true) do %>
-								<i class="fas fa-plus"></i>
-								<% end %>
-								<span class="btn btn_advanced" id="searchB"><i class="fas fa-minus"></i></span><br />
+                <%= form_tag(festivals_path, method: :get ) do %>
+                <div class="row justify-content-center">
+                    <%= text_field_tag :title, params[:title], class: "form-title search_bar", placeholder: "  Nom d'un festival"  %>
+                    <%= button_tag 'Rechercher', class: "btn btn_search"  do %>
+                    <i class="fas fa-search"></i>
+                    <% end %>
+                    <%=link_to(home_index_path,class: "btn btn_advanced", id: "searchA",method: :post, remote: true) do %>
+                    <i class="fas fa-plus"></i>
+                    <% end %>
+                    <span class="btn btn_advanced" id="searchB"><i class="fas fa-minus"></i></span><br />
 
 
                 </div>
@@ -21,10 +22,10 @@
                 </div>
 
                 <%end%><br />
-                <div>
-									<%= link_to("#services", class: "arrow") do %>
-									<i class="fas fa-chevron-down fa-2x"></i>
-									<% end %>
+                <div class="p_arrow">
+                    <%= link_to("#services", class: "arrow") do %>
+                    <i class="fas fa-chevron-down fa-2x"></i>
+                    <% end %>
                 </div>
             </div>
         </div>

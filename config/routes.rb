@@ -30,4 +30,6 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :edit, :update, :destroy], path: "utilisateur"
   end
 
+  resources :legal_mentions, only: [:index]
+
 end

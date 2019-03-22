@@ -304,7 +304,7 @@
 }
 
 .cont-img img {
-  height: 20vw;
+  height: 15vw;
 }
 
 .img-carousel img {
@@ -316,7 +316,8 @@
 /* Form LOG IN */
 
 #login {
-  margin: 15% 10% 15% 25%;
+  margin-top: 25%;
+  margin-bottom: 25%;
 }
 #login a {
 color:#E54F26;
@@ -329,8 +330,8 @@ color:#E54F26;
 /* Form SIGN IN */
 
 .signup-page{
-  margin-top:15%;
-  margin-bottom:10%;
+  margin-top:5%;
+  margin-bottom:5%;
 }
 
 .signup-page a {
@@ -469,10 +470,6 @@ color:#E54F26;
   background: linear-gradient(to right, #FFCF0F 0%, #E54F26 100%) !important;
 }
 
-/*CSS FOR CONTACT FORM*/
-.contact-form{
-  padding-top: 80px;
-}
 
 /*CSS FOR CONTACT FORM*/
 .kit-container{
@@ -492,6 +489,9 @@ color:#E54F26;
   color: grey; 
 }
 
+#messageerror {
+  font-size: 1.5em;
+}
 
 /*CSS FOR MAP WISHLIST PAGE*/
 
@@ -806,8 +806,34 @@ display: inline-block;
   vertical-align: top !important;
 }
 
+/*** LEGAL MENTIONS ***/
+.mention {
+  transform: translate(+25%, 0%);
+}
+
+#mention h4 {
+  margin-top: 20%;
+  margin-bottom: 5%;
+}
+
+#mention h6 {
+  margin-top: 5%;
+}
+
 table a {
   color: #4A1836 !important;
   text-decoration: underline;
   background-color: transparent;
+}
+
+/*** HOME PAGE SECTION WHY ***/
+.image-why{
+  width: 450px;
+  height: 250px;
+}
+
+.image-why-right{
+  width: 450px;
+  height: 250px;
+  text-align: right;
 }

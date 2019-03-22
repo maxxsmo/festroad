@@ -23,7 +23,11 @@ class FestivalsController < ApplicationController
       format.html
       format.js
     end
-    @carousel = Fest.all 
+    @result = []
+    if current_user
+      wishlist = WishList.where(user: current_user).each {|w| @result << w.fest}
+    end
+    @carousel = Fest.carousel 
   end
   
 

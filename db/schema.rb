@@ -55,9 +55,9 @@ ActiveRecord::Schema.define(version: 2019_03_22_122758) do
     t.string "website"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "validation_admin"
     t.float "latitude"
     t.float "longitude"
-    t.boolean "validation_admin"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -96,7 +96,7 @@ ActiveRecord::Schema.define(version: 2019_03_22_122758) do
     t.string "last_name"
     t.string "first_name"
     t.text "description"
-    t.boolean "is_admin"
+    t.boolean "is_admin", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false

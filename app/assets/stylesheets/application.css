@@ -40,7 +40,15 @@
 
 #home #navbar .dropdown-item{
   color:black !important;
+ 
 }
+
+#home #navbar .dropdown-menu .dropdown-item:hover{
+  color:#E54F26 !important;
+
+ }
+
+
  /*CSS COLORS CHOSEN*/
 
  .color-table{
@@ -142,7 +150,10 @@
     background-color: #E54F26 !important;
   }
 
+ .dropdown-menu .dropdown-item:hover{
+   color:#E54F26 !important;
 
+  }
  /*CSS OF THE FOOTER*/
 
  footer{
@@ -206,7 +217,9 @@
   margin : auto;
 }
 
-
+.page-container{
+  margin-bottom: 5%;
+}
 
 
 /*CSS FOR PROFILE CARD*/
@@ -218,12 +231,16 @@
 /* CSS FOR FAV list*/
 #favlist {
   background-color: #8080800a;
-  margin-top: 5%;
   padding: 5%;
   margin-bottom: 5%;
 }
 
 /*CSS FOR ICON TABLE*/
+
+.backoffice {
+  background-color: #4A1836;
+  color: #FFFFFF;
+}
 .icon-table td {
   text-align: center;
   padding-top: .5em;
@@ -485,6 +502,41 @@ overflow-y: scroll;
 
 
 /* CSS FOR BANNER */
+.btn_search {
+  margin-left: -71px;
+  margin-right: 4px;
+}
+
+.btn_search:hover {
+  background-color: white !important;
+  color: black !important;
+  border-radius: 4px !important;
+}
+
+
+.search_bar {
+  border-top-left-radius: 7px !important ;
+  border-bottom-left-radius: 7px  !important;
+  border: none !important;
+}
+.search_bar:focus {
+  outline: none;
+}
+.btn_advanced {
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  background-color: #E54F26 !important;
+  color: white;
+}
+.arrow {
+  position: relative;
+  top: 200px;
+  background-color: transparent;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+
 .banner-overlay {
   background: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,.3)), url(cover_concerts.jpg);
   background-repeat: no-repeat;
@@ -515,13 +567,17 @@ overflow-y: scroll;
     background-size: cover;
     background-position: center center;
     color: #fff;
-    padding-top: 200px;
-    padding-bottom:200px;
+    padding-top: 20%;
+    padding-bottom:15%;
   }
 
 /*** BUTTONS ***/
 
 .fa-heart:before, .text-accent{
+  color:#E54F26 ;
+}
+
+.arrow:hover, i:hover{
   color:#E54F26 ;
 }
 
@@ -707,4 +763,10 @@ display: inline-block;
 /*** TABLE BACKOFFICE ADMIN ***/
 .backoffice-table {
   vertical-align: top !important;
+}
+
+table a {
+  color: #4A1836 !important;
+  text-decoration: underline;
+  background-color: transparent;
 }

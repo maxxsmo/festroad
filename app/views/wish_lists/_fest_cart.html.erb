@@ -1,12 +1,12 @@
 
 <div class="card blog-card">
-    <a class="post-thumb" href="#">
+    <%link_to("#", class:"post-thumb") do %>
       <%if fest.festpic.attached?%>
         <%= image_tag fest.festpic, alt: 'festival picture' %>
       <%else%>
          <%= image_tag 'https://festivalhommesforts.ca/wp-content/uploads/2017/06/Festival_music_374x230.jpg' %>
       <%end%>
-    </a>
+    <% end %>
 
     <%= link_to(wish_list_path(wishlist.id), method: :delete, data: {confirm: "Es-tu sûr?"},  class: "remove-item mr-3") do %>
       <i class="fas fa-times"></i>
@@ -29,7 +29,7 @@
       <% end %>
       
       <%if fest.tags != [] %>
-        <%= fest.tags.each do |tag| %><a class="tag-link"><%= tag.music_type.style%> </a><%end%>
+        <% fest.tags.each do |tag| %><span class="tag-link"><%= tag.music_type.style%> </span><%end%>
       <% end %>
     </div>
 

@@ -1,5 +1,30 @@
+<div class="offcanvas-container is-triggered offcanvas-container-reverse" id="mobile-menu">
+  <span class="offcanvas-close"><i class="fas fa-times"></i></span>
+        <h6>Menu</h6>
+      <div class="offcanvas-scrollable-area border-top" style="height:calc(100% - 235px); top: 144px;">
+        <!-- Mobile Menu-->
+        <div class="accordion mobile-menu" id="accordion-menu">
+          <!-- Components-->
+          <div class="card">
+            <div class="card-header">
+                      <%= link_to 'Les festivals', festivals_path , class:"mobile-menu-link" %>
+            </div>
+          </div> 
+          <div class="card">
+            <div class="card-header">
+                      <%= link_to wish_lists_path, class: "mobile-menu-link" do %>
+                          <i class="far fa-heart text-center"></i>
+                            Mes favoris
+                  <% end%>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
 
-<nav class="navbar-wrapper navbar-boxed navbar-sticky" id="navbar">
+
+<!-- navbar desktop -->
+<header class="navbar-wrapper navbar-boxed navbar-sticky" id="navbar">
       <div class="container-fluid">
         <div class="d-table-cell align-middle pr-md-3">
             <%= link_to root_path do %>
@@ -19,34 +44,43 @@
                             Mes favoris
                   <% end%>
               </li>
-              
                <li class="nav-item">
                  <%= link_to 'Proposer un festival', new_fest_submission_path, class: 'nav-link' %>
               </li>
               <% end%>
             </ul>
-            <ul class="navbar-nav d-none d-lg-block">
+            <div class= "navbar justify-content-end justify-content-lg-between">
+              <ul class="navbar-nav d-none d-lg-block">
                 <% if current_user && current_user.is_admin == true %> 
                   <li class="nav-item"> 
                     <%= link_to 'Espace Admin', admin_index_path, class: 'nav-link' %>
+                  </li>
                 <%end%>
+                  
                 <% if current_user%>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <li class="nav-item dropdown-toggle">
+                    <%=link_to("#" ,class: "nav-link",id: "navbarDropdownMenuLink", data: {toggle: "dropdown"}, aria: {haspopup: "true",expanded: "false"}) do %>
                         Espace personnel <i class="fas fa-chevron-down"></i>
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <% end %>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                       <%= link_to "Mon profil", profile_path(current_user), class: 'dropdown-item' %>
                       <%= link_to "Paramètres", edit_user_registration_path(current_user), class: 'dropdown-item' %>
                       <%= link_to "Se déconnecter",  destroy_user_session_path, method: :delete, class:"dropdown-item " %>
-                    </div>
+                    </ul>
                   </li>
+                  </ul>
           <!-- Components-->
                   <%else%>
-                      <%= link_to "Me connecter",  new_user_session_path, method: :new, class:"btn ml-3 d-none d-xl-inline-block" %></li>
+                   <li class="nav-item">
+                      <%= link_to "Me connecter",  new_user_session_path, method: :new, class:"btn ml-3 d-none d-xl-inline-block navlink" %></li>
+                    </li>
                   <%end%>
-            </ul>
+                   <ul class="navbar-buttons d-inline-block align-middle">
+                <li class="d-block d-lg-none"><a href="#mobile-menu" data-toggle="offcanvas"><i class="fas fa-bars"></i></a></li>
+             </ul>
+              </div>
+            </div>
           </div>
-        </div>
-  </nav>
+  </header>
+
 

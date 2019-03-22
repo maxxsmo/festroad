@@ -1,8 +1,6 @@
 <% x = 0 %>
-<div style="height: 10%;"></div>
-
 <%= form_tag(festivals_path, method: :get ) do %>
-  <div class= "row justify-content-center mt-3 mb-3">
+  <div class= "row justify-content-center mt-3 ">
     <%= text_field_tag :title, params[:title], class: "form-control form-date mr-2", placeholder: "Nom d'un festival"  %>
     <%= select_tag :music, options_for_select(@music.collect{ |u| [u.style, u.id] }), include_blank: "Type de musique" , class: "form-control form-date-2 mr-2" %>
     <%= select_tag :location, options_for_select(@location.collect{ |u| [u.location, u.id] }.slice(0..-2)), include_blank:"Type de festival" , class: "form-control form-date mr-2" %>

@@ -1,5 +1,7 @@
 class User < ApplicationRecord
-
+  
+  extend FriendlyId
+  friendly_id :first_name, use: :slugged
   after_create :welcome_send
 
   # Include default devise modules. Others available are:
@@ -14,10 +16,12 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :description, allow_nil: true,  length: { in: 4..1000 }
   validates :is_admin, default: false
+  
 
   def welcome_send
     UserMailer.welcome_email(self).deliver_now
 
   end
+  
   
 end

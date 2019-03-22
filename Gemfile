@@ -7,7 +7,7 @@ gem 'table_print'
 gem 'faker'
 gem 'dotenv-rails'
 gem 'devise'
-
+gem 'friendly_id', '~> 5.2.4'
 gem 'gon'
 gem 'jquery-rails'
 

@@ -696,3 +696,16 @@ display: inline-block;
   vertical-align: top !important;
 }
 
+/*** LEGAL MENTIONS ***/
+.mention {
+  transform: translate(+25%, 0%);
+}
+
+#mention h4 {
+  margin-top: 20%;
+  margin-bottom: 5%;
+}
+
+#mention h6 {
+  margin-top: 5%;
+}

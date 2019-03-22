@@ -1,13 +1,23 @@
 <div class="offcanvas-container is-triggered offcanvas-container-reverse" id="mobile-menu">
   <span class="offcanvas-close"><i class="fas fa-times"></i></span>
-        <h6>Menu</h6>
+      <div><h6 class="text-center">Menu</h6></div>
       <div class="offcanvas-scrollable-area border-top" style="height:calc(100% - 235px); top: 144px;">
         <!-- Mobile Menu-->
         <div class="accordion mobile-menu" id="accordion-menu">
           <!-- Components-->
           <div class="card">
             <div class="card-header">
-                      <%= link_to 'Les festivals', festivals_path , class:"mobile-menu-link" %>
+                      <%= link_to new_user_session_path , class:"mobile-menu-link " do %>
+                     <i class="fas fa-user text-accent"></i></i> Connexion
+                      <%end%>
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="card-header">
+                      <%= link_to festivals_path , class:"mobile-menu-link " do %>
+                      <i class="fas fa-map-signs text-accent"></i> les festivals
+                      <%end%>
             </div>
           </div> 
           <div class="card">

@@ -28,7 +28,7 @@
          <%else%>
         <div class="d-flex flex-column bd-highlight col-centered">
         <% @fests.each do |fest| %>
-            <div class="mb-30 card_index" id="hello">
+            <div class="mb-30 card_index">
               <%if fest.festpic.attached?%>
                 <%= image_tag fest.festpic, alt: 'festival picture' %>
               <%else%>

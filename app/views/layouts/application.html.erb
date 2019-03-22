@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
   <%= Gon::Base.render_data %>
-    <!--code fontawsome--->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">  
+  <!--code fontawsome--->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
-    <title>FestRoad</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag    'application' %>
-    <%= javascript_include_tag 'application' %>
-  </head>
+  <title>FestRoad</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag    'application' %>
+  <%= javascript_include_tag 'application' %>
+</head>
 
-  <body>
+<body>
   <%= render 'layouts/navbar'%>
   <%= render 'layouts/flash'%>
-    <%= yield %>
-  <%= render 'layouts/footer'%> 
-  
-  </body>
+  <%= yield %>
+  <%= render 'layouts/footer'%>
+
+</body>
+
 </html>

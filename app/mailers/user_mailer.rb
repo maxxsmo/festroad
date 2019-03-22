@@ -6,8 +6,21 @@ class UserMailer < ApplicationMailer
       @user = user 
   
       #on définit une variable @url qu'on utilisera dans la view d’e-mail
-      @url  = 'https://festroad-dev.herokuapp.com/users/sign_in/login' 
-  
+      @url  = new_user_registration_path
+
+      headers "X-SMTPAPI" => {
+        sub: {
+          "%name%" => [@user.email]
+        },
+        filters:{
+          templates: {
+            settings: {
+              enable: 1,
+              template_id: 'd-3374fdb66c8042659d631a192c209ed6'
+            }
+          }
+        }
+      }.to_json
       # c'est cet appel à mail() qui permet d'envoyer l’e-mail en définissant destinataire et sujet.
       mail(to: @user.email, subject: 'Bienvenue chez nous !') 
     end

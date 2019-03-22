@@ -91,7 +91,7 @@
  <section class="container card pb-4" id="sectionhow">
     <h2 class="h3 block-title text-center pt-2"> Ca se passe prochainement </h2>
     <div class="owl-carousel" data-owl-carousel='{ "nav": false, "dots": true, "loop": true, "margin": 30, "autoplay": true, "autoplayTimeout": 4000, "responsive": {"0":{"items":1},"630":{"items":2},"991":{"items":3},"1200":{"items":3}} }'>
-      <% @fests.each do |fest| %>
+      <% @carousel.each do |fest| %>
           <div class="card_index">
            <%if fest.festpic.attached?%>
               <%= image_tag fest.festpic, alt: 'festival picture' %>

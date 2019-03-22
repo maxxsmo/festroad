@@ -563,7 +563,6 @@ overflow-y: scroll;
 }
 .arrow {
   position: relative;
-  top: 200px;
   background-color: transparent;
   color: white;
   scroll-behavior: smooth;
